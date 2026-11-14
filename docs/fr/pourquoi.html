@@ -86,19 +86,19 @@
 <ul>
 <li><strong>Calcul du délai de respiration (<code>Rules.delay</code>) :</strong>
 <code>délai = min(90, (base + pas × max(0, tentatives_heure − 1)) × (2 si heure_à_risque sinon 1))</code>, avec par défaut <code>base = 10 s</code>, <code>pas = 5 s</code> et un plafond strict <code>MAX_DELAY_S = 90 s</code>.
-&rarr; <a href="https://github.com/Relthdrarxash/respire/blob/main/app/src/main/java/fr/respire/app/Rules.kt"><code>Rules.kt</code></a> · <a href="https://github.com/Relthdrarxash/respire/blob/main/app/src/test/java/fr/respire/app/RulesTest.kt"><code>RulesTest.kt</code></a></li>
+&rarr; <a href="https://github.com/Pilmil-Studio/respire/blob/main/app/src/main/java/fr/respire/app/Rules.kt"><code>Rules.kt</code></a> · <a href="https://github.com/Pilmil-Studio/respire/blob/main/app/src/test/java/fr/respire/app/RulesTest.kt"><code>RulesTest.kt</code></a></li>
 <li><strong>Décision de blocage quotidien ou en plage à risque (<code>Rules.blockReason</code> &amp; <code>Rules.riskWindowStart</code>) :</strong>
 blocage quotidien dès que <code>quota_jour &gt; 0</code> et <code>ouvertures_jour &ge; quota_jour</code> ; blocage en plage à risque dès que l’heure courante appartient à <code>[début, fin[</code> (avec gestion du passage de minuit et des nuits de 23 h ou 25 h lors des changements d’heure d’été/hiver) et que <code>ouvertures_plage &ge; quota_risque</code>.
-&rarr; <a href="https://github.com/Relthdrarxash/respire/blob/main/app/src/main/java/fr/respire/app/Rules.kt"><code>Rules.kt</code></a> · <a href="https://github.com/Relthdrarxash/respire/blob/main/app/src/test/java/fr/respire/app/RulesTest.kt"><code>RulesTest.kt</code></a></li>
+&rarr; <a href="https://github.com/Pilmil-Studio/respire/blob/main/app/src/main/java/fr/respire/app/Rules.kt"><code>Rules.kt</code></a> · <a href="https://github.com/Pilmil-Studio/respire/blob/main/app/src/test/java/fr/respire/app/RulesTest.kt"><code>RulesTest.kt</code></a></li>
 <li><strong>Détection d’un assouplissement des règles (<code>Rules.isRiskLooser</code>) :</strong>
 impose l’attente de réflexion de <code>30 s</code> uniquement si la plage à risque active perd au moins une heure couverte ou si son plafond d’ouvertures augmente.
-&rarr; <a href="https://github.com/Relthdrarxash/respire/blob/main/app/src/main/java/fr/respire/app/Rules.kt"><code>Rules.kt</code></a></li>
+&rarr; <a href="https://github.com/Pilmil-Studio/respire/blob/main/app/src/main/java/fr/respire/app/Rules.kt"><code>Rules.kt</code></a></li>
 <li><strong>Service d’accessibilité et filtre Reels / Shorts :</strong>
 n’observe que le nom de paquet au premier plan et les identifiants de vues des lecteurs de vidéos courtes (sans jamais lire le texte des messages ni disposer de la permission <code>INTERNET</code>).
-&rarr; <a href="https://github.com/Relthdrarxash/respire/blob/main/app/src/main/java/fr/respire/app/PauseService.kt"><code>PauseService.kt</code></a> · <a href="https://github.com/Relthdrarxash/respire/blob/main/app/src/main/java/fr/respire/app/ShortFormBlocker.kt"><code>ShortFormBlocker.kt</code></a></li>
+&rarr; <a href="https://github.com/Pilmil-Studio/respire/blob/main/app/src/main/java/fr/respire/app/PauseService.kt"><code>PauseService.kt</code></a> · <a href="https://github.com/Pilmil-Studio/respire/blob/main/app/src/main/java/fr/respire/app/ShortFormBlocker.kt"><code>ShortFormBlocker.kt</code></a></li>
 <li><strong>Statistiques locales sur 7 jours et suggestion de plage à risque :</strong>
 agrégation par jour calendaire et par tranche horaire locale sur les 7 derniers jours.
-&rarr; <a href="https://github.com/Relthdrarxash/respire/blob/main/app/src/main/java/fr/respire/app/ui/AppStats.kt"><code>AppStats.kt</code></a> · <a href="https://github.com/Relthdrarxash/respire/blob/main/app/src/test/java/fr/respire/app/ui/StatsLogicTest.kt"><code>StatsLogicTest.kt</code></a></li>
+&rarr; <a href="https://github.com/Pilmil-Studio/respire/blob/main/app/src/main/java/fr/respire/app/ui/AppStats.kt"><code>AppStats.kt</code></a> · <a href="https://github.com/Pilmil-Studio/respire/blob/main/app/src/test/java/fr/respire/app/ui/StatsLogicTest.kt"><code>StatsLogicTest.kt</code></a></li>
 </ul>
 
 <h2>Ce que Respire ne fait pas</h2>
@@ -109,7 +109,7 @@ agrégation par jour calendaire et par tranche horaire locale sur les 7 derniers
 </ul>
 
 <h2>Les limites</h2>
-<p>Respire n’a pas été évaluée dans une étude. Les résultats cités portent sur des outils comparables de micro-friction évalués dans la littérature scientifique, pas sur Respire elle-même. Si tu constates qu’une règle ne t’aide pas ou te gêne, <a href="https://github.com/Relthdrarxash/respire/issues">dis-le nous</a> ou écris à <a href="mailto:pilmil.studio@proton.me">pilmil.studio@proton.me</a>.</p>
+<p>Respire n’a pas été évaluée dans une étude. Les résultats cités portent sur des outils comparables de micro-friction évalués dans la littérature scientifique, pas sur Respire elle-même. Si tu constates qu’une règle ne t’aide pas ou te gêne, <a href="https://github.com/Pilmil-Studio/respire/issues">dis-le nous</a> ou écris à <a href="mailto:pilmil.studio@proton.me">pilmil.studio@proton.me</a>.</p>
 
 <h2>Sources</h2>
 <ol class="refs">
@@ -125,7 +125,7 @@ agrégation par jour calendaire et par tranche horaire locale sur les 7 derniers
 <footer>
 <div class="wrap">
 <p style="margin:0">Respire, par Pilmil Studio. Logiciel libre sous licence MPL-2.0.</p>
-<nav aria-label="Code source"><a href="mailto:pilmil.studio@proton.me">pilmil.studio@proton.me</a><a href="https://github.com/Relthdrarxash/respire">Code source</a><a href="confidentialite.html">Politique de confidentialité</a></nav>
+<nav aria-label="Code source"><a href="mailto:pilmil.studio@proton.me">pilmil.studio@proton.me</a><a href="https://github.com/Pilmil-Studio/respire">Code source</a><a href="confidentialite.html">Politique de confidentialité</a></nav>
 </div>
 </footer>
 </body>

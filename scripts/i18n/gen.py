@@ -133,8 +133,8 @@ S = {
 "link_feedback": ["Give feedback", "Donner mon avis", "Dar mi opinión", "Feedback geben"],
 "link_source": ["Source code", "Code source", "Código fuente", "Quellcode"],
 "link_why": ["Why these rules?", "Pourquoi ces règles ?", "¿Por qué estas reglas?", "Warum diese Regeln?"],
-"url_why": ["https://relthdrarxash.github.io/respire/why.html", "https://relthdrarxash.github.io/respire/fr/pourquoi.html", "https://relthdrarxash.github.io/respire/why.html", "https://relthdrarxash.github.io/respire/why.html"],
-"url_privacy": ["https://relthdrarxash.github.io/respire/privacy.html", "https://relthdrarxash.github.io/respire/fr/confidentialite.html", "https://relthdrarxash.github.io/respire/privacy.html", "https://relthdrarxash.github.io/respire/privacy.html"],
+"url_why": ["https://pilmil-studio.github.io/respire/why.html", "https://pilmil-studio.github.io/respire/fr/pourquoi.html", "https://pilmil-studio.github.io/respire/why.html", "https://pilmil-studio.github.io/respire/why.html"],
+"url_privacy": ["https://pilmil-studio.github.io/respire/privacy.html", "https://pilmil-studio.github.io/respire/fr/confidentialite.html", "https://pilmil-studio.github.io/respire/privacy.html", "https://pilmil-studio.github.io/respire/privacy.html"],
 "app_version": ["Respire %1$s", "Respire %1$s", "Respire %1$s", "Respire %1$s"],
 "back": ["Back", "Retour", "Atrás", "Zurück"],
 }

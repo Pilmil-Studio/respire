@@ -2,13 +2,13 @@
 
 **English** · [Français](README.fr.md)
 
-[![Build](https://github.com/Relthdrarxash/respire/actions/workflows/build.yml/badge.svg)](https://github.com/Relthdrarxash/respire/actions/workflows/build.yml)
+[![Build](https://github.com/Pilmil-Studio/respire/actions/workflows/build.yml/badge.svg)](https://github.com/Pilmil-Studio/respire/actions/workflows/build.yml)
 
 A small Android app against doomscrolling. Respire puts a breathing pause in front of the apps you open on autopilot, limits how long a session lasts, caps how many times a day you can open them, and can hide Instagram Reels and YouTube Shorts while leaving the rest of those apps usable.
 
 No Internet permission, no trackers, no account. Everything stays on your phone.
 
-**[Respire website](https://relthdrarxash.github.io/respire/)** · **[Download APK](https://github.com/Relthdrarxash/respire/releases/latest)** · [Why these choices](https://relthdrarxash.github.io/respire/why.html) · [Privacy policy](https://relthdrarxash.github.io/respire/privacy.html)
+**[Respire website](https://pilmil-studio.github.io/respire/)** · **[Download APK](https://github.com/Pilmil-Studio/respire/releases/latest)** · [Why these choices](https://pilmil-studio.github.io/respire/why.html) · [Privacy policy](https://pilmil-studio.github.io/respire/privacy.html)
 
 **Before the Google Play release:** [join the internal test](https://play.google.com/apps/internaltest/4701443078606336635) (only for people already on the tester list: [ask for access by e-mail](mailto:pilmil.studio@proton.me?subject=Tester%20Respire)).
 
@@ -16,7 +16,7 @@ Available in English, French, Spanish and German.
 
 ## Why these features
 
-The app keeps only what you need: the explanations live here and on the page [Why Respire works the way it does](https://relthdrarxash.github.io/respire/why.html), with full sources. Each feature rests on a study or on a design choice, flagged as such.
+The app keeps only what you need: the explanations live here and on the page [Why Respire works the way it does](https://pilmil-studio.github.io/respire/why.html), with full sources. Each feature rests on a study or on a design choice, flagged as such.
 
 | Feature | What it does | Why |
 |---|---|---|
@@ -92,7 +92,7 @@ What that means in practice:
 - **The decisions are human.** Which problem to solve, which features to keep based on the studies cited below, what to leave out (streaks, badges, reminders; the only notification, optional, warns that Android stopped the service), the design, and every fix after testing on a real phone.
 - **You don't have to take my word for it.** The full source is here under the MPL-2.0. The manifest declares no `INTERNET` permission, so even a bug cannot send data anywhere. The accessibility code is in [`PauseService.kt`](app/src/main/java/fr/respire/app/PauseService.kt) and [`ShortFormBlocker.kt`](app/src/main/java/fr/respire/app/ShortFormBlocker.kt).
 - **The rules are tested.** Everything that decides a wait or a block lives in [`Rules.kt`](app/src/main/java/fr/respire/app/Rules.kt), with no Android dependency, and is covered by unit tests run on every build (including daylight saving time changes and time ranges that cross midnight).
-- **Someone answers for it.** If you find a bug, a privacy concern or something unclear, [open an issue](https://github.com/Relthdrarxash/respire/issues) or write to pilmil.studio@proton.me. Reviews of the accessibility code are especially welcome.
+- **Someone answers for it.** If you find a bug, a privacy concern or something unclear, [open an issue](https://github.com/Pilmil-Studio/respire/issues) or write to pilmil.studio@proton.me. Reviews of the accessibility code are especially welcome.
 
 ## License
 
@@ -115,7 +115,7 @@ The fonts in `app/src/main/res/font/` keep their own SIL Open Font License (see 
 
 ## From the same studio (Pilmil Studio)
 
-- **[Sommelle](https://github.com/Relthdrarxash/sommelle)**: 6-to-8-week CBT-I insomnia support app, free, open source and offline.
-- **[Lunaison](https://github.com/Relthdrarxash/lunaison)**: private menstrual cycle tracker with referenced medical guides and serverless partner sharing.
-- **[Sauve](https://github.com/Relthdrarxash/sauve)**: anti-panic first aid guide, free, open source and offline, with hands-free voice and haptic guidance.
-- **[Sillon](https://github.com/Relthdrarxash/sillon)**: living vegetable garden planner and agronomic calendar based on the last frost date, free, open source and offline.
+- **[Sommelle](https://github.com/Pilmil-Studio/sommelle)**: 6-to-8-week CBT-I insomnia support app, free, open source and offline.
+- **[Lunaison](https://github.com/Pilmil-Studio/lunaison)**: private menstrual cycle tracker with referenced medical guides and serverless partner sharing.
+- **[Sauve](https://github.com/Pilmil-Studio/sauve)**: anti-panic first aid guide, free, open source and offline, with hands-free voice and haptic guidance.
+- **[Sillon](https://github.com/Pilmil-Studio/sillon)**: living vegetable garden planner and agronomic calendar based on the last frost date, free, open source and offline.

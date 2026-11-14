@@ -2,13 +2,13 @@
 
 [English](README.md) · **Français**
 
-[![Build](https://github.com/Relthdrarxash/respire/actions/workflows/build.yml/badge.svg)](https://github.com/Relthdrarxash/respire/actions/workflows/build.yml)
+[![Build](https://github.com/Pilmil-Studio/respire/actions/workflows/build.yml/badge.svg)](https://github.com/Pilmil-Studio/respire/actions/workflows/build.yml)
 
 Une petite appli Android contre le doom scroll. Respire place une pause de respiration devant les applis que tu ouvres par réflexe, limite la durée d'une session, plafonne le nombre d'ouvertures par jour et peut masquer les Reels d'Instagram et les Shorts de YouTube tout en laissant le reste de ces applis utilisable.
 
 Pas de permission Internet, pas de traqueur, pas de compte. Tout reste sur ton téléphone.
 
-**[Site de Respire](https://relthdrarxash.github.io/respire/fr/)** · **[Google Play](https://play.google.com/store/apps/details?id=fr.respire.app)** · **[Télécharger l'APK](https://github.com/Relthdrarxash/respire/releases/latest)** · [Pourquoi ces choix](https://relthdrarxash.github.io/respire/fr/pourquoi.html) · [Confidentialité](https://relthdrarxash.github.io/respire/fr/confidentialite.html)
+**[Site de Respire](https://pilmil-studio.github.io/respire/fr/)** · **[Google Play](https://play.google.com/store/apps/details?id=fr.respire.app)** · **[Télécharger l'APK](https://github.com/Pilmil-Studio/respire/releases/latest)** · [Pourquoi ces choix](https://pilmil-studio.github.io/respire/fr/pourquoi.html) · [Confidentialité](https://pilmil-studio.github.io/respire/fr/confidentialite.html)
 
 **Avant la sortie sur Google Play :** [rejoindre le test interne](https://play.google.com/apps/internaltest/4701443078606336635) (réservé aux personnes déjà ajoutées à la liste de testeurs : [demande l'accès par mail](mailto:pilmil.studio@proton.me?subject=Tester%20Respire)).
 
@@ -16,7 +16,7 @@ Disponible en français, anglais, espagnol et allemand.
 
 ## Pourquoi ces fonctions
 
-L'appli reste au strict nécessaire : les explications sont ici et sur la page [Pourquoi Respire est faite comme ça](https://relthdrarxash.github.io/respire/fr/pourquoi.html), avec les sources complètes. Chaque fonction s'appuie sur une étude ou sur un choix de conception, signalé comme tel.
+L'appli reste au strict nécessaire : les explications sont ici et sur la page [Pourquoi Respire est faite comme ça](https://pilmil-studio.github.io/respire/fr/pourquoi.html), avec les sources complètes. Chaque fonction s'appuie sur une étude ou sur un choix de conception, signalé comme tel.
 
 | Fonction | Ce qu'elle fait | Pourquoi |
 |---|---|---|
@@ -90,7 +90,7 @@ Concrètement :
 - **Les décisions sont humaines.** Le problème à régler, les fonctions retenues à partir des études citées plus bas, ce qui a été écarté (séries, badges, rappels ; la seule notification, facultative, prévient qu'Android a coupé le service), le design, et chaque correction après des tests sur un vrai téléphone.
 - **Pas besoin de me croire sur parole.** Tout le code est ici, sous licence MPL-2.0. Le manifeste ne déclare pas la permission `INTERNET` : même un bug ne peut rien envoyer nulle part. Le code lié à l'accessibilité se trouve dans [`PauseService.kt`](app/src/main/java/fr/respire/app/PauseService.kt) et [`ShortFormBlocker.kt`](app/src/main/java/fr/respire/app/ShortFormBlocker.kt).
 - **Les règles sont testées.** Tout ce qui décide d'une attente ou d'un blocage se trouve dans [`Rules.kt`](app/src/main/java/fr/respire/app/Rules.kt), sans dépendance à Android, et est couvert par des tests lancés à chaque compilation (y compris les changements d'heure et les plages qui passent minuit).
-- **Quelqu'un en répond.** Si tu trouves un bug, un souci de vie privée ou quelque chose de flou, [ouvre une issue](https://github.com/Relthdrarxash/respire/issues) ou écris à pilmil.studio@proton.me. Les relectures du code d'accessibilité sont particulièrement bienvenues.
+- **Quelqu'un en répond.** Si tu trouves un bug, un souci de vie privée ou quelque chose de flou, [ouvre une issue](https://github.com/Pilmil-Studio/respire/issues) ou écris à pilmil.studio@proton.me. Les relectures du code d'accessibilité sont particulièrement bienvenues.
 
 ## Licence
 
@@ -113,7 +113,7 @@ Les polices de `app/src/main/res/font/` restent sous leur propre licence SIL Ope
 
 ## Du même atelier (Pilmil Studio)
 
-- **[Sommelle](https://github.com/Relthdrarxash/sommelle)** : accompagnement de l'insomnie chronique par la TCC-I en 6 à 8 semaines, gratuit, libre et sans accès à Internet.
-- **[Lunaison](https://github.com/Relthdrarxash/lunaison)** : suivi du cycle menstruel libre, gratuit et sans accès à Internet, avec fiches médicales sourcées et partage partenaire hors-ligne.
-- **[Sauve](https://github.com/Relthdrarxash/sauve)** : premiers secours « anti-panique », gratuit, libre et sans accès à Internet, avec guidage vocal et haptique mains libres.
-- **[Sillon](https://github.com/Relthdrarxash/sillon)** : potager vivant et calendrier agronomique indexé sur la date des dernières gelées, gratuit, libre et sans accès à Internet.
+- **[Sommelle](https://github.com/Pilmil-Studio/sommelle)** : accompagnement de l'insomnie chronique par la TCC-I en 6 à 8 semaines, gratuit, libre et sans accès à Internet.
+- **[Lunaison](https://github.com/Pilmil-Studio/lunaison)** : suivi du cycle menstruel libre, gratuit et sans accès à Internet, avec fiches médicales sourcées et partage partenaire hors-ligne.
+- **[Sauve](https://github.com/Pilmil-Studio/sauve)** : premiers secours « anti-panique », gratuit, libre et sans accès à Internet, avec guidage vocal et haptique mains libres.
+- **[Sillon](https://github.com/Pilmil-Studio/sillon)** : potager vivant et calendrier agronomique indexé sur la date des dernières gelées, gratuit, libre et sans accès à Internet.

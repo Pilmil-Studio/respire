@@ -224,8 +224,8 @@ fun HomeScreen(
                         AboutSection(
                             version = ui.version,
                             onOpenPrivacy = { onOpenLink(privacyUrl) },
-                            onOpenFeedback = { onOpenLink("https://github.com/Relthdrarxash/respire/issues") },
-                            onOpenSource = { onOpenLink("https://github.com/Relthdrarxash/respire") },
+                            onOpenFeedback = { onOpenLink("https://github.com/Pilmil-Studio/respire/issues") },
+                            onOpenSource = { onOpenLink("https://github.com/Pilmil-Studio/respire") },
                             onShowDiag = { showDiag = true },
                             onReplayOnboarding = onReplayOnboarding,
                             onShowDisclosure = { showDisclosure = true },

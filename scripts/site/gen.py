@@ -1,7 +1,7 @@
 import os, sys
 
 OUT = sys.argv[1]
-REPO = "https://github.com/Relthdrarxash/respire"
+REPO = "https://github.com/Pilmil-Studio/respire"
 APK = REPO + "/releases/latest/download/Respire.apk"
 PLAY_STORE = "https://play.google.com/store/apps/details?id=fr.respire.app"
 ISSUES = REPO + "/issues"

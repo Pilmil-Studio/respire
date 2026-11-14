@@ -86,19 +86,19 @@
 <ul>
 <li><strong>Breathing delay calculation (<code>Rules.delay</code>):</strong>
 <code>delay = min(90, (base + step × max(0, attempts_in_hour − 1)) × (2 if in_risk_hours else 1))</code>, with defaults <code>base = 10 s</code>, <code>step = 5 s</code> and a strict cap <code>MAX_DELAY_S = 90 s</code>.
-&rarr; <a href="https://github.com/Relthdrarxash/respire/blob/main/app/src/main/java/fr/respire/app/Rules.kt"><code>Rules.kt</code></a> · <a href="https://github.com/Relthdrarxash/respire/blob/main/app/src/test/java/fr/respire/app/RulesTest.kt"><code>RulesTest.kt</code></a></li>
+&rarr; <a href="https://github.com/Pilmil-Studio/respire/blob/main/app/src/main/java/fr/respire/app/Rules.kt"><code>Rules.kt</code></a> · <a href="https://github.com/Pilmil-Studio/respire/blob/main/app/src/test/java/fr/respire/app/RulesTest.kt"><code>RulesTest.kt</code></a></li>
 <li><strong>Daily or risky-hours block decision (<code>Rules.blockReason</code> &amp; <code>Rules.riskWindowStart</code>):</strong>
 daily block when <code>daily_quota &gt; 0</code> and <code>opens_today &ge; daily_quota</code>; risky-hours block when the current hour falls in <code>[start, end[</code> (handling midnight wrap-around and 23-hour or 25-hour daylight saving time transitions) and <code>opens_since_risk_start &ge; risk_quota</code>.
-&rarr; <a href="https://github.com/Relthdrarxash/respire/blob/main/app/src/main/java/fr/respire/app/Rules.kt"><code>Rules.kt</code></a> · <a href="https://github.com/Relthdrarxash/respire/blob/main/app/src/test/java/fr/respire/app/RulesTest.kt"><code>RulesTest.kt</code></a></li>
+&rarr; <a href="https://github.com/Pilmil-Studio/respire/blob/main/app/src/main/java/fr/respire/app/Rules.kt"><code>Rules.kt</code></a> · <a href="https://github.com/Pilmil-Studio/respire/blob/main/app/src/test/java/fr/respire/app/RulesTest.kt"><code>RulesTest.kt</code></a></li>
 <li><strong>Rule-loosening detection (<code>Rules.isRiskLooser</code>):</strong>
 triggers the <code>30 s</code> reflection wait only when an active risky-hours range loses at least one covered hour or its allowed open count increases.
-&rarr; <a href="https://github.com/Relthdrarxash/respire/blob/main/app/src/main/java/fr/respire/app/Rules.kt"><code>Rules.kt</code></a></li>
+&rarr; <a href="https://github.com/Pilmil-Studio/respire/blob/main/app/src/main/java/fr/respire/app/Rules.kt"><code>Rules.kt</code></a></li>
 <li><strong>Accessibility service and Reels / Shorts filter:</strong>
 checks only the foreground package name and the view IDs of short-video players (never reading message text, and with no <code>INTERNET</code> permission in the manifest).
-&rarr; <a href="https://github.com/Relthdrarxash/respire/blob/main/app/src/main/java/fr/respire/app/PauseService.kt"><code>PauseService.kt</code></a> · <a href="https://github.com/Relthdrarxash/respire/blob/main/app/src/main/java/fr/respire/app/ShortFormBlocker.kt"><code>ShortFormBlocker.kt</code></a></li>
+&rarr; <a href="https://github.com/Pilmil-Studio/respire/blob/main/app/src/main/java/fr/respire/app/PauseService.kt"><code>PauseService.kt</code></a> · <a href="https://github.com/Pilmil-Studio/respire/blob/main/app/src/main/java/fr/respire/app/ShortFormBlocker.kt"><code>ShortFormBlocker.kt</code></a></li>
 <li><strong>7-day local statistics and risky-hours suggestion:</strong>
 aggregates by calendar day and local hour slot over the last 7 days.
-&rarr; <a href="https://github.com/Relthdrarxash/respire/blob/main/app/src/main/java/fr/respire/app/ui/AppStats.kt"><code>AppStats.kt</code></a> · <a href="https://github.com/Relthdrarxash/respire/blob/main/app/src/test/java/fr/respire/app/ui/StatsLogicTest.kt"><code>StatsLogicTest.kt</code></a></li>
+&rarr; <a href="https://github.com/Pilmil-Studio/respire/blob/main/app/src/main/java/fr/respire/app/ui/AppStats.kt"><code>AppStats.kt</code></a> · <a href="https://github.com/Pilmil-Studio/respire/blob/main/app/src/test/java/fr/respire/app/ui/StatsLogicTest.kt"><code>StatsLogicTest.kt</code></a></li>
 </ul>
 
 <h2>What Respire does not do</h2>
@@ -109,7 +109,7 @@ aggregates by calendar day and local hour slot over the last 7 days.
 </ul>
 
 <h2>Limits</h2>
-<p>Respire has not been evaluated in a study. The results cited here concern comparable micro-friction tools evaluated in scientific literature, not Respire itself. If a rule does not help you or gets in your way, <a href="https://github.com/Relthdrarxash/respire/issues">tell us</a> or write to <a href="mailto:pilmil.studio@proton.me">pilmil.studio@proton.me</a>.</p>
+<p>Respire has not been evaluated in a study. The results cited here concern comparable micro-friction tools evaluated in scientific literature, not Respire itself. If a rule does not help you or gets in your way, <a href="https://github.com/Pilmil-Studio/respire/issues">tell us</a> or write to <a href="mailto:pilmil.studio@proton.me">pilmil.studio@proton.me</a>.</p>
 
 <h2>Sources</h2>
 <ol class="refs">
@@ -125,7 +125,7 @@ aggregates by calendar day and local hour slot over the last 7 days.
 <footer>
 <div class="wrap">
 <p style="margin:0">Respire, by Pilmil Studio. Free software under the MPL-2.0 license.</p>
-<nav aria-label="Source code"><a href="mailto:pilmil.studio@proton.me">pilmil.studio@proton.me</a><a href="https://github.com/Relthdrarxash/respire">Source code</a><a href="privacy.html">Privacy policy</a></nav>
+<nav aria-label="Source code"><a href="mailto:pilmil.studio@proton.me">pilmil.studio@proton.me</a><a href="https://github.com/Pilmil-Studio/respire">Source code</a><a href="privacy.html">Privacy policy</a></nav>
 </div>
 </footer>
 </body>

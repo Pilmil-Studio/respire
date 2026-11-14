@@ -149,8 +149,8 @@ Co dzieje się z danymi: wszystko zostaje wyłącznie w telefonie. Respire nie m
     <string name="link_feedback">Zgłoś uwagę</string>
     <string name="link_source">Kod źródłowy</string>
     <string name="link_why">Skąd te zasady?</string>
-    <string name="url_why">https://relthdrarxash.github.io/respire/why.html</string>
-    <string name="url_privacy">https://relthdrarxash.github.io/respire/privacy.html</string>
+    <string name="url_why">https://pilmil-studio.github.io/respire/why.html</string>
+    <string name="url_privacy">https://pilmil-studio.github.io/respire/privacy.html</string>
     <string name="back">Wstecz</string>
     <plurals name="risk_desc_quota">
         <item quantity="one">Czas podwojony, maks. %d otwarcie na aplikację.</item>
