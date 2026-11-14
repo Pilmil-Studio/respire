@@ -444,6 +444,7 @@ internal fun AboutSection(
                 color = Calme.Sage,
                 textAlign = androidx.compose.ui.text.style.TextAlign.Center,
             )
+            PilmilLegalBlock()
         }
     }
 }
