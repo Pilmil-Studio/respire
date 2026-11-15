@@ -13,7 +13,6 @@
     <string name="pause_close">No, la cierro</string>
     <string name="pause_open">Abrir de todos modos</string>
     <string name="pause_continue">Continuar</string>
-    <string name="pause_open_short">Solo 2 min</string>
     <string name="pause_reason_msg">Mensaje concreto</string>
     <string name="pause_reason_lookup">Buscar un dato</string>
     <string name="pause_reason_habit">Pura inercia</string>
@@ -70,14 +69,16 @@
     <string name="picker_title">Apps que frenar</string>
     <string name="picker_search">Buscar una app</string>
     <string name="picker_loading">Cargando apps…</string>
-    <string name="short_fb_title">Ocultar los Reels de Facebook (en pruebas)</string>
-    <string name="short_fb_note">En pruebas: este filtro todavía no bloquea nada. Abre algunos Reels en Facebook, copia el diagnóstico de abajo y compártelo con «Dar mi opinión» para poder ajustarlo.</string>
+    <string name="short_fb_title">Ocultar los Reels de Facebook (Facebook en inglés)</string>
+    <string name="short_fb_note">Funciona cuando Facebook está en inglés; otros idiomas, en recopilación. Abre un Reel en Facebook, copia el diagnóstico de abajo y compártelo con «Dar mi opinión» para poder añadir el tuyo.</string>
     <string name="picker_suggest_title">Se suelen abrir por inercia</string>
     <string name="picker_all_title">Todas las apps</string>
     <string name="diag_link">¿No funciona? Diagnóstico</string>
     <string name="diag_title">Diagnóstico de Reels y Shorts</string>
     <string name="diag_hint">Abre un Short en YouTube (o un Reel en Instagram o Facebook), vuelve aquí y copia este texto. Si indica que no hay ventana legible, desactiva y vuelve a activar Respire en los ajustes de accesibilidad.</string>
     <string name="diag_empty">Aún no se ha analizado nada. Activa un filtro y abre YouTube, Instagram o Facebook.</string>
+    <string name="diag_hint_fb">Facebook: abre un Reel en Facebook, vuelve aquí y copia estas líneas. Léelas antes de compartirlas: vienen de tu pantalla.</string>
+    <string name="cd_add">Añadir</string>
     <string name="diag_copy">Copiar</string>
     <string name="diag_copied">Copiado</string>
     <string name="dialog_close">Cerrar</string>

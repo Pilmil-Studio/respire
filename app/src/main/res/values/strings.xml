@@ -14,7 +14,6 @@
     <string name="pause_close">No, close it</string>
     <string name="pause_open">Open anyway</string>
     <string name="pause_continue">Continue</string>
-    <string name="pause_open_short">Just 2 min</string>
     <string name="pause_reason_msg">Specific message</string>
     <string name="pause_reason_lookup">Quick lookup</string>
     <string name="pause_reason_habit">Just a habit</string>
@@ -73,14 +72,16 @@
     <string name="picker_title">Apps to slow down</string>
     <string name="picker_search">Search for an app</string>
     <string name="picker_loading">Loading apps…</string>
-    <string name="short_fb_title">Hide Facebook Reels (testing)</string>
-    <string name="short_fb_note">Testing: this filter doesn’t block anything yet. Open a few Reels in Facebook, then copy the diagnostic below and share it through “Give feedback” so it can be tuned.</string>
+    <string name="short_fb_title">Hide Facebook Reels (works with Facebook in English)</string>
+    <string name="short_fb_note">Works when Facebook is set to English; other languages are being collected. Open a Reel in Facebook, then copy the diagnostic below and share it through “Give feedback” to help add yours.</string>
     <string name="picker_suggest_title">Often opened on autopilot</string>
     <string name="picker_all_title">All apps</string>
     <string name="diag_link">Not working? Diagnostic</string>
     <string name="diag_title">Reels and Shorts diagnostic</string>
     <string name="diag_hint">Open a Short in YouTube (or a Reel in Instagram or Facebook), come back here and copy this text. If it says no readable window, turn Respire off and on again in Accessibility settings.</string>
     <string name="diag_empty">Nothing analysed yet. Turn on a filter, then open YouTube, Instagram or Facebook.</string>
+    <string name="diag_hint_fb">Facebook: open a Reel, come back here and copy these lines. Read them before sharing: they come from your screen.</string>
+    <string name="cd_add">Add</string>
     <string name="diag_copy">Copy</string>
     <string name="diag_copied">Copied</string>
     <string name="dialog_close">Close</string>

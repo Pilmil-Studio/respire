@@ -97,7 +97,7 @@ internal fun PilmilLegalBlock(modifier: Modifier = Modifier) {
                     color = Calme.Ink,
                 )
                 Text(
-                    text = "Alfortville, France",
+                    text = "France",
                     fontFamily = Nunito,
                     fontSize = 12.sp,
                     color = Calme.Muted,
@@ -105,7 +105,7 @@ internal fun PilmilLegalBlock(modifier: Modifier = Modifier) {
             }
         }
         Text(
-            text = "Éditeur : Pilmil Studio (Alfortville, France).\n" +
+            text = "Éditeur : Pilmil Studio (France).\n" +
                 "Confidentialité : 100 % hors-ligne, aucune permission réseau, aucun traceur, aucun compte.\n" +
                 "Licence : logiciel libre sous licence MPL-2.0.\n" +
                 "Contact : pilmil.studio@proton.me · https://pilmil-studio.github.io\n\n" +

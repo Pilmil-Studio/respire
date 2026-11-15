@@ -37,6 +37,8 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.Role
+import androidx.compose.ui.semantics.clearAndSetSemantics
+import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.semantics.stateDescription
 import androidx.compose.ui.text.font.FontFamily
@@ -272,6 +274,11 @@ internal fun DiagnosticDialog(text: String, onDismiss: () -> Unit) {
             Column(Modifier.verticalScroll(rememberScrollState())) {
                 Text(stringResource(R.string.diag_hint), fontFamily = Nunito, fontSize = 14.sp, color = Calme.Muted)
                 Text(
+                    stringResource(R.string.diag_hint_fb),
+                    modifier = Modifier.padding(top = 8.dp),
+                    fontFamily = Nunito, fontSize = 14.sp, color = Calme.Muted,
+                )
+                Text(
                     text.ifBlank { stringResource(R.string.diag_empty) },
                     modifier = Modifier
                         .padding(top = 12.dp)
@@ -466,6 +473,7 @@ internal fun StartChecklist(
     onAllowNotifications: () -> Unit,
     onOpenAppInfo: () -> Unit,
 ) {
+    val addLabel = stringResource(R.string.cd_add)
     CalmeCard {
         Text(stringResource(R.string.start_title), fontFamily = Fraunces, fontWeight = FontWeight.SemiBold, fontSize = 20.sp, color = Calme.Ink)
         Spacer(Modifier.height(12.dp))
@@ -491,7 +499,11 @@ internal fun StartChecklist(
                         AppIcon(app.icon, 28)
                         Spacer(Modifier.size(10.dp))
                         Text(app.label, modifier = Modifier.weight(1f), fontFamily = Nunito, fontSize = 15.sp, color = Calme.Ink)
-                        Text("+", fontFamily = Nunito, fontWeight = FontWeight.Bold, fontSize = 20.sp, color = Calme.Sage)
+                        Text(
+                            "+",
+                            modifier = Modifier.semantics { contentDescription = addLabel },
+                            fontFamily = Nunito, fontWeight = FontWeight.Bold, fontSize = 20.sp, color = Calme.Sage,
+                        )
                     }
                 }
             }
@@ -551,7 +563,8 @@ private fun StepLine(text: String, done: Boolean) {
                 .background(if (done) Calme.Sage else Calme.Chip),
             contentAlignment = Alignment.Center,
         ) {
-            if (done) Text("✓", color = Color.White, fontWeight = FontWeight.Bold, fontSize = 14.sp)
+            // Glyphe décoratif : l'état « fait » est déjà annoncé par la ligne.
+            if (done) Text("✓", modifier = Modifier.clearAndSetSemantics {}, color = Color.White, fontWeight = FontWeight.Bold, fontSize = 14.sp)
         }
         Spacer(Modifier.size(10.dp))
         Text(

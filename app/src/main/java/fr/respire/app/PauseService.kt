@@ -18,7 +18,8 @@ import android.view.inputmethod.InputMethodManager
  *  2. Fin de session : l'utilisateur est toujours dans l'appli quand la session autorisée expire.
  *
  * Reels / Shorts (options) : dans Instagram, YouTube et Facebook uniquement, les identifiants
- * techniques des vues sont consultés pour repérer le lecteur plein écran (voir ShortFormBlocker).
+ * techniques des vues (et, dans Facebook, des libellés d'accessibilité d'éléments d'interface) sont
+ * consultés pour repérer le lecteur plein écran (voir ShortFormBlocker).
  */
 class PauseService : AccessibilityService() {
 
@@ -160,7 +161,7 @@ class PauseService : AccessibilityService() {
         val pkg = event.packageName?.toString() ?: return
         if (pkg in ShortFormBlocker.PACKAGES) {
             onShortFormCandidate(pkg)
-            // Facebook (filtre en test) : on garde le nom technique des écrans pour le diagnostic.
+            // Facebook : on garde le nom technique des écrans pour le diagnostic.
             if (pkg == ShortFormBlocker.FACEBOOK && prefs.blockFacebookReels &&
                 event.eventType == AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED
             ) {

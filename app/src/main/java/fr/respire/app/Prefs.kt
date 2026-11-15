@@ -195,6 +195,11 @@ class Prefs(context: Context) {
             append('\n')
             append("résultat : ").append(r.reason).append('\n')
             append("identifiants : ").append(if (r.seen.isEmpty()) "aucun" else r.seen.joinToString(", "))
+            if (r.descriptions.isNotEmpty()) {
+                // Facebook : libellés d'éléments d'interface (jamais de texte saisi), pour les copier.
+                append('\n').append("libellés :")
+                r.descriptions.forEach { append("\n- ").append(it) }
+            }
             val screens = sp.getString("scr_$pkg", null)
             if (!screens.isNullOrEmpty()) append('\n').append("écrans récents : ").append(screens)
         }

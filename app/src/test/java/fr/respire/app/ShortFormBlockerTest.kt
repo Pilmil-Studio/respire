@@ -17,7 +17,10 @@ class ShortFormBlockerTest {
         assertTrue("reel_recycler" in yt)
         assertTrue("shorts_player" in yt)
 
+        // Facebook masque tous ses identifiants : la détection passe par les libellés d'accessibilité.
         assertTrue(ShortFormBlocker.knownIds(ShortFormBlocker.FACEBOOK).isEmpty())
+        assertTrue("Reels tab details" in FacebookReels.allLabels)
+        assertTrue("Reel details" in FacebookReels.allLabels)
     }
 
     @Test

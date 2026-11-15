@@ -13,7 +13,6 @@
     <string name="pause_close">Nie, zamknij</string>
     <string name="pause_open">Otwórz mimo to</string>
     <string name="pause_continue">Kontynuuj</string>
-    <string name="pause_open_short">Tylko na 2 min</string>
     <string name="pause_reason_msg">Konkretna wiadomość</string>
     <string name="pause_reason_lookup">Szybkie sprawdzenie</string>
     <string name="pause_reason_habit">Z przyzwyczajenia</string>
@@ -70,14 +69,16 @@
     <string name="picker_title">Aplikacje do spowolnienia</string>
     <string name="picker_search">Szukaj aplikacji</string>
     <string name="picker_loading">Wczytywanie aplikacji…</string>
-    <string name="short_fb_title">Ukryj Facebook Reels (testowo)</string>
-    <string name="short_fb_note">Wersja testowa: ten filtr jeszcze niczego nie blokuje. Otwórz kilka Reels na Facebooku, a następnie skopiuj diagnostykę poniżej.</string>
+    <string name="short_fb_title">Ukryj Facebook Reels (Facebook po angielsku)</string>
+    <string name="short_fb_note">Działa, gdy Facebook jest ustawiony na angielski; inne języki są w trakcie zbierania. Otwórz Reela na Facebooku, skopiuj diagnostykę poniżej i prześlij ją przez „Wyślij opinię”, aby dodać twój język.</string>
     <string name="picker_suggest_title">Często otwierane odruchowo</string>
     <string name="picker_all_title">Wszystkie aplikacje</string>
     <string name="diag_link">Nie działa? Diagnostyka</string>
     <string name="diag_title">Diagnostyka Reels i Shorts</string>
     <string name="diag_hint">Otwórz Shorta w YouTube (lub Reela na Instagramie), wróć tutaj i skopiuj ten tekst.</string>
     <string name="diag_empty">Brak danych. Włącz filtr i otwórz YouTube lub Instagram.</string>
+    <string name="diag_hint_fb">Facebook: otwórz Reela na Facebooku, wróć tutaj i skopiuj te wiersze. Przeczytaj je przed udostępnieniem: pochodzą z twojego ekranu.</string>
+    <string name="cd_add">Dodaj</string>
     <string name="diag_copy">Kopiuj</string>
     <string name="diag_copied">Skopiowano</string>
     <string name="dialog_close">Zamknij</string>

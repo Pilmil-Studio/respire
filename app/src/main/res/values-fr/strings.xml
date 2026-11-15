@@ -13,7 +13,6 @@
     <string name="pause_close">Non, je ferme</string>
     <string name="pause_open">Ouvrir quand même</string>
     <string name="pause_continue">Continuer</string>
-    <string name="pause_open_short">2 min seulement</string>
     <string name="pause_reason_msg">Message précis</string>
     <string name="pause_reason_lookup">Chercher une info</string>
     <string name="pause_reason_habit">Simple réflexe</string>
@@ -70,14 +69,16 @@
     <string name="picker_title">Applis à freiner</string>
     <string name="picker_search">Rechercher une appli</string>
     <string name="picker_loading">Chargement des applis…</string>
-    <string name="short_fb_title">Masquer les Reels de Facebook (en test)</string>
-    <string name="short_fb_note">En test : ce filtre ne bloque encore rien. Ouvre quelques Reels dans Facebook, puis copie le diagnostic ci-dessous et partage-le via « Donner mon avis » pour qu’on puisse le régler.</string>
+    <string name="short_fb_title">Masquer les Reels de Facebook (Facebook en anglais)</string>
+    <string name="short_fb_note">Fonctionne quand Facebook est en anglais ; autres langues en cours de relevé. Ouvre un Reel dans Facebook, puis copie le diagnostic ci-dessous et partage-le via « Donner mon avis » pour qu’on puisse ajouter la tienne.</string>
     <string name="picker_suggest_title">Souvent ouvertes par réflexe</string>
     <string name="picker_all_title">Toutes les applis</string>
     <string name="diag_link">Ça ne marche pas ? Diagnostic</string>
     <string name="diag_title">Diagnostic Reels et Shorts</string>
     <string name="diag_hint">Ouvre un Short dans YouTube (ou un Reel dans Instagram ou Facebook), reviens ici et copie ce texte. S’il indique « aucune fenêtre lisible », désactive puis réactive Respire dans les paramètres d’accessibilité.</string>
     <string name="diag_empty">Rien d’analysé pour l’instant. Active un filtre, puis ouvre YouTube, Instagram ou Facebook.</string>
+    <string name="diag_hint_fb">Facebook : ouvre un Reel dans Facebook, reviens ici et copie ces lignes. Relis-les avant de les partager : elles viennent de ton écran.</string>
+    <string name="cd_add">Ajouter</string>
     <string name="diag_copy">Copier</string>
     <string name="diag_copied">Copié</string>
     <string name="dialog_close">Fermer</string>

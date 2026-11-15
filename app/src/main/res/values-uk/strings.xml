@@ -13,7 +13,6 @@
     <string name="pause_close">Ні, закрити</string>
     <string name="pause_open">Все одно відкрити</string>
     <string name="pause_continue">Продовжити</string>
-    <string name="pause_open_short">Лише на 2 хв</string>
     <string name="pause_reason_msg">Конкретне повідомлення</string>
     <string name="pause_reason_lookup">Швидко перевірити</string>
     <string name="pause_reason_habit">За звичкою</string>
@@ -70,14 +69,16 @@
     <string name="picker_title">Застосунки для сповільнення</string>
     <string name="picker_search">Пошук застосунку</string>
     <string name="picker_loading">Завантаження…</string>
-    <string name="short_fb_title">Приховати Facebook Reels (тест)</string>
-    <string name="short_fb_note">Тестовий режим: цей фільтр ще нічого не блокує.</string>
+    <string name="short_fb_title">Приховати Facebook Reels (Facebook англійською)</string>
+    <string name="short_fb_note">Працює, коли Facebook налаштований англійською; інші мови ще збираємо. Відкрийте Reel у Facebook, скопіюйте діагностику нижче й надішліть її через «Залишити відгук», щоб додати вашу мову.</string>
     <string name="picker_suggest_title">Часто відкриваються машинально</string>
     <string name="picker_all_title">Усі застосунки</string>
     <string name="diag_link">Не працює? Діагностика</string>
     <string name="diag_title">Діагностика Reels і Shorts</string>
     <string name="diag_hint">Відкрийте Short у YouTube або Reel в Instagram, поверніться сюди й скопіюйте текст.</string>
     <string name="diag_empty">Ще немає даних.</string>
+    <string name="diag_hint_fb">Facebook: відкрийте Reel у Facebook, поверніться сюди й скопіюйте ці рядки. Перегляньте їх перед надсиланням: вони взяті з вашого екрана.</string>
+    <string name="cd_add">Додати</string>
     <string name="diag_copy">Копіювати</string>
     <string name="diag_copied">Скопійовано</string>
     <string name="dialog_close">Закрити</string>

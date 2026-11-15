@@ -37,6 +37,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.LiveRegionMode
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.semantics.clearAndSetSemantics
+import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.heading
 import androidx.compose.ui.semantics.liveRegion
 import androidx.compose.ui.semantics.semantics
@@ -194,6 +195,7 @@ private fun AppsContent(ui: HomeUi, onAddApp: (String) -> Unit, onPickApps: () -
     }
     val chosen = ui.targets.map { it.app.pkg }.toSet()
     val doneLabel = stringResource(R.string.start_done)
+    val addLabel = stringResource(R.string.cd_add)
 
     OnboardingTitle(stringResource(R.string.onb_apps_title))
     Text(
@@ -220,6 +222,8 @@ private fun AppsContent(ui: HomeUi, onAddApp: (String) -> Unit, onPickApps: () -
                     Text(app.label, modifier = Modifier.weight(1f), fontFamily = Nunito, fontSize = 16.sp, color = Calme.Ink)
                     Text(
                         if (added) "✓" else "+",
+                        // « Fait » est déjà annoncé par la ligne ; le « + » reçoit un libellé.
+                        modifier = if (added) Modifier.clearAndSetSemantics {} else Modifier.semantics { contentDescription = addLabel },
                         fontFamily = Nunito, fontWeight = FontWeight.Bold, fontSize = 20.sp,
                         color = if (added) Calme.SageDark else Calme.Sage,
                     )
