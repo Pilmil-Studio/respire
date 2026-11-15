@@ -29,6 +29,8 @@ The app keeps only what you need: the explanations live here and on the page [Wh
 | **Reels and Shorts filter** | Leaves Instagram or YouTube when the full-screen short-video player appears. Reels sent in a direct message still open. | Design choice: removes the endless feed while keeping messages, search and regular videos. Effect not measured. |
 | **Home screen widget & saved time** | A discreet home screen widget and 7-day summary show avoided openings and estimated minutes saved, with no streak counter. | Design choice: calm feedback without scores or badges. |
 
+Available in six languages: English, French, Spanish, German, Polish and Ukrainian (follows the phone language, or pick one in Android settings, Apps, Respire, Language).
+
 Default settings: 10 s wait, +5 s per attempt within the hour, 10-minute sessions, 6 opens per app per day. Risky hours are off until you turn them on.
 
 Tap a day in the weekly chart to see it hour by hour and find your most tempting time. Tap an app in the list to see its week: temptations, opens, how often you gave up, and its most tempting hour.
@@ -58,7 +60,7 @@ On Android 13 and later, you can pick the app language in Settings > Apps > Resp
 Respire uses an Accessibility Service, which is the only way on Android to detect which app is opening.
 
 - **Pauses** only use the package name of the app in the foreground.
-- **Reels and Shorts filter** (off by default): only inside Instagram, YouTube and Facebook (the Facebook filter is still being tested), the service checks the technical IDs of on-screen elements to spot the short-video player. It never reads text, messages or images.
+- **Reels and Shorts filter** (off by default): only inside Instagram, YouTube and Facebook, the service checks the technical IDs of on-screen elements (and, in Facebook, the accessibility labels of interface elements) to spot the short-video player. The Facebook filter works when Facebook is set to English; other languages are still being collected. It never reads text, messages or images.
 - Settings and counters stay in the app's local storage. The manifest declares no `INTERNET` permission, so nothing can be sent anywhere.
 
 ## Build from source
@@ -80,7 +82,7 @@ Release builds (`assembleRelease`, `bundleRelease`) refuse to run without an upl
 ## Known limits
 
 - Anyone can turn the service off in Accessibility settings. The lock only protects Respire's own settings.
-- The Reels and Shorts filter relies on view IDs that Instagram, YouTube or Facebook may change in an update.
+- The Reels and Shorts filter relies on view IDs (and, for Facebook, accessibility labels in English) that Instagram, YouTube or Facebook may change in an update.
 - Apps opened from a link inside another app also trigger the pause. This is intended.
 
 ## How Respire is made

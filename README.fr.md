@@ -29,6 +29,8 @@ L'appli reste au strict nécessaire : les explications sont ici et sur la page [
 | **Filtre Reels et Shorts** | Quitte le lecteur plein écran de vidéos courtes dès qu'il apparaît dans Instagram ou YouTube. Un Reel reçu en message s'ouvre quand même. | Choix de conception : supprime le flux sans fin tout en gardant les messages, la recherche et les vidéos classiques. Effet non mesuré. |
 | **Widget d'accueil et temps épargné** | Un widget discret sur l'écran d'accueil et un bilan partageable sur 7 jours affichent les renoncements et le temps estimé épargné, sans compteur de jours consécutifs. | Choix de conception : retour d'information posé, sans score ni badge. |
 
+Disponible en six langues : anglais, français, espagnol, allemand, polonais et ukrainien (suit la langue du téléphone, ou à choisir dans les réglages Android, Applications, Respire, Langue).
+
 Réglages par défaut : 10 s d'attente, +5 s par tentative dans l'heure, sessions de 10 min, 6 ouvertures par appli et par jour. Les heures à risque restent désactivées tant que tu ne les actives pas.
 
 Touche un jour du graphique de la semaine pour le voir heure par heure et repérer ton moment le plus tentant. Touche une appli de la liste pour voir sa semaine : tentations, ouvertures, part de renoncements et heure la plus tentante.
@@ -58,7 +60,7 @@ Sur Android 13 et plus, tu peux choisir la langue de l'appli dans Paramètres > 
 Respire utilise un service d'accessibilité, seul moyen sous Android de savoir quelle appli s'ouvre.
 
 - **Les pauses** n'utilisent que le nom du paquet de l'appli au premier plan.
-- **Le filtre Reels et Shorts** (désactivé par défaut) : uniquement dans Instagram, YouTube et Facebook (le filtre Facebook est encore en test), le service consulte les identifiants techniques des éléments affichés pour repérer le lecteur de vidéos courtes. Il ne lit jamais les textes, les messages ou les images.
+- **Le filtre Reels et Shorts** (désactivé par défaut) : uniquement dans Instagram, YouTube et Facebook, le service consulte les identifiants techniques des éléments affichés (et, dans Facebook, les libellés d'accessibilité d'éléments d'interface) pour repérer le lecteur de vidéos courtes. Le filtre Facebook fonctionne quand Facebook est en anglais ; autres langues en cours de relevé. Il ne lit jamais les textes, les messages ou les images.
 - Les réglages et compteurs restent dans le stockage local de l'appli. Le manifeste ne déclare pas la permission `INTERNET` : rien ne peut être envoyé nulle part.
 
 ## Compiler depuis les sources
@@ -80,7 +82,7 @@ Les builds release (`assembleRelease`, `bundleRelease`) refusent de se lancer sa
 ## Limites connues
 
 - On peut toujours désactiver le service dans les paramètres d'accessibilité. Le verrou ne protège que les réglages de Respire.
-- Le filtre Reels et Shorts repose sur des identifiants de vues qu'Instagram, YouTube ou Facebook peuvent modifier lors d'une mise à jour.
+- Le filtre Reels et Shorts repose sur des identifiants de vues (et, pour Facebook, des libellés d'accessibilité en anglais) qu'Instagram, YouTube ou Facebook peuvent modifier lors d'une mise à jour.
 - Les applis ouvertes via un lien depuis une autre appli déclenchent aussi la pause. C'est voulu.
 
 ## Comment Respire est fait

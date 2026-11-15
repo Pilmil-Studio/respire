@@ -20,7 +20,7 @@ L'assistant d'accueil comporte **4 étapes** :
 - **Indicateur d'état** : affiche si le service d'accessibilité est actif ou en attente.
 - **Liste de contrôle en 3 étapes** : suivi rapide de la configuration (applications choisies, service actif, notifications).
 - **Applications suivies** : liste modifiable à tout moment via `PickerScreen`.
-- **Blocage des vidéos courtes** : interrupteurs dédiés par plateforme (YouTube Shorts, Instagram Reels ; l'interrupteur Facebook Reels est en test et ne bloque encore rien), avec fenêtre de diagnostic (`DiagnosticDialog`) pour vérifier la détection.
+- **Blocage des vidéos courtes** : interrupteurs dédiés par plateforme (YouTube Shorts, Instagram Reels ; filtre Facebook Reels : fonctionne quand Facebook est en anglais, autres langues en cours de relevé), avec fenêtre de diagnostic (`DiagnosticDialog`) pour vérifier la détection.
 
 ### 2. Statistiques (`Statistiques`)
 - **Historique sur 8 semaines** (`StatsCard`) balayable horizontalement.
