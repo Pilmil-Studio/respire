@@ -16,8 +16,8 @@ android {
         minSdk = 26
         targetSdk = 36
         // En publication, la CI calcule le numéro à partir de l'étiquette (v4.2.0 -> 40200).
-        versionCode = System.getenv("RESPIRE_VERSION_CODE")?.toIntOrNull() ?: 40101
-        versionName = System.getenv("RESPIRE_VERSION_NAME") ?: "4.1.1-dev"
+        versionCode = System.getenv("RESPIRE_VERSION_CODE")?.toIntOrNull() ?: 40600
+        versionName = System.getenv("RESPIRE_VERSION_NAME") ?: "4.6.0-dev"
         manifestPlaceholders["allowAutoBackup"] =
             providers.gradleProperty("pilmil.allowAutoBackup").getOrElse("false")
     }
@@ -85,7 +85,6 @@ gradle.taskGraph.whenReady {
 
 dependencies {
     implementation(project(":shared"))
-    implementation("fr.pilmil.core:core-platform:0.1.0")
     val composeBom = platform("androidx.compose:compose-bom:2024.10.01")
     implementation(composeBom)
     implementation("androidx.compose.ui:ui")

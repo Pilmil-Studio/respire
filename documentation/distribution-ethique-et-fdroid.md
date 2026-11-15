@@ -24,18 +24,18 @@ RepoType: git
 Repo: https://github.com/Pilmil-Studio/respire.git
 
 Builds:
-  - versionName: 4.3.0
-    versionCode: 40300
-    commit: v4.3.0
+  - versionName: 4.6.0
+    versionCode: 40600
+    commit: v4.6.0
     subdir: app
     gradle:
       - yes
-    prebuild: sed -i -e 's/versionCode = .*/versionCode = 40300/' -e 's/versionName = .*/versionName = "4.3.0"/' build.gradle.kts
+    prebuild: sed -i -e 's/versionCode = .*/versionCode = 40600/' -e 's/versionName = .*/versionName = "4.6.0"/' build.gradle.kts
 
 AutoUpdateMode: Version
 UpdateCheckMode: Tags
-CurrentVersion: 4.3.0
-CurrentVersionCode: 40300
+CurrentVersion: 4.6.0
+CurrentVersionCode: 40600
 ```
 
 ---

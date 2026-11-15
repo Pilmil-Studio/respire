@@ -1,0 +1,4 @@
+• Accueil du premier lancement en quatre écrans, rouvrable depuis les Réglages.
+• Checklist de démarrage et alerte si le service d'accessibilité est coupé.
+• Historique de 8 semaines, à faire défiler.
+• Passage à la licence MPL-2.0.

@@ -13,3 +13,4 @@ distribution/
 
 # Captures brutes de Paparazzi (la version suivie est dans docs/marketing/captures)
 app/src/test/snapshots/
+.kotlin/

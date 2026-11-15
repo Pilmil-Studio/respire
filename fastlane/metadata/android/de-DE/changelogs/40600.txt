@@ -1,0 +1,3 @@
+• Gemeinsames Modul für iOS: Kohärenzbildschirm 4 s / 6 s und lokale Erinnerung.
+• Filter und Einstellungen gehärtet, mit mehr Tests.
+• Einheitlicher Kontakt von Pilmil Studio im Bereich „Über“.

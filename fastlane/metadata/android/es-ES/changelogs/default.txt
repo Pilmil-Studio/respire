@@ -1,3 +1,4 @@
-• Navegación inferior fluida de 3 pestañas: Aplicaciones, Estadísticas y Ajustes.
-• Eliminación del atajo «Solo 2 min» en la pausa para reforzar la toma de consciencia.
-• Pantalla de Ajustes reorganizada, descubrimiento de apps compañeras (Sommelle, Lunaison) y compromiso de privacidad.
+• El filtro de Reels también funciona en Facebook cuando Facebook está en inglés; otros idiomas, en recopilación.
+• El diagnóstico recoge las etiquetas de pantalla de Facebook y se copia con un toque.
+• Etiquetas de TalkBack en los botones «+» de la lista de apps.
+• Textos completados en los seis idiomas, corrección de concurrencia en los contadores.

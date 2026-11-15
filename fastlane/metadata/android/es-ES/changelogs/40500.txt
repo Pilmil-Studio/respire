@@ -1,0 +1,4 @@
+• Bienvenida del primer arranque en cuatro pantallas, que se puede reabrir desde Ajustes.
+• Lista de inicio y aviso si el servicio de accesibilidad se apaga.
+• Historial de 8 semanas, deslizable.
+• Cambio de licencia a MPL-2.0.

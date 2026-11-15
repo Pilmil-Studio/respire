@@ -1,0 +1,4 @@
+• Willkommensbereich beim ersten Start in vier Bildschirmen, in den Einstellungen erneut aufrufbar.
+• Start-Checkliste und Hinweis, wenn der Bedienungshilfendienst ausgeschaltet ist.
+• 8-Wochen-Verlauf zum Wischen.
+• Lizenz auf MPL-2.0 umgestellt.

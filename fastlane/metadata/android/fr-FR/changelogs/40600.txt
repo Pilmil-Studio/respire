@@ -1,0 +1,3 @@
+• Module partagé pour iOS : écran de cohérence cardiaque 4 s / 6 s et rappel local.
+• Filtre et préférences durcis, avec davantage de tests.
+• Contact Pilmil Studio unifié dans l'écran À propos.

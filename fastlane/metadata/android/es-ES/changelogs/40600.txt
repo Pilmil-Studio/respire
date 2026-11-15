@@ -1,0 +1,3 @@
+• Módulo compartido para iOS: pantalla de coherencia cardiaca 4 s / 6 s y recordatorio local.
+• Filtro y ajustes reforzados, con más pruebas.
+• Contacto unificado de Pilmil Studio en la pantalla Acerca de.

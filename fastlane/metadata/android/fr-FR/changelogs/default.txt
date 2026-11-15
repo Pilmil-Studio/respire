@@ -1,3 +1,4 @@
-• Navigation basse fluide à 3 onglets : Applications, Statistiques et Réglages.
-• Suppression du raccourci « 2 min seulement » sur l'écran de pause pour renforcer l'efficacité de la prise de recul.
-• Écran Réglages réorganisé, découverte des applications compagnes (Sommelle, Lunaison) et engagement éthique unifié.
+• Le filtre Reels fonctionne aussi dans Facebook quand Facebook est en anglais ; autres langues en cours de relevé.
+• Le diagnostic relève les libellés d'écran de Facebook et se copie en un geste.
+• Libellés TalkBack sur les boutons « + » de la liste d'applis.
+• Textes complétés dans les six langues, correctif de concurrence dans les compteurs.

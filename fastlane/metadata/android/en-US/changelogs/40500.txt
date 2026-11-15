@@ -1,0 +1,4 @@
+• First-launch welcome in four screens, reopenable from Settings.
+• Start checklist and an alert if the accessibility service is turned off.
+• Swipeable 8-week history.
+• Licence changed to MPL-2.0.

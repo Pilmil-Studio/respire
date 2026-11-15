@@ -1,3 +1,4 @@
-• Fluid 3-tab bottom navigation: Apps, Statistics, and Settings.
-• Removed the "Just 2 min" shortcut on pause screen to maintain effective mindful breathing.
-• Reorganized Settings screen, companion suite discovery (Sommelle, Lunaison), and unified privacy pledge.
+• The Reels filter now also works in Facebook when Facebook is set to English; other languages are still being collected.
+• The diagnostic lists Facebook interface labels and can be copied in one tap.
+• TalkBack labels on the "+" buttons of the app list.
+• Texts completed in all six languages, concurrency fix in the counters.

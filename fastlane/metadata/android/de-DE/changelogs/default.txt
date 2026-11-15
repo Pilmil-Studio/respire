@@ -1,3 +1,4 @@
-• Flüssige 3-Reiter-Navigation: Apps, Statistiken und Einstellungen.
-• Entfernung des Shortcuts „Nur 2 Min.“ auf dem Pausenbildschirm für mehr Achtsamkeit.
-• Neu organisierte Einstellungen, Entdeckung der Partner-Apps (Sommelle, Lunaison) und Datenschutzversprechen.
+• Der Reels-Filter funktioniert jetzt auch in Facebook, wenn Facebook auf Englisch eingestellt ist; weitere Sprachen werden noch erfasst.
+• Die Diagnose listet Facebook-Bezeichnungen auf und lässt sich mit einem Tipp kopieren.
+• TalkBack-Beschriftungen für die „+“-Schaltflächen der App-Liste.
+• Texte in allen sechs Sprachen ergänzt, Nebenläufigkeitsfehler bei den Zählern behoben.
