@@ -120,4 +120,3 @@ The fonts in `app/src/main/res/font/` keep their own SIL Open Font License (see 
 - **[Sauve](https://github.com/Pilmil-Studio/sauve)**: anti-panic first aid guide, free, open source and offline, with hands-free voice and haptic guidance.
 - **[Sillon](https://github.com/Pilmil-Studio/sillon)**: living vegetable garden planner and agronomic calendar based on the last frost date, free, open source and offline.
 - **[Fredonne](https://github.com/Pilmil-Studio/fredonne)**: single-voice melody entry, offline acoustic playback and transposition, free, open source and offline.
-- **[Sillon](https://github.com/Pilmil-Studio/sillon)**: living vegetable garden planner and agronomic calendar based on the last frost date, free, open source and offline.
