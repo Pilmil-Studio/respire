@@ -4,15 +4,15 @@
 
 [![Build](https://github.com/Pilmil-Studio/respire/actions/workflows/build.yml/badge.svg)](https://github.com/Pilmil-Studio/respire/actions/workflows/build.yml)
 
-A small Android app against doomscrolling. Respire puts a breathing pause in front of the apps you open on autopilot, limits how long a session lasts, caps how many times a day you can open them, and can hide Instagram Reels and YouTube Shorts while leaving the rest of those apps usable.
+A small app against doomscrolling (Android + KMP/iOS cardiac coherence). On Android, Respire puts a breathing pause in front of the apps you open on autopilot, limits how long a session lasts, caps how many times a day you can open them, and can hide Instagram Reels and YouTube Shorts while leaving the rest of those apps usable. On iOS (`iosApp/` + `:shared`), it provides the 4 s / 6 s cardiac coherence screen with dark theme and optional daily local reminder (`UNUserNotificationCenter`).
 
 No Internet permission, no trackers, no account. Everything stays on your phone.
 
-**[Respire website](https://pilmil-studio.github.io/respire/)** · **[Download APK](https://github.com/Pilmil-Studio/respire/releases/latest)** · [Why these choices](https://pilmil-studio.github.io/respire/why.html) · [Privacy policy](https://pilmil-studio.github.io/respire/privacy.html)
+**[Respire website](https://pilmil-studio.github.io/respire/)** · **Google Play** (soon) · **[Download APK](https://github.com/Pilmil-Studio/respire/releases/latest)** · [Why these choices](https://pilmil-studio.github.io/respire/why.html) · [Privacy policy](https://pilmil-studio.github.io/respire/privacy.html)
 
 **Before the Google Play release:** [join the internal test](https://play.google.com/apps/internaltest/4701443078606336635) (only for people already on the tester list: [ask for access by e-mail](mailto:pilmil.studio@proton.me?subject=Tester%20Respire)).
 
-Available in English, French, Spanish and German.
+Available in English, French, Spanish, German, Polish and Ukrainian.
 
 ## Why these features
 
@@ -71,7 +71,7 @@ To build locally, open the folder in Android Studio, or run:
 ./gradlew assembleDebug
 ```
 
-Requirements: JDK 17. The app uses Kotlin and Jetpack Compose, with a minimum of Android 8.0 (API 26).
+Requirements: JDK 17. The project uses Kotlin, Jetpack Compose / Compose Multiplatform (`:app`, `:shared` KMP Android/iOS, `iosApp/`, and the `pilmil-core` submodule with `pilmil.allowAutoBackup`), with a minimum of Android 8.0 (API 26). The iOS simulator build is checked by `.github/workflows/ios.yml`.
 
 Run the unit tests with `./gradlew testReleaseUnitTest`.
 
@@ -118,4 +118,6 @@ The fonts in `app/src/main/res/font/` keep their own SIL Open Font License (see 
 - **[Sommelle](https://github.com/Pilmil-Studio/sommelle)**: 6-to-8-week CBT-I insomnia support app, free, open source and offline.
 - **[Lunaison](https://github.com/Pilmil-Studio/lunaison)**: private menstrual cycle tracker with referenced medical guides and serverless partner sharing.
 - **[Sauve](https://github.com/Pilmil-Studio/sauve)**: anti-panic first aid guide, free, open source and offline, with hands-free voice and haptic guidance.
+- **[Sillon](https://github.com/Pilmil-Studio/sillon)**: living vegetable garden planner and agronomic calendar based on the last frost date, free, open source and offline.
+- **[Fredonne](https://github.com/Pilmil-Studio/fredonne)**: single-voice melody entry, offline acoustic playback and transposition, free, open source and offline.
 - **[Sillon](https://github.com/Pilmil-Studio/sillon)**: living vegetable garden planner and agronomic calendar based on the last frost date, free, open source and offline.

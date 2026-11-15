@@ -4,15 +4,15 @@
 
 [![Build](https://github.com/Pilmil-Studio/respire/actions/workflows/build.yml/badge.svg)](https://github.com/Pilmil-Studio/respire/actions/workflows/build.yml)
 
-Une petite appli Android contre le doom scroll. Respire place une pause de respiration devant les applis que tu ouvres par réflexe, limite la durée d'une session, plafonne le nombre d'ouvertures par jour et peut masquer les Reels d'Instagram et les Shorts de YouTube tout en laissant le reste de ces applis utilisable.
+Une petite appli contre le doom scroll (Android + module KMP/iOS de cohérence cardiaque). Sur Android, Respire place une pause de respiration devant les applis que tu ouvres par réflexe, limite la durée d'une session, plafonne le nombre d'ouvertures par jour et peut masquer les Reels d'Instagram et les Shorts de YouTube tout en laissant le reste de ces applis utilisable. Sur iOS (`iosApp/` + `:shared`), elle propose l'écran de cohérence cardiaque 4 s / 6 s avec thème sombre et rappel quotidien local facultatif (`UNUserNotificationCenter`).
 
 Pas de permission Internet, pas de traqueur, pas de compte. Tout reste sur ton téléphone.
 
-**[Site de Respire](https://pilmil-studio.github.io/respire/fr/)** · **[Google Play](https://play.google.com/store/apps/details?id=fr.respire.app)** · **[Télécharger l'APK](https://github.com/Pilmil-Studio/respire/releases/latest)** · [Pourquoi ces choix](https://pilmil-studio.github.io/respire/fr/pourquoi.html) · [Confidentialité](https://pilmil-studio.github.io/respire/fr/confidentialite.html)
+**[Site de Respire](https://pilmil-studio.github.io/respire/fr/)** · **Google Play** (bientôt) · **[Télécharger l'APK](https://github.com/Pilmil-Studio/respire/releases/latest)** · [Pourquoi ces choix](https://pilmil-studio.github.io/respire/fr/pourquoi.html) · [Confidentialité](https://pilmil-studio.github.io/respire/fr/confidentialite.html)
 
 **Avant la sortie sur Google Play :** [rejoindre le test interne](https://play.google.com/apps/internaltest/4701443078606336635) (réservé aux personnes déjà ajoutées à la liste de testeurs : [demande l'accès par mail](mailto:pilmil.studio@proton.me?subject=Tester%20Respire)).
 
-Disponible en français, anglais, espagnol et allemand.
+Disponible en français, anglais, espagnol, allemand, polonais et ukrainien.
 
 ## Pourquoi ces fonctions
 
@@ -45,7 +45,7 @@ Je passe moi aussi trop de temps à faire défiler des fils sans fin, et des pro
 
 ## Installer
 
-1. Installe Respire depuis [Google Play](https://play.google.com/store/apps/details?id=fr.respire.app), ou télécharge `Respire.apk` dans la [dernière version](../../releases/latest) depuis ton téléphone et installe-le. Android te demandera d'autoriser l'installation depuis ton navigateur ou ton gestionnaire de fichiers.
+1. Télécharge `Respire.apk` dans la [dernière version](../../releases/latest) depuis ton téléphone et installe-le. Android te demandera d'autoriser l'installation depuis ton navigateur ou ton gestionnaire de fichiers.
 2. Ouvre Respire. Le court accueil te guide dans les mêmes étapes (tu peux le passer et le revoir depuis les Réglages). Sinon, appuie sur **Choisir les applis** et active celles à freiner.
 3. Appuie sur **Ouvrir les paramètres** (ou sur la pastille **Inactif**) et active **Respire** dans les paramètres d'accessibilité.
 4. **Android 13 et plus** : si l'interrupteur est grisé (« paramètre restreint »), va dans Paramètres > Applications > Respire > menu ⋮ > **Autoriser les paramètres restreints**, puis recommence l'étape 3.
@@ -71,9 +71,11 @@ Pour compiler en local, ouvre le dossier dans Android Studio, ou lance :
 ./gradlew assembleDebug
 ```
 
-Prérequis : JDK 17. L'appli est écrite en Kotlin avec Jetpack Compose et fonctionne à partir d'Android 8.0 (API 26).
+Prérequis : JDK 17. Le projet est écrit en Kotlin avec Jetpack Compose / Compose Multiplatform (`:app`, `:shared` KMP Android/iOS, `iosApp/` et le sous-module `pilmil-core` avec `pilmil.allowAutoBackup`), à partir d'Android 8.0 (API 26). La compilation simulateur iOS est vérifiée par `.github/workflows/ios.yml`.
 
 Pour lancer les tests unitaires : `./gradlew testReleaseUnitTest`.
+
+Les builds release (`assembleRelease`, `bundleRelease`) refusent de se lancer sans clé de signature (`RELEASE_KEYSTORE`, `RELEASE_STORE_PASSWORD`, `RELEASE_KEY_ALIAS` et `RELEASE_KEY_PASSWORD`). Les builds debug ne sont pas affectés.
 
 ## Limites connues
 
@@ -117,3 +119,4 @@ Les polices de `app/src/main/res/font/` restent sous leur propre licence SIL Ope
 - **[Lunaison](https://github.com/Pilmil-Studio/lunaison)** : suivi du cycle menstruel libre, gratuit et sans accès à Internet, avec fiches médicales sourcées et partage partenaire hors-ligne.
 - **[Sauve](https://github.com/Pilmil-Studio/sauve)** : premiers secours « anti-panique », gratuit, libre et sans accès à Internet, avec guidage vocal et haptique mains libres.
 - **[Sillon](https://github.com/Pilmil-Studio/sillon)** : potager vivant et calendrier agronomique indexé sur la date des dernières gelées, gratuit, libre et sans accès à Internet.
+- **[Fredonne](https://github.com/Pilmil-Studio/fredonne)** : saisie mélodique, écoute acoustique hors-ligne et transposition, gratuit, libre et sans accès à Internet.
