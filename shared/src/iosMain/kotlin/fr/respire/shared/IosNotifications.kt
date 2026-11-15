@@ -9,6 +9,8 @@ import platform.UserNotifications.UNMutableNotificationContent
 import platform.UserNotifications.UNNotificationRequest
 import platform.UserNotifications.UNNotificationSound
 import platform.UserNotifications.UNUserNotificationCenter
+import platform.darwin.dispatch_async
+import platform.darwin.dispatch_get_main_queue
 
 /**
  * Rappel quotidien local de cohérence cardiaque sur iOS via UNUserNotificationCenter (aucun accès réseau).
@@ -34,10 +36,11 @@ object IosBreathingReminder {
             if (granted) {
                 scheduleDaily(center)
                 NSUserDefaults.standardUserDefaults.setBool(true, forKey = PREF_ENABLED)
-                onResult(true)
             } else {
                 NSUserDefaults.standardUserDefaults.setBool(false, forKey = PREF_ENABLED)
-                onResult(false)
+            }
+            dispatch_async(dispatch_get_main_queue()) {
+                onResult(granted)
             }
         }
     }

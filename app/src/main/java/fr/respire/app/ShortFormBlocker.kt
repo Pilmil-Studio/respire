@@ -2,6 +2,7 @@ package fr.respire.app
 
 import android.accessibilityservice.AccessibilityService
 import android.graphics.Rect
+import android.os.Build
 import android.os.SystemClock
 import android.view.accessibility.AccessibilityNodeInfo
 import android.view.accessibility.AccessibilityWindowInfo
@@ -105,6 +106,7 @@ object ShortFormBlocker {
                 val hit = nodes.any { n ->
                     n.isVisibleToUser && run { n.getBoundsInScreen(rect); rect.height() >= height * MIN_COVER }
                 }
+                recycleNodes(nodes, root)
                 if (hit) return id
             }
         }
@@ -115,7 +117,10 @@ object ShortFormBlocker {
         if (pkg != YOUTUBE) return false
         return youtubeNegativeIds.any { id ->
             roots.any { root ->
-                root.findAccessibilityNodeInfosByViewId("$pkg:id/$id")?.any { it.isVisibleToUser } == true
+                val nodes = root.findAccessibilityNodeInfosByViewId("$pkg:id/$id") ?: return@any false
+                val hit = nodes.any { it.isVisibleToUser }
+                recycleNodes(nodes, root)
+                hit
             }
         }
     }
@@ -124,7 +129,10 @@ object ShortFormBlocker {
         if (pkg != INSTAGRAM) return false
         return dmIds.all { id ->
             roots.any { root ->
-                root.findAccessibilityNodeInfosByViewId("$pkg:id/$id")?.any { it.isVisibleToUser } == true
+                val nodes = root.findAccessibilityNodeInfosByViewId("$pkg:id/$id") ?: return@any false
+                val hit = nodes.any { it.isVisibleToUser }
+                recycleNodes(nodes, root)
+                hit
             }
         }
     }
@@ -145,27 +153,56 @@ object ShortFormBlocker {
             val height = rootHeight(root)
             val queue = ArrayDeque<AccessibilityNodeInfo>()
             queue.add(root)
-            while (queue.isNotEmpty() && count < MAX_NODES) {
-                val node = queue.removeFirst()
-                count++
-                val fullId = node.viewIdResourceName
-                if (fullId != null && node.isVisibleToUser) {
-                    withId++
-                    val id = fullId.substringAfter(":id/")
-                    val lower = id.lowercase()
-                    node.getBoundsInScreen(rect)
-                    val cover = rect.height() * 100 / height
-                    val named = "reel" in lower || "short" in lower || "clips" in lower || (wide && "video" in lower)
-                    if (named || (wide && cover >= WIDE_COVER)) {
-                        if ((seen[id] ?: -1) < cover) seen[id] = cover
-                        if (match == null && cover >= MIN_COVER * 100 && fallback in lower) match = id
+            try {
+                while (queue.isNotEmpty() && count < MAX_NODES) {
+                    val node = queue.removeFirst()
+                    try {
+                        count++
+                        val fullId = node.viewIdResourceName
+                        if (fullId != null && node.isVisibleToUser) {
+                            withId++
+                            val id = fullId.substringAfter(":id/")
+                            val lower = id.lowercase()
+                            node.getBoundsInScreen(rect)
+                            val cover = rect.height() * 100 / height
+                            val named = "reel" in lower || "short" in lower || "clips" in lower || (wide && "video" in lower)
+                            if (named || (wide && cover >= WIDE_COVER)) {
+                                if ((seen[id] ?: -1) < cover) seen[id] = cover
+                                if (match == null && cover >= MIN_COVER * 100 && fallback in lower) match = id
+                            }
+                        }
+                        for (i in 0 until node.childCount) node.getChild(i)?.let { queue.add(it) }
+                    } finally {
+                        if (node !== root) recycleNode(node)
                     }
                 }
-                for (i in 0 until node.childCount) node.getChild(i)?.let { queue.add(it) }
+            } finally {
+                while (queue.isNotEmpty()) {
+                    val remaining = queue.removeFirst()
+                    if (remaining !== root) recycleNode(remaining)
+                }
             }
         }
         val top = seen.entries.sortedByDescending { it.value }.take(25)
         return FullScan(match, top.map { "${it.key} ${it.value}%" }, count, withId)
+    }
+
+    @Suppress("DEPRECATION")
+    private fun recycleNode(node: AccessibilityNodeInfo) {
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU) {
+            node.recycle()
+        }
+    }
+
+    private fun recycleNodes(nodes: List<AccessibilityNodeInfo>, root: AccessibilityNodeInfo) {
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU) {
+            for (n in nodes) {
+                if (n !== root) {
+                    @Suppress("DEPRECATION")
+                    n.recycle()
+                }
+            }
+        }
     }
 
     /** Analyse complète utilisée par le service : rapide d'abord, exploration si demandé. */

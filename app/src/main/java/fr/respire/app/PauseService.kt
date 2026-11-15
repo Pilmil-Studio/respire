@@ -59,9 +59,19 @@ class PauseService : AccessibilityService() {
     private val shortThread = HandlerThread("respire-shorts").apply { start() }
     private val shortHandler = Handler(shortThread.looper)
 
-    @Volatile private var shortPkg: String? = null
-    @Volatile private var shortScheduled = false
+    private val shortLock = Any()
+    private var shortPkg: String? = null
+    private var shortScheduled = false
     private val shortCheck = Runnable { runShortCheck() }
+
+    private fun scheduleShortCheck(delayMs: Long) {
+        synchronized(shortLock) {
+            if (!shortScheduled) {
+                shortScheduled = true
+                shortHandler.postDelayed(shortCheck, delayMs)
+            }
+        }
+    }
 
     private fun onShortFormCandidate(pkg: String) {
         val enabled = when (pkg) {
@@ -71,11 +81,13 @@ class PauseService : AccessibilityService() {
             else -> false
         }
         if (!enabled) return
-        shortPkg = pkg
-        // Au plus une vérification toutes les 120 ms, même si les événements s'enchaînent.
-        if (!shortScheduled) {
-            shortScheduled = true
-            shortHandler.postDelayed(shortCheck, SHORT_CHECK_MS)
+        synchronized(shortLock) {
+            shortPkg = pkg
+            // Au plus une vérification toutes les 120 ms, même si les événements s'enchaînent.
+            if (!shortScheduled) {
+                shortScheduled = true
+                shortHandler.postDelayed(shortCheck, SHORT_CHECK_MS)
+            }
         }
     }
 
@@ -86,15 +98,16 @@ class PauseService : AccessibilityService() {
     private var confirmed = false
 
     private fun runShortCheck() {
-        shortScheduled = false
-        val pkg = shortPkg ?: return
+        val pkg = synchronized(shortLock) {
+            shortScheduled = false
+            shortPkg
+        } ?: return
         val now = SystemClock.uptimeMillis()
 
         // Juste après un « retour », l'écran est encore en transition : on attend,
         // puis on vérifie une seule fois si le lecteur est toujours là.
         if (now < cooldownUntil) {
-            shortScheduled = true
-            shortHandler.postDelayed(shortCheck, cooldownUntil - now)
+            scheduleShortCheck(cooldownUntil - now)
             return
         }
 
@@ -122,8 +135,7 @@ class PauseService : AccessibilityService() {
         // furtivement à l'écran ne déclenche rien.
         if (!confirmed) {
             confirmed = true
-            shortScheduled = true
-            shortHandler.postDelayed(shortCheck, CONFIRM_MS)
+            scheduleShortCheck(CONFIRM_MS)
             return
         }
         confirmed = false
@@ -138,8 +150,7 @@ class PauseService : AccessibilityService() {
             handler.post { Toast.makeText(this, msg, Toast.LENGTH_SHORT).show() }
         }
         // Vérification de contrôle à la fin de la transition.
-        shortScheduled = true
-        shortHandler.postDelayed(shortCheck, BACK_COOLDOWN_MS)
+        scheduleShortCheck(BACK_COOLDOWN_MS)
     }
 
     // ---- Pauses -----------------------------------------------------------------

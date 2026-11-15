@@ -6,8 +6,9 @@ import androidx.compose.animation.core.RepeatMode
 import androidx.compose.animation.core.StartOffset
 import androidx.compose.animation.core.animateFloat
 import androidx.compose.animation.core.infiniteRepeatable
+import androidx.compose.animation.core.keyframes
 import androidx.compose.animation.core.rememberInfiniteTransition
-import androidx.compose.animation.core.tween
+import fr.respire.shared.CoherenceTiming
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.BoxScope
@@ -43,7 +44,7 @@ import androidx.compose.ui.unit.sp
 
 /**
  * Trois disques concentriques qui grandissent pendant 4 s (inspiration)
- * puis rétrécissent pendant 4 s (expiration), légèrement décalés.
+ * puis rétrécissent pendant 6 s (expiration), légèrement décalés (cohérence cardiaque).
  */
 @Composable
 fun BreathingCircles(modifier: Modifier = Modifier, content: @Composable BoxScope.() -> Unit) {
@@ -63,10 +64,15 @@ fun BreathingCircles(modifier: Modifier = Modifier, content: @Composable BoxScop
 @Composable
 private fun InfiniteTransition.breath(offsetMs: Int) = animateFloat(
     initialValue = 0.62f,
-    targetValue = 1f,
+    targetValue = 0.62f,
     animationSpec = infiniteRepeatable(
-        animation = tween(durationMillis = 4000, easing = FastOutSlowInEasing),
-        repeatMode = RepeatMode.Reverse,
+        animation = keyframes {
+            durationMillis = CoherenceTiming.CYCLE_MS.toInt()
+            0.62f at 0 using FastOutSlowInEasing
+            1f at CoherenceTiming.INHALE_MS.toInt() using FastOutSlowInEasing
+            0.62f at CoherenceTiming.CYCLE_MS.toInt()
+        },
+        repeatMode = RepeatMode.Restart,
         initialStartOffset = StartOffset(offsetMs),
     ),
     label = "cercle$offsetMs",

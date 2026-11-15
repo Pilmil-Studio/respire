@@ -205,7 +205,7 @@ class Prefs(context: Context) {
      * Nom technique (classe) des derniers écrans ouverts dans l'appli, pour le diagnostic.
      * Ce sont des noms de code de l'appli, jamais du contenu affiché.
      */
-    fun noteScreen(pkg: String, className: String) {
+    fun noteScreen(pkg: String, className: String) = synchronized(LOCK) {
         val list = sp.getString("scr_$pkg", null)?.split(", ")?.filter { it.isNotEmpty() }.orEmpty()
         val next = (listOf(className) + list.filter { it != className }).take(6)
         sp.edit().putString("scr_$pkg", next.joinToString(", ")).apply()

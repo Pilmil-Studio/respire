@@ -61,12 +61,28 @@ class RulesTest {
     @Test
     fun riskHours_startEqualsEnd_isWholeDay() {
         assertEquals(24, Rules.riskHours(9, 9).size)
+        assertEquals((0 until 24).toSet(), Rules.riskHours(0, 0))
+    }
+
+    @Test
+    fun riskHours_singleHourCrossingMidnight() {
+        assertEquals(setOf(23), Rules.riskHours(23, 0))
+        assertEquals(setOf(0), Rules.riskHours(0, 1))
     }
 
     @Test
     fun riskWindowStart_outsideRange_isNull() {
         assertNull(Rules.riskWindowStart(at(2026, 6, 10, 15), 22, 7))
         assertNull(Rules.riskWindowStart(at(2026, 6, 10, 7, 0), 22, 7))
+    }
+
+    @Test
+    fun riskWindowStart_exactStartAndBeforeEndBoundaries() {
+        val exactStart = Rules.riskWindowStart(at(2026, 6, 10, 22, 0), 22, 7)!!
+        assertEquals(listOf(6, 10, 22), fields(exactStart))
+
+        val justBeforeEnd = Rules.riskWindowStart(at(2026, 6, 11, 6, 59), 22, 7)!!
+        assertEquals(listOf(6, 10, 22), fields(justBeforeEnd))
     }
 
     @Test
@@ -82,9 +98,12 @@ class RulesTest {
     }
 
     @Test
-    fun riskWindowStart_acrossMonthEnd() {
-        val start = Rules.riskWindowStart(at(2026, 7, 1, 1, 0), 22, 7)!!
-        assertEquals(listOf(6, 30, 22), fields(start))
+    fun riskWindowStart_acrossMonthAndYearEnd() {
+        val monthEnd = Rules.riskWindowStart(at(2026, 7, 1, 1, 0), 22, 7)!!
+        assertEquals(listOf(6, 30, 22), fields(monthEnd))
+
+        val yearEnd = Rules.riskWindowStart(at(2026, 1, 1, 1, 0), 22, 7)!!
+        assertEquals(listOf(12, 31, 22), fields(yearEnd))
     }
 
     @Test
@@ -92,6 +111,22 @@ class RulesTest {
         // Nuit du 28 au 29 mars 2026 : 2 h n'existe pas.
         val start = Rules.riskWindowStart(at(2026, 3, 29, 4, 0), 22, 7)!!
         assertEquals(listOf(3, 28, 22), fields(start))
+    }
+
+    @Test
+    fun riskWindowStart_fallBackNight() {
+        // Nuit du 24 au 25 octobre 2026 : 2 h existe deux fois.
+        val start = Rules.riskWindowStart(at(2026, 10, 25, 3, 30), 22, 7)!!
+        assertEquals(listOf(10, 24, 22), fields(start))
+    }
+
+    @Test
+    fun riskWindowStart_wholeDayRange_anchorsAtStartHour() {
+        val afterStart = Rules.riskWindowStart(at(2026, 6, 10, 10, 15), 9, 9)!!
+        assertEquals(listOf(6, 10, 9), fields(afterStart))
+
+        val beforeStart = Rules.riskWindowStart(at(2026, 6, 10, 8, 15), 9, 9)!!
+        assertEquals(listOf(6, 9, 9), fields(beforeStart))
     }
 
     @Test
@@ -110,13 +145,24 @@ class RulesTest {
     }
 
     @Test
-    fun block_daily_whenQuotaReached() {
+    fun block_daily_whenQuotaReachedOrExceeded() {
         assertEquals(Prefs.Block.DAILY, Rules.blockReason(6, 6, null, 0, 0))
+        assertEquals(Prefs.Block.DAILY, Rules.blockReason(6, 8, null, 0, 0))
     }
 
     @Test
-    fun block_dailyQuotaZero_meansUnlimited() {
+    fun block_dailyQuotaZero_meansUnlimitedOutsideRisk() {
         assertEquals(Prefs.Block.NONE, Rules.blockReason(0, 500, null, 0, 0))
+    }
+
+    @Test
+    fun block_dailyQuotaZero_stillBlockedByRisk() {
+        assertEquals(Prefs.Block.RISK, Rules.blockReason(0, 500, 1L, 0, 0))
+    }
+
+    @Test
+    fun block_outsideRisk_ignoresRiskQuotaZero() {
+        assertEquals(Prefs.Block.NONE, Rules.blockReason(6, 2, null, 5, 0))
     }
 
     @Test
@@ -150,6 +196,13 @@ class RulesTest {
     @Test
     fun delay_zeroAttemptsCounted_isBase() {
         assertEquals(10, Rules.delay(10, 5, 0, false))
+        assertEquals(10, Rules.delay(10, 5, -2, false))
+    }
+
+    @Test
+    fun delay_zeroStep_staysAtBase() {
+        assertEquals(10, Rules.delay(10, 0, 5, false))
+        assertEquals(20, Rules.delay(10, 0, 5, true))
     }
 
     @Test
@@ -160,6 +213,7 @@ class RulesTest {
     @Test
     fun delay_cappedAtMax() {
         assertEquals(Rules.MAX_DELAY_S, Rules.delay(60, 15, 10, true))
+        assertEquals(Rules.MAX_DELAY_S, Rules.delay(60, 15, 4, false))
     }
 
     // ---- Assouplissement des heures à risque -----------------------------------
@@ -170,8 +224,16 @@ class RulesTest {
     }
 
     @Test
+    fun riskLooser_identicalOrStricter_isNotLooser() {
+        assertFalse(Rules.isRiskLooser(true, 22, 7, 2, 22, 7, 2))
+        assertFalse(Rules.isRiskLooser(true, 22, 7, 2, 22, 7, 1))
+        assertFalse(Rules.isRiskLooser(true, 22, 7, 0, 22, 22, 0))
+    }
+
+    @Test
     fun riskLooser_shorterRange_isLooser() {
         assertTrue(Rules.isRiskLooser(true, 22, 7, 0, 23, 7, 0))
+        assertTrue(Rules.isRiskLooser(true, 0, 0, 0, 9, 17, 0))
     }
 
     @Test
@@ -220,5 +282,20 @@ class RulesTest {
     @Test
     fun startOfDay_isLocalMidnight() {
         assertEquals(at(2026, 6, 10, 0), Rules.startOfDay(at(2026, 6, 10, 17, 45)))
+    }
+
+    @Test
+    fun pastDays_customCounts() {
+        val now = at(2026, 6, 10, 14)
+        assertTrue(Rules.pastDays(now, 0).isEmpty())
+
+        val single = Rules.pastDays(now, 1)
+        assertEquals(1, single.size)
+        assertEquals(listOf(6, 10, 12), fields(single.single()))
+
+        val eightWeeks = Rules.pastDays(now, 56)
+        assertEquals(56, eightWeeks.size)
+        assertEquals(listOf(4, 16, 12), fields(eightWeeks.first()))
+        assertEquals(listOf(6, 10, 12), fields(eightWeeks.last()))
     }
 }

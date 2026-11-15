@@ -24,6 +24,10 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.asImageBitmap
 import androidx.core.graphics.drawable.toBitmap
+import androidx.lifecycle.lifecycleScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import fr.respire.app.ui.AppItem
 import fr.respire.app.ui.DayDetail
 import fr.respire.app.ui.DisclosureDialog
@@ -333,30 +337,30 @@ class MainActivity : ComponentActivity() {
     }
 
     private fun loadApps() {
-        Thread {
-            val pm = packageManager
-            val launcher = Intent(Intent.ACTION_MAIN).addCategory(Intent.CATEGORY_LAUNCHER)
-            @Suppress("DEPRECATION")
-            val infos = pm.queryIntentActivities(launcher, 0)
-            val chosen = prefs.targets
-            val size = (40 * resources.displayMetrics.density).toInt().coerceAtLeast(48)
-            val result = infos
-                .distinctBy { it.activityInfo.packageName }
-                .filter { it.activityInfo.packageName != packageName }
-                .map {
-                    AppItem(
-                        pkg = it.activityInfo.packageName,
-                        label = it.loadLabel(pm).toString(),
-                        icon = it.loadIcon(pm).toBitmap(size, size).asImageBitmap(),
-                    )
-                }
-                .sortedWith(compareBy<AppItem>({ it.pkg !in chosen }, { it.label.lowercase() }))
-            runOnUiThread {
-                if (isFinishing || isDestroyed) return@runOnUiThread
-                allApps = result
-                refresh()
+        lifecycleScope.launch {
+            val result = withContext(Dispatchers.IO) {
+                val pm = packageManager
+                val launcher = Intent(Intent.ACTION_MAIN).addCategory(Intent.CATEGORY_LAUNCHER)
+                @Suppress("DEPRECATION")
+                val infos = pm.queryIntentActivities(launcher, 0)
+                val chosen = prefs.targets
+                val size = (40 * resources.displayMetrics.density).toInt().coerceAtLeast(48)
+                infos
+                    .distinctBy { it.activityInfo.packageName }
+                    .filter { it.activityInfo.packageName != packageName }
+                    .map {
+                        AppItem(
+                            pkg = it.activityInfo.packageName,
+                            label = it.loadLabel(pm).toString(),
+                            icon = it.loadIcon(pm).toBitmap(size, size).asImageBitmap(),
+                        )
+                    }
+                    .sortedWith(compareBy<AppItem>({ it.pkg !in chosen }, { it.label.lowercase() }))
             }
-        }.start()
+            if (isFinishing || isDestroyed) return@launch
+            allApps = result
+            refresh()
+        }
     }
 }
 

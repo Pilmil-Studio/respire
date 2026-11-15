@@ -22,20 +22,23 @@ class StatsLogicTest {
     }
 
     @Test
-    fun peakHour_findsMax() {
+    fun peakHour_findsMaxAndBreaksTiesByEarliestHour() {
         assertEquals(21, peakHour(List(24) { if (it == 21) 5 else 1 }))
+        assertEquals(8, peakHour(List(24) { if (it == 8 || it == 20) 4 else 0 }))
     }
 
     @Test
     fun temptation_countsPausesAndShorts() {
         val d = day(attempts = mapOf(20 to 2), shorts = mapOf(20 to 3))
         assertEquals(5, d.temptation[20])
+        assertEquals(0, day().temptation.sum())
     }
 
     @Test
-    fun sumHours_addsDays() {
+    fun sumHours_addsDaysAndHandlesEmptyList() {
         val week = listOf(day(attempts = mapOf(8 to 1)), day(attempts = mapOf(8 to 2)))
         assertEquals(3, sumHours(week)[8])
+        assertEquals(List(24) { 0 }, sumHours(emptyList()))
     }
 
     @Test
@@ -58,12 +61,21 @@ class StatsLogicTest {
     @Test
     fun ruleLooser_lowerWait_isLooser() {
         assertTrue(Rule.DELAY.isLooser(10, 5))
+        assertFalse(Rule.DELAY.isLooser(10, 10))
         assertFalse(Rule.DELAY.isLooser(10, 20))
+    }
+
+    @Test
+    fun ruleLooser_lowerStep_isLooser() {
+        assertTrue(Rule.STEP.isLooser(5, 2))
+        assertFalse(Rule.STEP.isLooser(5, 5))
+        assertFalse(Rule.STEP.isLooser(5, 8))
     }
 
     @Test
     fun ruleLooser_longerSession_isLooser() {
         assertTrue(Rule.SESSION.isLooser(10, 15))
+        assertFalse(Rule.SESSION.isLooser(10, 10))
         assertFalse(Rule.SESSION.isLooser(10, 5))
     }
 
@@ -71,8 +83,10 @@ class StatsLogicTest {
     fun ruleLooser_quota_unlimitedIsLoosest() {
         assertTrue(Rule.QUOTA.isLooser(6, 0))
         assertTrue(Rule.QUOTA.isLooser(6, 8))
+        assertFalse(Rule.QUOTA.isLooser(6, 6))
         assertFalse(Rule.QUOTA.isLooser(6, 3))
-        // Passer d'illimité à une limite rend la règle plus stricte.
+        // Passer d'illimité à une limite ou rester illimité n'est pas plus permissif.
         assertFalse(Rule.QUOTA.isLooser(0, 6))
+        assertFalse(Rule.QUOTA.isLooser(0, 0))
     }
 }

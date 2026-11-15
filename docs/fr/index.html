@@ -22,7 +22,7 @@
 <h1>Pourquoi tu l’ouvres maintenant ?</h1>
 <p class="lede">Respire est une appli Android gratuite qui place une pause de respiration devant les applis que tu ouvres sans y penser. Ferme-les d’un geste, ou attends quelques secondes et ouvre-les en connaissance de cause.</p>
 <div class="actions">
-<a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=fr.respire.app">Google Play</a>
+<span class="btn btn-primary" aria-disabled="true" style="opacity:.6;cursor:default">Google Play · bientôt</span>
 <a class="btn btn-quiet" href="https://github.com/Pilmil-Studio/respire/releases/latest/download/Respire.apk">Télécharger l’APK</a>
 <a class="btn btn-quiet" href="https://github.com/Pilmil-Studio/respire">Voir le code source</a>
 </div>
@@ -41,7 +41,7 @@
 <ul class="features">
 <li><h3>Une pause avant d’ouvrir</h3><p>Un écran de respiration avec un compte à rebours et une seule question. Fermer est possible tout de suite, ouvrir seulement à la fin du décompte.</p><p class="why">Ajouter une friction avant d’ouvrir les réseaux sociaux a réduit les tentatives d’ouverture et rendu les ouvertures plus intentionnelles (Grüning, Riedel et Lorenz-Spreen, PNAS, 2023).</p></li>
 <li><h3>Une attente qui s’allonge</h3><p>Chaque nouvelle tentative dans l’heure ajoute quelques secondes. Plus l’envie revient, plus c’est lent.</p></li>
-<li><h3>Fin de session et choix « 2 min seulement »</h3><p>Ouvrir une appli te donne 10 minutes (ou 2 minutes seulement pour un message rapide). Si tu y es encore, la pause revient au milieu du fil.</p></li>
+<li><h3>Fin de session</h3><p>Ouvrir une appli te donne 10 minutes. Si tu y es encore, la pause revient au milieu du fil.</p></li>
 <li><h3>Quota quotidien</h3><p>Au-delà d’un nombre d’ouvertures par appli, l’appli reste fermée jusqu’au lendemain. Prolonger une session compte comme une ouverture.</p><p class="why">Des limites difficiles à contourner ont réduit l’usage des réseaux sociaux d’environ 16 % sur 12 semaines, et la plupart des participants les ont gardées (Allcott, Gentzkow et Song, NBER, 2021).</p></li>
 <li><h3>Heures à risque</h3><p>Des règles plus strictes aux heures que tu choisis, le soir par exemple. Respire propose une plage à partir de ton propre suivi par heure.</p></li>
 <li><h3>Filtre Reels et Shorts</h3><p>Quitte les Reels d’Instagram et les Shorts de YouTube dès qu’ils s’ouvrent. Les messages, la recherche et les vidéos classiques restent accessibles.</p></li>
@@ -144,7 +144,7 @@
 
 <section id="install"><div class="wrap">
 <h2>Installer</h2>
-<ol class="steps"><li><strong>Installe depuis Google Play</strong> sur le <a href="https://play.google.com/store/apps/details?id=fr.respire.app">Google Play Store</a>, ou <strong>télécharge</strong> <a href="https://github.com/Pilmil-Studio/respire/releases/latest/download/Respire.apk">Respire.apk</a> depuis ton téléphone (Android te demandera d’autoriser l’installation depuis ton navigateur).</li><li><strong>Choisis les applis</strong> à freiner dans Respire.</li><li><strong>Active Respire</strong> dans les paramètres d’accessibilité, depuis le bouton de l’appli.</li><li><strong>Android 13 et plus :</strong> si l’interrupteur est grisé, va dans Paramètres, Applications, Respire, menu ⋮, puis Autoriser les paramètres restreints, et recommence.</li></ol>
+<ol class="steps"><li><strong>Télécharge</strong> <a href="https://github.com/Pilmil-Studio/respire/releases/latest/download/Respire.apk">Respire.apk</a> depuis ton téléphone (Android te demandera d’autoriser l’installation depuis ton navigateur).</li><li><strong>Choisis les applis</strong> à freiner dans Respire.</li><li><strong>Active Respire</strong> dans les paramètres d’accessibilité, depuis le bouton de l’appli.</li><li><strong>Android 13 et plus :</strong> si l’interrupteur est grisé, va dans Paramètres, Applications, Respire, menu ⋮, puis Autoriser les paramètres restreints, et recommence.</li></ol>
 </div></section>
 
 <section><div class="wrap">
@@ -159,11 +159,12 @@
 <li><h3>Sommelle : Retrouver le sommeil (TCC-I)</h3><p>Un programme de 6 à 8 semaines fondé sur la thérapie cognitivo-comportementale de l’insomnie : agenda du sommeil en 20 secondes, fenêtre de sommeil ajustée chaque semaine, exercices guidés à la voix et écran de nuit apaisant.</p><p class="why"><a href="https://pilmil-studio.github.io/sommelle/">Découvrir Sommelle →</a></p></li>
 <li><h3>Lunaison : Suivre son cycle en toute intimité</h3><p>Suivi du cycle menstruel, prévisions honnêtes, fiches médicales sourcées, bilan de consultation sur une page et partage partenaire par QR Code hors-ligne.</p><p class="why"><a href="https://pilmil-studio.github.io/lunaison/">Découvrir Lunaison →</a></p></li>
 </ul>
+<p class="intro" style="margin-top:18px"><strong>Proposer un besoin d'application hors-ligne :</strong> un outil du quotidien vous manque sans pub, sans compte et sans connexion ? Écrivez à <a href="mailto:pilmil.studio@proton.me?subject=Id%C3%A9e%20d%27application%20hors-ligne">pilmil.studio@proton.me</a> en précisant la situation concrète et les applis existantes qui posent problème.</p>
 </div></section>
 </main>
 <footer>
 <div class="wrap">
-<p style="margin:0"><img src="../assets/pilmil-logo.svg" alt="" width="18" height="18" style="vertical-align:-3px;margin-right:6px">Respire, par <a href="https://relthdrarxash.github.io/">Pilmil Studio</a> (Alfortville, France). Logiciel libre sous licence MPL-2.0.</p>
+<p style="margin:0"><img src="../assets/pilmil-logo.svg" alt="" width="18" height="18" style="vertical-align:-3px;margin-right:6px">Respire, par <a href="https://pilmil-studio.github.io/">Pilmil Studio</a> (Alfortville, France). Logiciel libre sous licence MPL-2.0.</p>
 <nav aria-label="Code source"><a href="mailto:pilmil.studio@proton.me">pilmil.studio@proton.me</a><a href="https://github.com/Pilmil-Studio/respire">Code source</a><a href="pourquoi.html">Pourquoi ces choix</a><a href="confidentialite.html">Politique de confidentialité</a></nav>
 </div>
 </footer>
