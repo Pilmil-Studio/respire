@@ -1,0 +1,3 @@
+• The Reels filter now also recognises Facebook Reels, when Facebook is set to English.
+• Pilmil Studio legal notice, with its logo, in the About screen.
+• iOS module: daily local reminder and dark theme for the cardiac coherence screen.
