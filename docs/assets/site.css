@@ -19,6 +19,32 @@
   --line: #D9DDD2;
   --serif: "Fraunces", Georgia, serif;
   --sans: "Nunito", system-ui, sans-serif;
+
+  /* Échelle typographique fluide */
+  --step--1: clamp(0.875rem, 0.86rem + 0.08vw, 0.9375rem);
+  --step-0: clamp(1rem, 0.97rem + 0.15vw, 1.0625rem);
+  --step-1: clamp(1.125rem, 1.07rem + 0.25vw, 1.25rem);
+  --step-2: clamp(1.25rem, 1.15rem + 0.5vw, 1.5rem);
+  --step-3: clamp(1.75rem, 1.4rem + 1.6vw, 2.5rem);
+  --step-4: clamp(2.5rem, 1.6rem + 4vw, 4.6rem);
+
+  /* Échelle d'espacement */
+  --space-1: 0.5rem;
+  --space-2: 0.75rem;
+  --space-3: 1rem;
+  --space-4: 1.5rem;
+  --space-5: 2.5rem;
+  --space-6: 4rem;
+  --space-7: 6rem;
+
+  /* Rayons et ombres légères */
+  --radius-s: 8px;
+  --radius-m: 20px;
+  --radius-l: 28px;
+  --shadow-s: 0 1px 2px rgb(38 51 44 / 0.06), 0 4px 14px rgb(38 51 44 / 0.06);
+  --shadow-m: 0 2px 4px rgb(38 51 44 / 0.08), 0 18px 40px rgb(38 51 44 / 0.14);
+  --measure: 40em;
+  --ease: 160ms ease-out;
 }
 
 * { box-sizing: border-box; }
@@ -32,10 +58,10 @@ body {
   background-repeat: no-repeat;
   color: var(--ink);
   font-family: var(--sans);
-  font-size: 1.0625rem;
+  font-size: var(--step-0);
   line-height: 1.6;
 }
-a { color: var(--sage-dark); text-underline-offset: 3px; }
+a { color: var(--sage-dark); text-underline-offset: 3px; text-decoration-thickness: 1px; transition: color var(--ease), text-decoration-color var(--ease); }
 a:hover { color: var(--ink); }
 :focus-visible { outline: 3px solid var(--sage); outline-offset: 3px; border-radius: 6px; }
 
@@ -64,7 +90,7 @@ a:hover { color: var(--ink); }
 .hero h1 {
   font-family: var(--serif);
   font-weight: 600;
-  font-size: clamp(2.6rem, 6vw, 4.6rem);
+  font-size: var(--step-4);
   line-height: 1.04;
   letter-spacing: -0.02em;
   margin: 0;
@@ -102,21 +128,22 @@ a:hover { color: var(--ink); }
 @media (prefers-reduced-motion: reduce) { .breath span { animation: none; transform: scale(0.85); } }
 
 /* ---- Sections ---- */
-section { padding: 64px 0; border-top: 1px solid var(--line); }
+section { padding: var(--space-6) 0; border-top: 1px solid var(--line); }
 h2 {
-  font-family: var(--serif); font-weight: 600; font-size: clamp(1.8rem, 3.6vw, 2.5rem);
-  line-height: 1.15; letter-spacing: -0.01em; margin: 0 0 12px; max-width: 22ch;
+  font-family: var(--serif); font-weight: 600; font-size: var(--step-3);
+  line-height: 1.15; letter-spacing: -0.01em; margin: 0 0 var(--space-2); max-width: 26ch;
 }
-.intro { max-width: 40em; color: var(--muted); margin: 0 0 40px; }
+.intro { max-width: var(--measure); color: var(--muted); margin: 0 0 var(--space-5); }
+.intro + .intro { margin-top: calc(-1 * var(--space-4)); }
 
 /* Fonctions : deux colonnes de texte, la preuve en retrait sous chaque fonction */
 .features { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px 56px; margin: 0; padding: 0; list-style: none; }
-.features h3 { font-family: var(--serif); font-weight: 600; font-size: 1.375rem; margin: 0 0 6px; }
+.features h3 { font-family: var(--serif); font-weight: 600; font-size: var(--step-2); margin: 0 0 6px; }
 .features p { margin: 0; max-width: 32em; }
 .features .why { margin-top: 10px; padding-left: 14px; border-left: 3px solid var(--ring2); font-size: 0.9375rem; color: var(--muted); }
 
 /* Vie privée : un encart plein, le seul fond coloré de la page */
-.privacy-box { background: var(--sage); color: #fff; border-radius: 28px; padding: 40px; display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: 40px; }
+.privacy-box { background: var(--sage); color: #fff; border-radius: var(--radius-l); padding: var(--space-5); display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: 40px; }
 .privacy-box h2 { color: #fff; }
 .privacy-box p { margin: 0 0 16px; }
 .privacy-box ul { margin: 0; padding-left: 1.2em; }
