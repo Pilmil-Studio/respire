@@ -23,7 +23,7 @@ T = {
     dl="Download APK", dl_play="Google Play", src="View the source code",
     fine="Android 8 and later. Free and open source (MPL-2.0). No ads, no account, no Internet permission. Available on Google Play and GitHub.",
     caption="Breathe in as the circle grows, out as it shrinks.",
-    how_h="Built from what research says works",
+    how_h="Built from published studies and stated design choices",
     how_intro='Each feature rests on a study of smartphone overuse or on a stated design choice. The details, rule by rule, are on the page <a href="why.html">Why Respire works the way it does</a>.',
     why="why.html", nav_why="Why", foot_why="Why these choices",
     features=[
@@ -94,7 +94,7 @@ T = {
     dl="Télécharger l’APK", dl_play="Google Play", src="Voir le code source",
     fine="Android 8 et plus. Libre et gratuite (MPL-2.0). Sans pub, sans compte, sans permission Internet. Disponible sur Google Play et GitHub.",
     caption="Inspire quand le cercle grandit, expire quand il rétrécit.",
-    how_h="Conçue à partir de ce que dit la recherche",
+    how_h="Conçue à partir d’études publiées et de choix de conception assumés",
     how_intro='Chaque fonction s’appuie sur une étude sur l’usage excessif du smartphone ou sur un choix de conception assumé. Le détail, règle par règle, est sur la page <a href="pourquoi.html">Pourquoi Respire est faite comme ça</a>.',
     why="pourquoi.html", nav_why="Pourquoi", foot_why="Pourquoi ces choix",
     features=[
