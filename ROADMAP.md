@@ -1,4 +1,4 @@
-# Feuille de route — Respire
+# Feuille de route : Respire
 
 > Dernière mise à jour : novembre 2026.
 
@@ -12,13 +12,11 @@
 - Amélioration des contrastes et du guidage d'accessibilité Android (y compris l'écran « paramètres restreints » d'Android 13+).
 
 ## 3. Qualité de code & sécurité
-- Sauvegarde Android configurable par application (`-Ppilmil.allowAutoBackup=false` par défaut dans `app/build.gradle.kts`, aucune permission `INTERNET`).
-- Exécution systématique de `testReleaseUnitTest` et `lintDebug` en CI (zéro erreur de formatage i18n/lint).
-- À faire : ajouter `ktlint` / `detekt` et des tests unitaires supplémentaires sur les règles de blocage (`ShortFormBlocker`, `Prefs`).
+- À faire : ajouter `ktlint` / `detekt` au projet.
 
 ## 4. Feuille de route iOS
-- **État actuel** : 100 % Android (l'appli repose sur `AccessibilityService`, inexistant sur iOS).
-- **Étapes** :
+- **État actuel** : module iOS partiel. La coque SwiftUI (`iosApp/`) affiche l'écran de cohérence cardiaque 4 s / 6 s du module `:shared`, écrit en Compose Multiplatform, avec thème sombre et rappel quotidien local facultatif. Il n'y a pas encore de blocage d'applis sur iOS : l'appli Android repose sur `AccessibilityService`, qui n'a pas d'équivalent sur iOS.
+- **Étapes restantes** :
   1. Étudier une version iOS dédiée basée sur la **Screen Time API** (`FamilyControls`, `ManagedSettings`, `DeviceActivity` en Swift).
   2. Demander à Apple l'entitlement **Family Controls** (prérequis bloquant avant toute distribution).
-  3. Porter la cohérence cardiaque et les statistiques via Compose Multiplatform si l'entitlement est accordé.
+  3. Porter les statistiques via Compose Multiplatform si l'entitlement est accordé.

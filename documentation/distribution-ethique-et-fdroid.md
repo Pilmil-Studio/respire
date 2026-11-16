@@ -42,5 +42,5 @@ CurrentVersionCode: 40600
 
 ## 2. Référencement IzzyOnDroid / AlternativeTo / Framalibre
 
-- **IzzyOnDroid** : soumettre `https://github.com/Pilmil-Studio/respire` sur `https://gitlab.com/IzzyOnDroid/repo/-/issues` (structure Fastlane en 4 langues `fr-FR`, `en-US`, `es-ES`, `de-DE` déjà présente, 0 pisteur, 0 permission `INTERNET`).
+- **IzzyOnDroid** : soumettre `https://github.com/Pilmil-Studio/respire` sur `https://gitlab.com/IzzyOnDroid/repo/-/issues` (structure Fastlane en six langues `fr-FR`, `en-US`, `es-ES`, `de-DE`, `pl-PL`, `uk` déjà présente, 0 pisteur, 0 permission `INTERNET`).
 - **AlternativeTo** : référencer dans les catégories *Screen Time*, *Digital Wellbeing* et *App Blocker* avec les critères libres (`Open Source`, `Free`, `Privacy-focused`).

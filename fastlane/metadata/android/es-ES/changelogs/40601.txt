@@ -1,0 +1,3 @@
+• El filtro de Reels también reconoce los Reels de Facebook, cuando Facebook está en inglés.
+• Aviso legal de Pilmil Studio, con su logotipo, en la pantalla Acerca de.
+• Módulo iOS: recordatorio diario local y tema oscuro para la pantalla de coherencia cardiaca.

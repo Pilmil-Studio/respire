@@ -4,7 +4,7 @@
 
 [![Build](https://github.com/Pilmil-Studio/respire/actions/workflows/build.yml/badge.svg)](https://github.com/Pilmil-Studio/respire/actions/workflows/build.yml)
 
-A small app against doomscrolling (Android + KMP/iOS cardiac coherence). On Android, Respire puts a breathing pause in front of the apps you open on autopilot, limits how long a session lasts, caps how many times a day you can open them, and can hide Instagram Reels and YouTube Shorts while leaving the rest of those apps usable. On iOS (`iosApp/` + `:shared`), it provides the 4 s / 6 s cardiac coherence screen with dark theme and optional daily local reminder (`UNUserNotificationCenter`).
+Respire puts a breathing pause in front of the apps that pull you in, and can hide Instagram Reels and YouTube Shorts while leaving the rest of those apps usable. On Android, it also limits how long a session lasts and how many times a day you can open each app. On iOS (`iosApp/` + `:shared`), it provides the 4 s / 6 s cardiac coherence screen with dark theme and optional daily local reminder (`UNUserNotificationCenter`).
 
 No Internet permission, no trackers, no account. Everything stays on your phone.
 
@@ -20,12 +20,12 @@ The app keeps only what you need: the explanations live here and on the page [Wh
 
 | Feature | What it does | Why |
 |---|---|---|
-| **Pause before opening & intention** | A breathing screen with a countdown, intention chips (*Specific message*, *Quick lookup*, *Just a habit*), and the question "Why are you opening it now?". Closing is available immediately, opening only once the countdown ends. | Friction before opening social apps reduced opening attempts and made openings more intentional (Grüning, Riedel & Lorenz-Spreen, *PNAS* 2023; Haliburton et al., *CHI* 2024). |
+| **Pause before opening & intention** | A breathing screen with a countdown, intention chips (*Specific message*, *Quick lookup*, *Just a habit*), and the question "Why are you opening it now?". Closing is available immediately, opening only once the countdown ends. | Friction before opening social apps reduced opening attempts (Grüning, Riedel & Lorenz-Spreen, *PNAS* 2023; Haliburton et al., *CHI* 2024). |
 | **Growing delay** | Each new attempt within the hour adds a few seconds. | Design choice: same friction principle, stronger when the urge repeats. No study compares a fixed and a growing wait. |
 | **Session end** | An opening only lasts a set time (10 min by default). If you are still in the app after this duration, the pause returns mid-scroll to create an exit point. | Design choice: an endless feed offers no moment to stop; session end creates one. |
-| **Daily limit** | After a set number of opens per app per day, the app is blocked until tomorrow. Extending a session counts as an open. | Hard-to-override limits cut social media use by about 16% over 12 weeks, and most people kept them (Allcott, Gentzkow & Song, *American Economic Review* 2022). |
+| **Daily limit** | After a set number of opens per app per day, the app is blocked until tomorrow. Extending a session counts as an open. | Letting people set limits on their screen time reduced use of the tracked apps by 16% over 12 weeks (Allcott, Gentzkow & Song, *American Economic Review* 2022). |
 | **Risky hours** | During a time range you choose (10 pm to 7 am by default, suggested from your own hourly data), the wait is doubled and opens are capped, at zero by default. | Design choice: tune the tool from your own data rather than a general rule. Effect not measured. |
-| **Loosening lock** | Removing an app or relaxing a rule requires a 30-second wait. | People tend to pause such tools and relapse quickly (Haliburton et al., 2024). |
+| **Loosening lock** | Removing an app or relaxing a rule requires a 30-second wait. | People tend to take breaks from such tools and quickly fall back into overuse (Haliburton et al., 2024). |
 | **Reels and Shorts filter** | Leaves Instagram or YouTube when the full-screen short-video player appears. Reels sent in a direct message still open. | Design choice: removes the endless feed while keeping messages, search and regular videos. Effect not measured. |
 | **Home screen widget & saved time** | A discreet home screen widget and 7-day summary show avoided openings and estimated minutes saved, with no streak counter. | Design choice: calm feedback without scores or badges. |
 
@@ -87,7 +87,7 @@ Release builds (`assembleRelease`, `bundleRelease`) refuse to run without an upl
 
 ## How Respire is made
 
-Respire is a personal project by Relthdrarxash, published under the name Pilmil Studio. Contact: pilmil.studio@proton.me. The code was developed with the help of an AI assistant (Claude, by Anthropic): the app itself embeds no artificial intelligence, all its rules are purely deterministic, and I want to state this plainly.
+Respire is published by Pilmil Studio, an independent developer. Contact: pilmil.studio@proton.me. The code was developed with the help of an AI assistant (Claude, by Anthropic): the app itself embeds no artificial intelligence, all its rules are purely deterministic, and I want to state this plainly.
 
 What that means in practice:
 
@@ -98,7 +98,7 @@ What that means in practice:
 
 ## License
 
-Copyright (C) 2026 Relthdrarxash
+Copyright (C) 2026 Pilmil Studio
 
 Respire is free software, distributed under the [Mozilla Public License 2.0](LICENSE) (MPL-2.0): you can use, study, modify and redistribute it; files you modify must stay under the same license, with their source code.
 

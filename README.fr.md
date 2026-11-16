@@ -4,7 +4,7 @@
 
 [![Build](https://github.com/Pilmil-Studio/respire/actions/workflows/build.yml/badge.svg)](https://github.com/Pilmil-Studio/respire/actions/workflows/build.yml)
 
-Une petite appli contre le doom scroll (Android + module KMP/iOS de cohérence cardiaque). Sur Android, Respire place une pause de respiration devant les applis que tu ouvres par réflexe, limite la durée d'une session, plafonne le nombre d'ouvertures par jour et peut masquer les Reels d'Instagram et les Shorts de YouTube tout en laissant le reste de ces applis utilisable. Sur iOS (`iosApp/` + `:shared`), elle propose l'écran de cohérence cardiaque 4 s / 6 s avec thème sombre et rappel quotidien local facultatif (`UNUserNotificationCenter`).
+Respire place une pause de respiration devant les applis qui t'attirent sans que tu le décides, et peut masquer les Reels d'Instagram et les Shorts de YouTube tout en laissant le reste de ces applis utilisable. Sur Android, elle limite aussi la durée d'une session et le nombre d'ouvertures par jour pour chaque appli. Sur iOS (`iosApp/` + `:shared`), elle propose l'écran de cohérence cardiaque 4 s / 6 s avec thème sombre et rappel quotidien local facultatif (`UNUserNotificationCenter`).
 
 Pas de permission Internet, pas de traqueur, pas de compte. Tout reste sur ton téléphone.
 
@@ -20,12 +20,12 @@ L'appli reste au strict nécessaire : les explications sont ici et sur la page [
 
 | Fonction | Ce qu'elle fait | Pourquoi |
 |---|---|---|
-| **Pause avant ouverture et intention** | Un écran de respiration avec un compte à rebours, trois repères d'intention (*Message précis*, *Chercher une info*, *Simple réflexe*) et la question « Pourquoi tu l'ouvres maintenant ? ». Fermer est possible tout de suite, ouvrir seulement à la fin du décompte. | Ajouter une friction avant d'ouvrir les réseaux sociaux réduit les tentatives d'ouverture et rend les ouvertures plus intentionnelles (Grüning, Riedel et Lorenz-Spreen, *PNAS* 2023 ; Haliburton et al., *CHI* 2024). |
+| **Pause avant ouverture et intention** | Un écran de respiration avec un compte à rebours, trois repères d'intention (*Message précis*, *Chercher une info*, *Simple réflexe*) et la question « Pourquoi tu l'ouvres maintenant ? ». Fermer est possible tout de suite, ouvrir seulement à la fin du décompte. | Ajouter une friction avant d'ouvrir les réseaux sociaux réduit les tentatives d'ouverture (Grüning, Riedel et Lorenz-Spreen, *PNAS* 2023 ; Haliburton et al., *CHI* 2024). |
 | **Délai croissant** | Chaque nouvelle tentative dans l'heure ajoute quelques secondes. | Choix de conception : même principe de friction, renforcé quand l'envie revient. Aucune étude ne compare une attente fixe et une attente croissante. |
 | **Fin de session** | Une ouverture ne vaut que pour une durée fixée (10 min par défaut). Si tu es toujours dans l'appli au bout de cette durée, la pause de respiration revient en plein défilement pour recréer un point d'arrêt. | Choix de conception : un fil sans fin n'offre aucun moment pour s'arrêter, la fin de session en recrée un. |
-| **Quota quotidien** | Au-delà d'un nombre d'ouvertures par appli et par jour, l'appli est bloquée jusqu'au lendemain. Prolonger une session compte comme une ouverture. | Des limites difficiles à contourner ont réduit l'usage des réseaux sociaux d'environ 16 % sur 12 semaines, et la plupart des participants les ont gardées (Allcott, Gentzkow et Song, *American Economic Review* 2022). |
+| **Quota quotidien** | Au-delà d'un nombre d'ouvertures par appli et par jour, l'appli est bloquée jusqu'au lendemain. Prolonger une session compte comme une ouverture. | Pouvoir se fixer des limites de temps d'écran a réduit l'usage des applis suivies de 16 % sur 12 semaines (Allcott, Gentzkow et Song, *American Economic Review* 2022). |
 | **Heures à risque** | Sur une plage que tu choisis (22 h à 7 h par défaut, avec une suggestion tirée de ton propre suivi par heure), l'attente est doublée et les ouvertures plafonnées, à zéro par défaut. | Choix de conception : régler l'outil à partir de ses propres données, plutôt que suivre une règle générale. Effet non mesuré. |
-| **Verrou d'assouplissement** | Retirer une appli ou relâcher une règle impose 30 secondes d'attente. | Les utilisateurs ont tendance à mettre ces outils en pause et à rechuter vite (Haliburton et al., 2024). |
+| **Verrou d'assouplissement** | Retirer une appli ou relâcher une règle impose 30 secondes d'attente. | Les utilisateurs ont tendance à faire des pauses avec ces outils, puis à retomber vite dans un usage excessif (Haliburton et al., 2024). |
 | **Filtre Reels et Shorts** | Quitte le lecteur plein écran de vidéos courtes dès qu'il apparaît dans Instagram ou YouTube. Un Reel reçu en message s'ouvre quand même. | Choix de conception : supprime le flux sans fin tout en gardant les messages, la recherche et les vidéos classiques. Effet non mesuré. |
 | **Widget d'accueil et temps épargné** | Un widget discret sur l'écran d'accueil et un bilan partageable sur 7 jours affichent les renoncements et le temps estimé épargné, sans compteur de jours consécutifs. | Choix de conception : retour d'information posé, sans score ni badge. |
 
@@ -87,7 +87,7 @@ Les builds release (`assembleRelease`, `bundleRelease`) refusent de se lancer sa
 
 ## Comment Respire est fait
 
-Respire est un projet personnel de Relthdrarxash, publié sous le nom Pilmil Studio. Contact : pilmil.studio@proton.me. Le code a été développé avec l'aide d'un assistant IA (Claude, d'Anthropic) : l'application elle-même n'embarque aucune intelligence artificielle, toutes ses règles sont purement déterministes, et je préfère l'indiquer clairement.
+Respire est publiée par Pilmil Studio, développeur indépendant. Contact : pilmil.studio@proton.me. Le code a été développé avec l'aide d'un assistant IA (Claude, d'Anthropic) : l'application elle-même n'embarque aucune intelligence artificielle, toutes ses règles sont purement déterministes, et je préfère l'indiquer clairement.
 
 Concrètement :
 
@@ -98,7 +98,7 @@ Concrètement :
 
 ## Licence
 
-Copyright (C) 2026 Relthdrarxash
+Copyright (C) 2026 Pilmil Studio
 
 Respire est un logiciel libre, distribué sous licence [Mozilla Public License 2.0](LICENSE) (MPL-2.0) : tu peux l'utiliser, l'étudier, le modifier et le redistribuer ; les fichiers que tu modifies doivent rester publiés sous la même licence, avec leur code source.
 

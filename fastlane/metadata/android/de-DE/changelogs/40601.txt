@@ -1,0 +1,3 @@
+• Der Reels-Filter erkennt jetzt auch Facebook-Reels, wenn Facebook auf Englisch eingestellt ist.
+• Rechtliche Hinweise von Pilmil Studio mit Logo im Bereich „Über“.
+• iOS-Modul: täglicher lokaler Hinweis und dunkles Design für den Kohärenzbildschirm.
