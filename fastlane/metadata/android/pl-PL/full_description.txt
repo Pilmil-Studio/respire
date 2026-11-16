@@ -1,0 +1,23 @@
+Respire wstawia krótką przerwę na oddech przed aplikacjami, które otwierasz bez zastanowienia. Zamknij je jednym dotknięciem albo poczekaj kilka sekund i otwórz je świadomie.
+
+Każda funkcja opiera się na badaniach nad nadmiernym użyciem smartfona albo na świadomym wyborze projektowym, który jest na stronie projektu oznaczony jako taki.
+
+• Przerwa przed otwarciem: ekran oddechu, odliczanie, pytanie („Po co teraz otwierasz tę aplikację?”) i 3 szybkie znaczniki intencji (Konkretna wiadomość, Sprawdzenie informacji, Zwykły odruch). Zamknięcie jest dostępne od razu, otwarcie dopiero po zakończeniu odliczania.
+• Rosnące oczekiwanie: każda kolejna próba w ciągu godziny dodaje kilka sekund.
+• Koniec sesji: po 10 minutach w spowolnionej aplikacji przerwa wraca w środku listy.
+• Dzienny limit: po określonej liczbie otwarć aplikacja pozostaje zamknięta do jutra.
+• Godziny wrażliwe: ściślejsze zasady w godzinach, które wybierzesz, na przykład wieczorem, z podpowiedzią opartą na twoich własnych danych.
+• Filtr Reels i Shorts: opuszcza Reels na Instagramie i Shorts na YouTube, gdy tylko się otworzą. Wiadomości, wyszukiwanie i zwykłe filmy pozostają dostępne.
+• Blokada przed osłabianiem zasad: usunięcie aplikacji lub złagodzenie reguły wymaga 30 sekund oczekiwania, żeby nie cofnąć ustawień pod wpływem chwili.
+• Twój tydzień w skrócie i widżet: przerwy, rezygnacje, szacunkowy zaoszczędzony czas, udostępnialne podsumowanie z 7 dni i dyskretny widżet na ekranie głównym.
+
+Prywatność
+Respire nie ma uprawnienia do Internetu, więc nie może nic nigdzie wysłać. Brak reklam, konta i analityki. Wszystko zostaje w twoim telefonie.
+
+Usługa ułatwień dostępu
+Respire korzysta z interfejsu usługi ułatwień dostępu Androida, którego potrzebuje do działania. Odczytuje wyłącznie nazwę aplikacji działającej na pierwszym planie oraz, jeśli włączysz filtr Reels lub Shorts, techniczne identyfikatory elementów na ekranie w Instagramie i YouTube, a w Facebooku etykiety dostępności elementów interfejsu. Nigdy nie odczytuje tekstów, wiadomości ani obrazów. Te informacje zostają w telefonie i nigdy nie są zbierane ani udostępniane.
+
+Wolne oprogramowanie
+Respire jest oprogramowaniem open source na licencji MPL-2.0. Kod źródłowy: https://github.com/Pilmil-Studio/respire
+
+Dostępna po polsku, ukraińsku, angielsku, francusku, hiszpańsku i niemiecku.
