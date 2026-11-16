@@ -1,6 +1,6 @@
 Respire puts a short breathing pause in front of the apps you open without thinking. Close them in one tap, or wait a few seconds and open them on purpose.
 
-Each feature comes from research on smartphone overuse:
+Each feature rests on a published study or on a design choice explained on the website:
 
 • Pause before opening: a breathing screen, a countdown, one question ("Why are you opening it now?") and 3 quick intention chips (Specific message, Look something up, Just a habit). Closing is available right away, opening only once the countdown ends.
 • A wait that grows: each new attempt within the hour adds a few seconds.

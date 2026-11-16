@@ -1,6 +1,6 @@
 Respire legt eine kurze Atempause vor die Apps, die du öffnest, ohne nachzudenken. Schließe sie mit einem Tipp, oder warte ein paar Sekunden und öffne sie bewusst.
 
-Jede Funktion stützt sich auf Forschung zur übermäßigen Smartphone-Nutzung:
+Jede Funktion stützt sich auf eine veröffentlichte Studie oder auf eine Gestaltungsentscheidung, die auf der Website erklärt wird:
 
 • Eine Pause vor dem Öffnen: ein Atembildschirm, ein Countdown, eine Frage („Warum öffnest du sie gerade?“) und 3 schnelle Absichts-Chips (Konkrete Nachricht, Etwas nachschlagen, Reiner Reflex). Schließen geht sofort, Öffnen erst nach Ablauf des Countdowns.
 • Eine Wartezeit, die wächst: Jeder weitere Versuch innerhalb einer Stunde fügt ein paar Sekunden hinzu.

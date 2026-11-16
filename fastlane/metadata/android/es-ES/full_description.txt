@@ -1,6 +1,6 @@
 Respire coloca una breve pausa para respirar delante de las apps que abres sin pensar. Ciérralas con un toque, o espera unos segundos y ábrelas a conciencia.
 
-Cada función se basa en la investigación sobre el uso excesivo del móvil:
+Cada función se basa en un estudio publicado o en una decisión de diseño explicada en la web:
 
 • Una pausa antes de abrir: una pantalla de respiración, una cuenta atrás, una pregunta («¿Por qué la abres ahora?») y 3 botones rápidos de intención (Mensaje concreto, Buscar algo, Puro reflejo). Cerrar es posible al instante, abrir solo al final de la cuenta atrás.
 • Una espera que crece: cada nuevo intento en la misma hora añade unos segundos.
