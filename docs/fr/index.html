@@ -49,7 +49,7 @@
 <h2>Comment ça marche</h2>
 <p class="intro">Trois étapes, quelques minutes.</p>
 <ul class="features three shots">
-<li><h3>1. Choisis les applis à freiner</h3><img class="shot" src="../marketing/captures/choix_applis.png" alt="Liste Applis à freiner de Respire : une barre de recherche et des interrupteurs, avec trois applis activées." width="1080" height="2340" loading="lazy"><p>Active celles que tu veux, sans limite sur leur nombre. Active ensuite Respire dans les paramètres d’accessibilité, depuis le bouton de l’appli.</p></li><li><h3>2. Respire avant d’ouvrir</h3><img class="shot" src="../marketing/captures/respiration.png" alt="Écran de pause de Respire : un cercle avec un compte à rebours, la question « Pourquoi tu l’ouvres maintenant ? », trois puces d’intention, un bouton pour fermer et le délai avant d’ouvrir." width="1080" height="2340" loading="lazy"><p>Un compte à rebours s’affiche (10 secondes par défaut). Tu peux fermer tout de suite, ou ouvrir quand il se termine.</p></li><li><h3>3. Regarde ta semaine</h3><img class="shot" src="../marketing/captures/statistiques.png" alt="Écran Statistiques de Respire : 6 renoncements sur 9 pauses aujourd’hui, environ 60 minutes épargnées, graphique des 7 derniers jours et pic de tentation vers 21 h." width="1080" height="2340" loading="lazy"><p>Respire compte les pauses et les renoncements, par jour et par heure, pour repérer ton moment le plus tentant. Les chiffres restent sur ton téléphone.</p></li>
+<li><h3>1. Choisis les applis à freiner</h3><img class="shot" decoding="async" src="../marketing/captures/choix_applis.png" alt="Liste Applis à freiner de Respire : une barre de recherche et des interrupteurs, avec trois applis activées." width="1080" height="2340" loading="lazy"><p>Active celles que tu veux, sans limite sur leur nombre. Active ensuite Respire dans les paramètres d’accessibilité, depuis le bouton de l’appli.</p></li><li><h3>2. Respire avant d’ouvrir</h3><img class="shot" decoding="async" src="../marketing/captures/respiration.png" alt="Écran de pause de Respire : un cercle avec un compte à rebours, la question « Pourquoi tu l’ouvres maintenant ? », trois puces d’intention, un bouton pour fermer et le délai avant d’ouvrir." width="1080" height="2340" loading="lazy"><p>Un compte à rebours s’affiche (10 secondes par défaut). Tu peux fermer tout de suite, ou ouvrir quand il se termine.</p></li><li><h3>3. Regarde ta semaine</h3><img class="shot" decoding="async" src="../marketing/captures/statistiques.png" alt="Écran Statistiques de Respire : 6 renoncements sur 9 pauses aujourd’hui, environ 60 minutes épargnées, graphique des 7 derniers jours et pic de tentation vers 21 h." width="1080" height="2340" loading="lazy"><p>Respire compte les pauses et les renoncements, par jour et par heure, pour repérer ton moment le plus tentant. Les chiffres restent sur ton téléphone.</p></li>
 </ul>
 </div></section>
 
@@ -71,7 +71,7 @@
 <section id="captures"><div class="wrap">
 <h2>Captures d’écran</h2>
 <ul class="features three shots">
-<li><h3>Accueil</h3><img class="shot" src="../marketing/captures/accueil.png" alt="Écran d’accueil de Respire : applis freinées Flux (3 sur 5), Vidéos courtes (bloqué) et Réseau social (1 sur 5), avec les interrupteurs du filtre Reels et Shorts." width="1080" height="2340" loading="lazy"></li><li><h3>Démarrage</h3><img class="shot" src="../marketing/captures/demarrage.png" alt="Écran Pour commencer de Respire : choisir les applis à freiner, puis activer le service d’accessibilité. La liste des applis freinées est encore vide." width="1080" height="2340" loading="lazy"></li><li><h3>Limite atteinte</h3><img class="shot" src="../marketing/captures/quota_atteint.png" alt="Écran de Respire quand la limite quotidienne est atteinte : ouvertures du jour 5 sur 5, retour le lendemain, bouton pour fermer l’appli." width="1080" height="2340" loading="lazy"></li>
+<li><h3>Accueil</h3><img class="shot" decoding="async" src="../marketing/captures/accueil.png" alt="Écran d’accueil de Respire : applis freinées Flux (3 sur 5), Vidéos courtes (bloqué) et Réseau social (1 sur 5), avec les interrupteurs du filtre Reels et Shorts." width="1080" height="2340" loading="lazy"></li><li><h3>Démarrage</h3><img class="shot" decoding="async" src="../marketing/captures/demarrage.png" alt="Écran Pour commencer de Respire : choisir les applis à freiner, puis activer le service d’accessibilité. La liste des applis freinées est encore vide." width="1080" height="2340" loading="lazy"></li><li><h3>Limite atteinte</h3><img class="shot" decoding="async" src="../marketing/captures/quota_atteint.png" alt="Écran de Respire quand la limite quotidienne est atteinte : ouvertures du jour 5 sur 5, retour le lendemain, bouton pour fermer l’appli." width="1080" height="2340" loading="lazy"></li>
 </ul>
 </div></section>
 
@@ -87,7 +87,7 @@
 <p class="intro">Naviguez entre les écrans de Respire et testez la pause respiratoire avant l’ouverture d’une appli.</p>
 <div style="display:flex;justify-content:center">
   <div style="width:min(340px,100%);border:8px solid #262925;border-radius:32px;background:#f7f5f0;color:#222621;overflow:hidden;box-shadow:0 18px 44px rgba(0,0,0,.2);font-size:14px">
-    <div style="background:#3d6b52;color:#fff;padding:10px 16px;display:flex;justify-content:space-between;font-weight:700">
+    <div style="background:var(--sage-dark);color:#fff;padding:10px 16px;display:flex;justify-content:space-between;font-weight:700">
       <span>Respire</span><span style="font-size:11px;opacity:.85">Service actif</span>
     </div>
     <div id="re-screen" style="padding:14px;min-height:330px;display:grid;gap:10px;align-content:start"></div>
@@ -106,7 +106,7 @@
   function render() {
     document.querySelectorAll(".re-tab").forEach(b => {
       const act = b.dataset.tab === tab;
-      b.style.color = act ? "#3d6b52" : "#6b6e68";
+      b.style.color = act ? "var(--sage-dark)" : "#6b6e68";
       b.style.fontWeight = act ? "700" : "500";
     });
     const scr = document.getElementById("re-screen");
@@ -116,15 +116,15 @@
         <div style="font-weight:800;font-size:16px">Applis freinées</div>
         <div style="background:#fff;border:1px solid #e1ddd3;border-radius:12px;padding:10px;display:flex;justify-content:space-between"><span>Instagram</span><strong>Pause 10 s</strong></div>
         <div style="background:#fff;border:1px solid #e1ddd3;border-radius:12px;padding:10px;display:flex;justify-content:space-between"><span>YouTube Shorts</span><strong>Filtré</strong></div>
-        <button type="button" id="re-try" style="margin-top:6px;padding:10px;border-radius:999px;border:0;background:#3d6b52;color:#fff;font:inherit;font-weight:700;cursor:pointer">Simuler l'ouverture</button>
+        <button type="button" id="re-try" style="margin-top:6px;padding:10px;border-radius:999px;border:0;background:var(--sage-dark);color:#fff;font:inherit;font-weight:700;cursor:pointer">Simuler l'ouverture</button>
       `;
     } else if (tab === "pause") {
       scr.innerHTML = `
         <div style="text-align:center;display:grid;gap:12px;justify-items:center;padding-top:12px">
           <div style="font-weight:700">Prenez une pause avant d'ouvrir</div>
-          <div id="re-bubble" style="width:118px;height:118px;border-radius:50%;background:radial-gradient(circle,#7aa889,#3d6b52);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;transition:transform 1s ease;transform:scale(0.85)">Prêt</div>
+          <div id="re-bubble" style="width:118px;height:118px;border-radius:50%;background:radial-gradient(circle,#7aa889,var(--sage-dark));color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;transition:transform 1s ease;transform:scale(0.85)">Prêt</div>
           <p id="re-info" style="margin:0;font-size:12px;color:#5d615b">Cycle 4 s inspiration / 6 s expiration</p>
-          <button type="button" id="re-btn" style="font:inherit;padding:9px 18px;border-radius:999px;border:0;background:#3d6b52;color:#fff;font-weight:700;cursor:pointer">${timer ? "Arrêter" : "Démarrer"}</button>
+          <button type="button" id="re-btn" style="font:inherit;padding:9px 18px;border-radius:999px;border:0;background:var(--sage-dark);color:#fff;font-weight:700;cursor:pointer">${timer ? "Arrêter" : "Démarrer"}</button>
         </div>
       `;
     } else {
@@ -132,7 +132,7 @@
       scr.innerHTML = `
         <div style="font-weight:800;font-size:16px">Cette semaine</div>
         <div style="background:#fff;border:1px solid #e1ddd3;border-radius:12px;padding:12px">
-          <div style="font-size:22px;font-weight:800;color:#3d6b52">18 renoncements</div>
+          <div style="font-size:22px;font-weight:800;color:var(--sage-dark)">18 renoncements</div>
           <div style="font-size:12px;color:#5d615b">~1 h 15 économisée sur les fils infinis</div>
         </div>
         <div style="background:#fff;border:1px solid #e1ddd3;border-radius:12px;padding:12px;font-size:12px">Pic de tentations : 21 h à 22 h</div>

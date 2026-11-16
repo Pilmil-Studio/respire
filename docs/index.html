@@ -49,7 +49,7 @@
 <h2>How it works</h2>
 <p class="intro">Three steps, a few minutes.</p>
 <ul class="features three shots">
-<li><h3>1. Choose the apps to slow down</h3><img class="shot" src="marketing/captures/en/choix_applis.png" alt="Respire Apps to slow down list: a search bar and switches, with three apps turned on." width="1080" height="2340" loading="lazy"><p>Turn on the ones you want, with no limit on how many. Then turn on Respire in Accessibility settings, from the button in the app.</p></li><li><h3>2. Pause before opening</h3><img class="shot" src="marketing/captures/en/respiration.png" alt="Respire pause screen: a circle with a countdown, the question "Why are you opening it now?", three intention chips, a button to close and the time left before opening." width="1080" height="2340" loading="lazy"><p>A countdown appears (10 seconds by default). You can close right away, or open once it ends.</p></li><li><h3>3. Look at your week</h3><img class="shot" src="marketing/captures/en/statistiques.png" alt="Respire statistics screen: 6 times the user gave up out of 9 pauses today, about 60 minutes saved, a bar chart of the last 7 days and temptation peaking around 21:00." width="1080" height="2340" loading="lazy"><p>Respire counts pauses and times you gave up, by day and by hour, to spot your most tempting moment. The figures stay on your phone.</p></li>
+<li><h3>1. Choose the apps to slow down</h3><img class="shot" decoding="async" src="marketing/captures/en/choix_applis.png" alt="Respire Apps to slow down list: a search bar and switches, with three apps turned on." width="1080" height="2340" loading="lazy"><p>Turn on the ones you want, with no limit on how many. Then turn on Respire in Accessibility settings, from the button in the app.</p></li><li><h3>2. Pause before opening</h3><img class="shot" decoding="async" src="marketing/captures/en/respiration.png" alt="Respire pause screen: a circle with a countdown, the question "Why are you opening it now?", three intention chips, a button to close and the time left before opening." width="1080" height="2340" loading="lazy"><p>A countdown appears (10 seconds by default). You can close right away, or open once it ends.</p></li><li><h3>3. Look at your week</h3><img class="shot" decoding="async" src="marketing/captures/en/statistiques.png" alt="Respire statistics screen: 6 times the user gave up out of 9 pauses today, about 60 minutes saved, a bar chart of the last 7 days and temptation peaking around 21:00." width="1080" height="2340" loading="lazy"><p>Respire counts pauses and times you gave up, by day and by hour, to spot your most tempting moment. The figures stay on your phone.</p></li>
 </ul>
 </div></section>
 
@@ -71,7 +71,7 @@
 <section id="captures"><div class="wrap">
 <h2>Screenshots</h2>
 <ul class="features three shots">
-<li><h3>Home</h3><img class="shot" src="marketing/captures/en/accueil.png" alt="Respire home screen: slowed-down apps Feed (3 of 5), Short videos (blocked) and Social network (1 of 5), with the Reels and Shorts filter switches." width="1080" height="2340" loading="lazy"></li><li><h3>Getting started</h3><img class="shot" src="marketing/captures/en/demarrage.png" alt="Respire getting-started screen: choose the apps to slow down, then turn on the accessibility service. The slowed-down apps list is still empty." width="1080" height="2340" loading="lazy"></li><li><h3>Limit reached</h3><img class="shot" src="marketing/captures/en/quota_atteint.png" alt="Respire screen when the daily limit is reached: opens today 5 of 5, come back tomorrow, a button to close the app." width="1080" height="2340" loading="lazy"></li>
+<li><h3>Home</h3><img class="shot" decoding="async" src="marketing/captures/en/accueil.png" alt="Respire home screen: slowed-down apps Feed (3 of 5), Short videos (blocked) and Social network (1 of 5), with the Reels and Shorts filter switches." width="1080" height="2340" loading="lazy"></li><li><h3>Getting started</h3><img class="shot" decoding="async" src="marketing/captures/en/demarrage.png" alt="Respire getting-started screen: choose the apps to slow down, then turn on the accessibility service. The slowed-down apps list is still empty." width="1080" height="2340" loading="lazy"></li><li><h3>Limit reached</h3><img class="shot" decoding="async" src="marketing/captures/en/quota_atteint.png" alt="Respire screen when the daily limit is reached: opens today 5 of 5, come back tomorrow, a button to close the app." width="1080" height="2340" loading="lazy"></li>
 </ul>
 </div></section>
 
@@ -87,7 +87,7 @@
 <p class="intro">Click through Respire's screens and test the 4s / 6s breathing pause shown before opening a distracting app.</p>
 <div style="display:flex;justify-content:center">
   <div style="width:min(340px,100%);border:8px solid #262925;border-radius:32px;background:#f7f5f0;color:#222621;overflow:hidden;box-shadow:0 18px 44px rgba(0,0,0,.2);font-size:14px">
-    <div style="background:#3d6b52;color:#fff;padding:10px 16px;display:flex;justify-content:space-between;font-weight:700">
+    <div style="background:var(--sage-dark);color:#fff;padding:10px 16px;display:flex;justify-content:space-between;font-weight:700">
       <span>Respire</span><span style="font-size:11px;opacity:.85">Service on</span>
     </div>
     <div id="re-screen" style="padding:14px;min-height:330px;display:grid;gap:10px;align-content:start"></div>
@@ -106,7 +106,7 @@
   function render() {
     document.querySelectorAll(".re-tab").forEach(b => {
       const act = b.dataset.tab === tab;
-      b.style.color = act ? "#3d6b52" : "#6b6e68";
+      b.style.color = act ? "var(--sage-dark)" : "#6b6e68";
       b.style.fontWeight = act ? "700" : "500";
     });
     const scr = document.getElementById("re-screen");
@@ -116,15 +116,15 @@
         <div style="font-weight:800;font-size:16px">Slowed apps</div>
         <div style="background:#fff;border:1px solid #e1ddd3;border-radius:12px;padding:10px;display:flex;justify-content:space-between"><span>Instagram</span><strong>10s pause</strong></div>
         <div style="background:#fff;border:1px solid #e1ddd3;border-radius:12px;padding:10px;display:flex;justify-content:space-between"><span>YouTube Shorts</span><strong>Filtered</strong></div>
-        <button type="button" id="re-try" style="margin-top:6px;padding:10px;border-radius:999px;border:0;background:#3d6b52;color:#fff;font:inherit;font-weight:700;cursor:pointer">Simulate opening</button>
+        <button type="button" id="re-try" style="margin-top:6px;padding:10px;border-radius:999px;border:0;background:var(--sage-dark);color:#fff;font:inherit;font-weight:700;cursor:pointer">Simulate opening</button>
       `;
     } else if (tab === "pause") {
       scr.innerHTML = `
         <div style="text-align:center;display:grid;gap:12px;justify-items:center;padding-top:12px">
           <div style="font-weight:700">Take a breath before opening</div>
-          <div id="re-bubble" style="width:118px;height:118px;border-radius:50%;background:radial-gradient(circle,#7aa889,#3d6b52);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;transition:transform 1s ease;transform:scale(0.85)">Ready</div>
+          <div id="re-bubble" style="width:118px;height:118px;border-radius:50%;background:radial-gradient(circle,#7aa889,var(--sage-dark));color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;transition:transform 1s ease;transform:scale(0.85)">Ready</div>
           <p id="re-info" style="margin:0;font-size:12px;color:#5d615b">4s inhale / 6s exhale cycle</p>
-          <button type="button" id="re-btn" style="font:inherit;padding:9px 18px;border-radius:999px;border:0;background:#3d6b52;color:#fff;font-weight:700;cursor:pointer">${timer ? "Stop" : "Start"}</button>
+          <button type="button" id="re-btn" style="font:inherit;padding:9px 18px;border-radius:999px;border:0;background:var(--sage-dark);color:#fff;font-weight:700;cursor:pointer">${timer ? "Stop" : "Start"}</button>
         </div>
       `;
     } else {
@@ -132,7 +132,7 @@
       scr.innerHTML = `
         <div style="font-weight:800;font-size:16px">This week</div>
         <div style="background:#fff;border:1px solid #e1ddd3;border-radius:12px;padding:12px">
-          <div style="font-size:22px;font-weight:800;color:#3d6b52">18 times resisted</div>
+          <div style="font-size:22px;font-weight:800;color:var(--sage-dark)">18 times resisted</div>
           <div style="font-size:12px;color:#5d615b">~1h 15m saved from endless feeds</div>
         </div>
         <div style="background:#fff;border:1px solid #e1ddd3;border-radius:12px;padding:12px;font-size:12px">Peak temptation: 9 PM to 10 PM</div>

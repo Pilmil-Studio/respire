@@ -224,3 +224,81 @@ footer nav { display: flex; flex-wrap: wrap; gap: 20px; }
   .shots { grid-template-columns: 1fr; }
   .shot { max-width: min(240px, calc(100% - 12px)); }
 }
+
+/* ---- Navigation, boutons, focus ---- */
+.top { flex-wrap: wrap; }
+.top nav { flex-wrap: wrap; gap: 0 var(--space-3); }
+.top nav a, footer nav a { display: inline-flex; align-items: center; min-height: 44px; }
+.brand { min-height: 44px; }
+.btn { transition: filter var(--ease), box-shadow var(--ease), transform var(--ease); }
+.btn:active { transform: translateY(1px); }
+.btn-primary { box-shadow: var(--shadow-s); }
+.privacy-box :focus-visible { outline-color: #fff; }
+.privacy-box a { text-decoration-thickness: 2px; }
+.hero { padding-top: var(--space-6); padding-bottom: var(--space-7); }
+.fine, .lede { max-width: 34em; }
+
+/* ---- Cartes : une seule famille pour « Pour qui », « Ce que Respire ne fait pas », atelier ---- */
+#for .features > li, #limits .features > li, #studio .features > li {
+  background: var(--card); border: 1px solid var(--line); border-radius: var(--radius-m);
+  padding: var(--space-4); box-shadow: var(--shadow-s);
+}
+#for .features h3, #limits .features h3, #studio .features h3 { font-size: var(--step-1); line-height: 1.25; }
+#limits .features, #studio .features { gap: var(--space-4); }
+#studio .why { border-left: 0; padding-left: 0; font-size: var(--step-0); }
+#studio .why a { display: inline-flex; align-items: center; min-height: 44px; font-weight: 700; }
+.features .why { max-width: 32em; }
+
+/* ---- Questions fréquentes ---- */
+details { background: transparent; border-bottom: 1px solid var(--line); padding: 0; transition: background-color var(--ease); }
+details summary {
+  display: flex; align-items: center; justify-content: space-between; gap: var(--space-3);
+  min-height: 56px; padding: var(--space-2) var(--space-1); cursor: pointer; list-style: none;
+  font-weight: 700; font-size: var(--step-0);
+}
+details summary::-webkit-details-marker { display: none; }
+details summary::after {
+  content: ""; flex: none; width: 10px; height: 10px; margin-right: 4px;
+  border-right: 2px solid var(--sage-dark); border-bottom: 2px solid var(--sage-dark);
+  transform: rotate(45deg); transition: transform var(--ease);
+}
+details[open] summary::after { transform: rotate(-135deg); }
+details[open] { background: color-mix(in srgb, var(--card) 70%, transparent); }
+details summary:hover { color: var(--sage-dark); }
+details p { margin: 0; padding: 0 var(--space-1) var(--space-3); max-width: 38em; }
+details summary:focus-visible { outline-offset: -3px; }
+
+/* ---- Simulateur : cadre et boutons ---- */
+#simulateur button { min-height: 44px; transition: filter var(--ease), color var(--ease); }
+#simulateur button:hover { filter: brightness(1.08); }
+#simulateur .re-tab { min-width: 44px; }
+
+/* ---- Pied de page ---- */
+footer { margin-top: var(--space-5); }
+footer .wrap { align-items: center; }
+
+/* ---- Mouvement réduit ---- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; scroll-behavior: auto !important; }
+}
+
+/* ---- Mobile : 360 px ---- */
+@media (max-width: 420px) {
+  .hero { padding-top: var(--space-4); padding-bottom: var(--space-6); gap: var(--space-5); }
+  .btn { width: 100%; }
+  .privacy-box { border-radius: var(--radius-m); }
+  .breath figcaption { bottom: -44px; }
+  section { padding: var(--space-5) 0; }
+}
+
+/* ---- Impression (surtout la politique de confidentialité) ---- */
+@media print {
+  body { background: #fff; color: #000; font-size: 11pt; }
+  .top nav, .actions, .breath, #simulateur, footer nav { display: none; }
+  .doc { max-width: none; padding: 0; }
+  a { color: #000; text-decoration: underline; }
+  .doc a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 0.85em; }
+  .doc h2, .doc h3 { break-after: avoid; }
+  .doc li, .doc p { break-inside: avoid; }
+  section { padding: 12pt 0; }
+}
