@@ -87,7 +87,7 @@ Release builds (`assembleRelease`, `bundleRelease`) refuse to run without an upl
 
 ## How Respire is made
 
-Respire is a personal project by Relthdrarxash, published under the name Pilmil Studio. Contact: pilmil.studio@proton.me. The code was developed with the help of an AI assistant (Claude, by Anthropic): the app itself embeds no artificial intelligence, all its rules are purely deterministic, and I want to state this plainly.
+Respire is published by Pilmil Studio, an independent developer. Contact: pilmil.studio@proton.me. The code was developed with the help of an AI assistant (Claude, by Anthropic): the app itself embeds no artificial intelligence, all its rules are purely deterministic, and I want to state this plainly.
 
 What that means in practice:
 
@@ -98,7 +98,7 @@ What that means in practice:
 
 ## License
 
-Copyright (C) 2026 Relthdrarxash
+Copyright (C) 2026 Pilmil Studio
 
 Respire is free software, distributed under the [Mozilla Public License 2.0](LICENSE) (MPL-2.0): you can use, study, modify and redistribute it; files you modify must stay under the same license, with their source code.
 

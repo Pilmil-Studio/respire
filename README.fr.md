@@ -87,7 +87,7 @@ Les builds release (`assembleRelease`, `bundleRelease`) refusent de se lancer sa
 
 ## Comment Respire est fait
 
-Respire est un projet personnel de Relthdrarxash, publié sous le nom Pilmil Studio. Contact : pilmil.studio@proton.me. Le code a été développé avec l'aide d'un assistant IA (Claude, d'Anthropic) : l'application elle-même n'embarque aucune intelligence artificielle, toutes ses règles sont purement déterministes, et je préfère l'indiquer clairement.
+Respire est publiée par Pilmil Studio, développeur indépendant. Contact : pilmil.studio@proton.me. Le code a été développé avec l'aide d'un assistant IA (Claude, d'Anthropic) : l'application elle-même n'embarque aucune intelligence artificielle, toutes ses règles sont purement déterministes, et je préfère l'indiquer clairement.
 
 Concrètement :
 
@@ -98,7 +98,7 @@ Concrètement :
 
 ## Licence
 
-Copyright (C) 2026 Relthdrarxash
+Copyright (C) 2026 Pilmil Studio
 
 Respire est un logiciel libre, distribué sous licence [Mozilla Public License 2.0](LICENSE) (MPL-2.0) : tu peux l'utiliser, l'étudier, le modifier et le redistribuer ; les fichiers que tu modifies doivent rester publiés sous la même licence, avec leur code source.
 
