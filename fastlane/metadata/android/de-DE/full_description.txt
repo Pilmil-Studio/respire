@@ -20,4 +20,4 @@ Respire nutzt die Schnittstelle des Android-Bedienungshilfendienstes, die die Ap
 Freie Software
 Respire ist Open Source unter der MPL-2.0-Lizenz. Quellcode: https://github.com/Pilmil-Studio/respire
 
-Verfügbar auf Deutsch, Englisch, Französisch und Spanisch.
+Verfügbar auf Deutsch, Englisch, Französisch, Spanisch, Polnisch und Ukrainisch.

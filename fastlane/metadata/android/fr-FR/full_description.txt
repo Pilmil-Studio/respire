@@ -20,4 +20,4 @@ Respire utilise l’API du service d’accessibilité d’Android, dont elle a b
 Logiciel libre
 Respire est open source, sous licence MPL-2.0. Code source : https://github.com/Pilmil-Studio/respire
 
-Disponible en français, anglais, espagnol et allemand.
+Disponible en français, anglais, espagnol, allemand, polonais et ukrainien.
