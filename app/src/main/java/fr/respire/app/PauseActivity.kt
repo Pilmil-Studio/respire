@@ -75,7 +75,7 @@ class PauseActivity : ComponentActivity() {
         val riskStart = prefs.riskWindowStart(now)
         remaining.intValue = when {
             blocked -> 0
-            mode == MODE_SESSION_END -> prefs.baseDelay * (if (riskStart != null) 2 else 1)
+            mode == MODE_SESSION_END -> Rules.continueDelay(prefs.baseDelay, riskStart != null)
             else -> prefs.delayFor(pkg, now)
         }
 

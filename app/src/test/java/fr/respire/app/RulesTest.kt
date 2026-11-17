@@ -211,6 +211,20 @@ class RulesTest {
     }
 
     @Test
+    fun continueDelay_isCappedAt30() {
+        assertEquals(30, Rules.continueDelay(60, false))
+        assertEquals(30, Rules.continueDelay(25, true))
+    }
+
+    @Test
+    fun continueDelay_keepsLowerChosenValue() {
+        assertEquals(10, Rules.continueDelay(10, false))
+        assertEquals(30, Rules.continueDelay(30, false))
+        assertEquals(20, Rules.continueDelay(10, true))
+        assertEquals(3, Rules.continueDelay(3, false))
+    }
+
+    @Test
     fun delay_cappedAtMax() {
         assertEquals(Rules.MAX_DELAY_S, Rules.delay(60, 15, 10, true))
         assertEquals(Rules.MAX_DELAY_S, Rules.delay(60, 15, 4, false))

@@ -18,6 +18,9 @@ object Rules {
     /** Attente maximale, en secondes, quelles que soient les règles. */
     const val MAX_DELAY_S = 90
 
+    /** Plafond de l'attente avant « Continuer » (fin de session), en secondes. */
+    const val MAX_CONTINUE_DELAY_S = 30
+
     /**
      * Heures couvertes par une plage [start, end[ (0-23), en passant minuit si besoin.
      * start == end : toute la journée.
@@ -86,6 +89,13 @@ object Rules {
         val raw = base + step * previous
         return (raw * (if (inRisk) 2 else 1)).coerceAtMost(MAX_DELAY_S)
     }
+
+    /**
+     * Attente avant « Continuer » en fin de session : le délai de base (doublé pendant les heures
+     * à risque), plafonné à [MAX_CONTINUE_DELAY_S]. Une valeur choisie plus basse n'est pas modifiée.
+     */
+    fun continueDelay(base: Int, inRisk: Boolean): Int =
+        (base * (if (inRisk) 2 else 1)).coerceAtMost(MAX_CONTINUE_DELAY_S)
 
     /**
      * Le nouveau réglage des heures à risque est-il plus permissif que l'ancien ?
