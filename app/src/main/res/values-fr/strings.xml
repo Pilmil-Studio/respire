@@ -6,14 +6,14 @@
     <string name="pause_hint_breathe">Inspire quand le cercle grandit, expire quand il rétrécit.</string>
     <string name="pause_hint_ready">Si c’est vraiment utile, tu peux y aller.</string>
     <string name="pause_title_blocked">Quota du jour atteint.</string>
-    <string name="pause_title_session">Ça fait %1$d min.\nTu continues vraiment ?</string>
-    <string name="pause_title_open">Pourquoi tu l’ouvres maintenant ?</string>
+    <string name="pause_title_session">Ça fait %1$d min.\nContinuer ?</string>
+    <string name="pause_title_open">Ouvrir maintenant ?</string>
     <string name="pause_opens_quota">Ouvertures aujourd’hui : %1$d / %2$d</string>
     <string name="pause_opens">Ouvertures aujourd’hui : %1$d</string>
     <string name="breath_in">Inspire</string>
     <string name="breath_out">Expire</string>
-    <string name="pause_close">Non, je ferme</string>
-    <string name="pause_open">Ouvrir quand même</string>
+    <string name="pause_close">Fermer</string>
+    <string name="pause_open">Ouvrir</string>
     <string name="pause_continue">Continuer</string>
     <string name="pause_wait">%1$s dans %2$d s</string>
     <string name="home_active">Actif</string>
@@ -182,7 +182,7 @@ Ce qu’elle en fait : ces informations sont utilisées sur ton téléphone uniq
     <string name="notif_channel">Respire</string>
     <string name="notif_stopped_title">Respire est en pause</string>
     <string name="notif_stopped_text">Android a coupé le service Respire : les pauses ne s’affichent plus. Touche pour le réactiver.</string>
-    <string name="toast_giveup">Bien joué : environ %1$d min de gagnées.</string>
+    <string name="toast_giveup">Environ %1$d min gagnées (estimation).</string>
     <string name="start_title">Pour commencer</string>
     <string name="start_step_apps">1. Choisis les applis que tu ouvres par réflexe</string>
     <string name="start_suggest">Suggestions, touche pour ajouter :</string>

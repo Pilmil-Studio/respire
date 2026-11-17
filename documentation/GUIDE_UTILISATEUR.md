@@ -45,5 +45,5 @@ L'assistant d'accueil comporte **4 étapes** :
 Lorsqu'une application encadrée est lancée, `PauseActivity` s'interpose avant son affichage :
 1. **Respiration guidée** (`BreathingCircles`) : animation visuelle uniquement (cycle 4 s inspiration / 6 s expiration, sans audio ni vibration sur Android pour rester discret).
 2. **Décision** :
-   - **« Non, je ferme »** : retour immédiat à l'écran d'accueil, comptabilisé comme ouverture évitée.
-   - **« Ouvrir quand même »** : disponible uniquement à l'issue du compte à rebours configuré.
+   - **« Fermer »** : retour immédiat à l'écran d'accueil, comptabilisé comme ouverture évitée.
+   - **« Ouvrir »** : disponible uniquement à l'issue du compte à rebours configuré.

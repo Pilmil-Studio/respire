@@ -6,14 +6,14 @@
     <string name="pause_hint_breathe">Atme ein, wenn der Kreis wächst, und aus, wenn er schrumpft.</string>
     <string name="pause_hint_ready">Wenn es wirklich nützlich ist, nur zu.</string>
     <string name="pause_title_blocked">Tageslimit erreicht.</string>
-    <string name="pause_title_session">Schon %1$d Min.\nWirklich weiter?</string>
-    <string name="pause_title_open">Warum öffnest du sie gerade?</string>
+    <string name="pause_title_session">Schon %1$d Min.\nWeiter?</string>
+    <string name="pause_title_open">Jetzt öffnen?</string>
     <string name="pause_opens_quota">Heute geöffnet: %1$d / %2$d</string>
     <string name="pause_opens">Heute geöffnet: %1$d</string>
     <string name="breath_in">Einatmen</string>
     <string name="breath_out">Ausatmen</string>
-    <string name="pause_close">Nein, schließen</string>
-    <string name="pause_open">Trotzdem öffnen</string>
+    <string name="pause_close">Schließen</string>
+    <string name="pause_open">Öffnen</string>
     <string name="pause_continue">Weiter</string>
     <string name="pause_wait">%1$s in %2$d s</string>
     <string name="home_active">Aktiv</string>
@@ -179,7 +179,7 @@ Was damit passiert: Die Daten werden nur auf deinem Handy verwendet, in dem Mome
     <string name="notif_channel">Respire</string>
     <string name="notif_stopped_title">Respire ist pausiert</string>
     <string name="notif_stopped_text">Android hat den Respire-Dienst beendet: Die Pausen erscheinen nicht mehr. Tippe, um ihn wieder einzuschalten.</string>
-    <string name="toast_giveup">Gut gemacht: etwa %1$d Min. gewonnen.</string>
+    <string name="toast_giveup">Etwa %1$d Min. gewonnen (Schätzung).</string>
     <string name="start_title">Erste Schritte</string>
     <string name="start_step_apps">1. Wähle die Apps, die du aus Gewohnheit öffnest</string>
     <string name="start_suggest">Vorschläge, zum Hinzufügen tippen:</string>

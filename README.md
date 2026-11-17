@@ -20,7 +20,7 @@ The app keeps only what you need: the explanations live here and on the page [Wh
 
 | Feature | What it does | Why |
 |---|---|---|
-| **Pause before opening** | A breathing screen with a countdown and the question "Why are you opening it now?". Closing is available immediately, opening only once the countdown ends. | Friction before opening social apps reduced opening attempts and made openings more intentional (Grüning, Riedel & Lorenz-Spreen, *PNAS* 2023; Haliburton et al., *CHI* 2024). |
+| **Pause before opening** | A breathing screen with a countdown and the question "Open it now?". Closing is available immediately, opening only once the countdown ends. | Friction before opening social apps reduced opening attempts and made openings more intentional (Grüning, Riedel & Lorenz-Spreen, *PNAS* 2023; Haliburton et al., *CHI* 2024). |
 | **Growing delay** | Each new attempt within the hour adds a few seconds. | Design choice: same friction principle, stronger when the urge repeats. No study compares a fixed and a growing wait. |
 | **Session end** | An opening only lasts a set time (10 min by default). If you are still in the app after this duration, the pause returns mid-scroll to create an exit point. | Design choice: an endless feed offers no moment to stop; session end creates one. |
 | **Daily limit** | After a set number of opens per app per day, the app is blocked until tomorrow. Extending a session counts as an open. | Hard-to-override limits cut social media use by about 16% over 12 weeks, and most people kept them (Allcott, Gentzkow & Song, *American Economic Review* 2022). |

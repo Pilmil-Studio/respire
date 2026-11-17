@@ -2,7 +2,7 @@ Respire place une courte pause de respiration devant les applis que tu ouvres sa
 
 Chaque fonction vient de la recherche sur l’usage excessif du smartphone :
 
-• Une pause avant d’ouvrir : un écran de respiration, un compte à rebours et une question (« Pourquoi tu l’ouvres maintenant ? »). Fermer est possible tout de suite, ouvrir seulement à la fin du décompte.
+• Une pause avant d’ouvrir : un écran de respiration, un compte à rebours et une question (« Ouvrir maintenant ? »). Fermer est possible tout de suite, ouvrir seulement à la fin du décompte.
 • Une attente qui s’allonge : chaque nouvelle tentative dans l’heure ajoute quelques secondes.
 • Fin de session : après 10 minutes dans une appli freinée, la pause revient au milieu du fil.
 • Quota quotidien : au-delà d’un nombre d’ouvertures, l’appli reste fermée jusqu’au lendemain.

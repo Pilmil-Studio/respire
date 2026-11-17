@@ -6,14 +6,14 @@
     <string name="pause_hint_breathe">Weź wdech, gdy koło rośnie, i wydech, gdy maleje.</string>
     <string name="pause_hint_ready">Jeśli to naprawdę potrzebne, śmiało.</string>
     <string name="pause_title_blocked">Osiągnięto dzienny limit.</string>
-    <string name="pause_title_session">Minęło %1$d min.\nZostajesz dalej?</string>
-    <string name="pause_title_open">Po co teraz otwierasz tę aplikację?</string>
+    <string name="pause_title_session">Minęło %1$d min.\nKontynuować?</string>
+    <string name="pause_title_open">Otworzyć teraz?</string>
     <string name="pause_opens_quota">Otwarcia dzisiaj: %1$d / %2$d</string>
     <string name="pause_opens">Otwarcia dzisiaj: %1$d</string>
     <string name="breath_in">Wdech</string>
     <string name="breath_out">Wydech</string>
-    <string name="pause_close">Nie, zamknij</string>
-    <string name="pause_open">Otwórz mimo to</string>
+    <string name="pause_close">Zamknij</string>
+    <string name="pause_open">Otwórz</string>
     <string name="pause_continue">Kontynuuj</string>
     <string name="pause_wait">%1$s za %2$d s</string>
     <string name="home_active">Aktywna</string>
@@ -185,7 +185,7 @@ Co dzieje się z danymi: wszystko zostaje wyłącznie w telefonie. Respire nie m
     <string name="notif_channel">Respire</string>
     <string name="notif_stopped_title">Respire jest wstrzymane</string>
     <string name="notif_stopped_text">Android wyłączył usługę Respire: przerwy już się nie wyświetlają. Dotknij, aby ją ponownie włączyć.</string>
-    <string name="toast_giveup">Brawo: odzyskane ok. %1$d min.</string>
+    <string name="toast_giveup">Odzyskane ok. %1$d min (szacunek).</string>
     <string name="start_title">Na początek</string>
     <string name="start_step_apps">1. Wybierz aplikacje, które otwierasz odruchowo</string>
     <string name="start_suggest">Propozycje, dotknij, aby dodać:</string>

@@ -7,14 +7,14 @@
     <string name="pause_hint_breathe">Breathe in as the circle grows, out as it shrinks.</string>
     <string name="pause_hint_ready">If it’s really useful, go ahead.</string>
     <string name="pause_title_blocked">Daily limit reached.</string>
-    <string name="pause_title_session">That’s %1$d min.\nStill going?</string>
-    <string name="pause_title_open">Why are you opening it now?</string>
+    <string name="pause_title_session">That’s %1$d min.\nContinue?</string>
+    <string name="pause_title_open">Open it now?</string>
     <string name="pause_opens_quota">Opens today: %1$d / %2$d</string>
     <string name="pause_opens">Opens today: %1$d</string>
     <string name="breath_in">Breathe in</string>
     <string name="breath_out">Breathe out</string>
-    <string name="pause_close">No, close it</string>
-    <string name="pause_open">Open anyway</string>
+    <string name="pause_close">Close</string>
+    <string name="pause_open">Open</string>
     <string name="pause_continue">Continue</string>
     <string name="pause_wait">%1$s in %2$d s</string>
     <string name="home_active">Active</string>
@@ -184,7 +184,7 @@ What happens to it: it is used on your phone only, at the moment it is accessed.
     <string name="notif_channel">Respire</string>
     <string name="notif_stopped_title">Respire is paused</string>
     <string name="notif_stopped_text">Android turned off the Respire service: pauses no longer appear. Tap to turn it back on.</string>
-    <string name="toast_giveup">Well done: about %1$d min won back.</string>
+    <string name="toast_giveup">About %1$d min won back (estimate).</string>
     <string name="start_title">Getting started</string>
     <string name="start_step_apps">1. Choose the apps you open on autopilot</string>
     <string name="start_suggest">Suggestions, tap to add:</string>
