@@ -5,6 +5,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ExperimentalLayoutApi
 import androidx.compose.foundation.layout.FlowRow
@@ -14,11 +15,14 @@ import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.systemBarsPadding
 import androidx.compose.foundation.layout.widthIn
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
@@ -63,135 +67,144 @@ fun PauseScreen(
     onOpen: () -> Unit,
 ) {
     var selectedReason by remember { mutableStateOf<Int?>(null) }
-    Column(
+    // L'écran défile (petit écran, police agrandie) ; la hauteur minimale garde les Spacer à poids
+    // en place quand tout tient : Column utilise alors cette hauteur minimale comme cible.
+    BoxWithConstraints(
         Modifier
             .fillMaxSize()
             .background(Calme.Ground)
-            .systemBarsPadding()
-            .padding(start = 28.dp, end = 28.dp, top = 28.dp, bottom = 20.dp),
-        horizontalAlignment = Alignment.CenterHorizontally,
+            .systemBarsPadding(),
     ) {
-        AppChip(ui.appLabel, ui.appIcon)
-
-        Spacer(Modifier.weight(0.6f))
-
-        BreathingCircles(
+        Column(
             Modifier
-                .fillMaxWidth(0.72f)
-                .widthIn(max = 300.dp)
-                .aspectRatio(1f)
+                .fillMaxWidth()
+                .heightIn(min = maxHeight)
+                .verticalScroll(rememberScrollState())
+                .padding(start = 28.dp, end = 28.dp, top = 28.dp, bottom = 20.dp),
+            horizontalAlignment = Alignment.CenterHorizontally,
         ) {
-            if (remaining > 0) {
-                Text(
-                    remaining.toString(),
-                    fontFamily = Fraunces,
-                    fontWeight = FontWeight.Normal,
-                    fontSize = 64.sp,
-                    color = Calme.Ink,
-                )
-            }
-        }
+            AppChip(ui.appLabel, ui.appIcon)
 
-        Text(
-            text = when {
-                ui.riskBlocked -> stringResource(R.string.pause_hint_risk)
-                ui.blocked -> stringResource(R.string.pause_hint_blocked)
-                remaining > 0 -> stringResource(R.string.pause_hint_breathe)
-                else -> stringResource(R.string.pause_hint_ready)
-            },
-            modifier = Modifier.padding(top = 20.dp),
-            fontFamily = Nunito,
-            fontSize = 15.sp,
-            color = Calme.Muted,
-            textAlign = TextAlign.Center,
-        )
+            Spacer(Modifier.weight(0.6f))
 
-        Text(
-            text = when {
-                ui.riskBlocked -> stringResource(R.string.pause_title_risk, ui.riskEnd)
-                ui.blocked -> stringResource(R.string.pause_title_blocked)
-                ui.sessionEnd -> stringResource(R.string.pause_title_session, ui.sessionMinutes)
-                else -> stringResource(R.string.pause_title_open)
-            },
-            modifier = Modifier.padding(top = 32.dp),
-            fontFamily = Fraunces,
-            fontWeight = FontWeight.SemiBold,
-            fontSize = 28.sp,
-            lineHeight = 34.sp,
-            color = Calme.Ink,
-            textAlign = TextAlign.Center,
-        )
-
-        Text(
-            text = if (ui.riskOpens != null) {
-                stringResource(R.string.pause_opens_risk, ui.riskOpens, ui.riskQuota)
-            } else if (ui.quota > 0) {
-                stringResource(R.string.pause_opens_quota, ui.opensToday, ui.quota)
-            } else {
-                stringResource(R.string.pause_opens, ui.opensToday)
-            },
-            modifier = Modifier.padding(top = 12.dp),
-            fontFamily = Nunito,
-            fontSize = 15.sp,
-            color = Calme.Muted,
-        )
-
-        if (!ui.blocked && !ui.sessionEnd) {
-            val reasons = listOf(
-                R.string.pause_reason_msg,
-                R.string.pause_reason_lookup,
-                R.string.pause_reason_habit,
-            )
-            // FlowRow et non Row : trois pastilles ne tiennent pas toujours sur une ligne (écran étroit, police agrandie).
-            // Avec une Row, la dernière était écrasée et son libellé coupé lettre par lettre ; ici la pastille passe à la ligne entière.
-            FlowRow(
-                Modifier.padding(top = 14.dp),
-                horizontalArrangement = Arrangement.spacedBy(8.dp, Alignment.CenterHorizontally),
-                verticalArrangement = Arrangement.spacedBy(8.dp),
+            BreathingCircles(
+                Modifier
+                    .fillMaxWidth(0.72f)
+                    .widthIn(max = 300.dp)
+                    .aspectRatio(1f)
             ) {
-                reasons.forEachIndexed { idx, resId ->
-                    val chosen = selectedReason == idx
-                    Box(
-                        Modifier
-                            .clip(RoundedCornerShape(50))
-                            .background(if (chosen) Calme.SageTint else Calme.Chip)
-                            .clickable(role = Role.RadioButton) { selectedReason = if (chosen) null else idx }
-                            .padding(horizontal = 12.dp, vertical = 6.dp),
-                    ) {
-                        Text(
-                            stringResource(resId),
-                            fontFamily = Nunito,
-                            fontWeight = if (chosen) FontWeight.Bold else FontWeight.SemiBold,
-                            fontSize = 13.sp,
-                            textAlign = TextAlign.Center,
-                            color = if (chosen) Calme.SageDark else Calme.InkSoft,
-                        )
+                if (remaining > 0) {
+                    Text(
+                        remaining.toString(),
+                        fontFamily = Fraunces,
+                        fontWeight = FontWeight.Normal,
+                        fontSize = 64.sp,
+                        color = Calme.Ink,
+                    )
+                }
+            }
+
+            Text(
+                text = when {
+                    ui.riskBlocked -> stringResource(R.string.pause_hint_risk)
+                    ui.blocked -> stringResource(R.string.pause_hint_blocked)
+                    remaining > 0 -> stringResource(R.string.pause_hint_breathe)
+                    else -> stringResource(R.string.pause_hint_ready)
+                },
+                modifier = Modifier.padding(top = 20.dp),
+                fontFamily = Nunito,
+                fontSize = 15.sp,
+                color = Calme.Muted,
+                textAlign = TextAlign.Center,
+            )
+
+            Text(
+                text = when {
+                    ui.riskBlocked -> stringResource(R.string.pause_title_risk, ui.riskEnd)
+                    ui.blocked -> stringResource(R.string.pause_title_blocked)
+                    ui.sessionEnd -> stringResource(R.string.pause_title_session, ui.sessionMinutes)
+                    else -> stringResource(R.string.pause_title_open)
+                },
+                modifier = Modifier.padding(top = 32.dp),
+                fontFamily = Fraunces,
+                fontWeight = FontWeight.SemiBold,
+                fontSize = 28.sp,
+                lineHeight = 34.sp,
+                color = Calme.Ink,
+                textAlign = TextAlign.Center,
+            )
+
+            Text(
+                text = if (ui.riskOpens != null) {
+                    stringResource(R.string.pause_opens_risk, ui.riskOpens, ui.riskQuota)
+                } else if (ui.quota > 0) {
+                    stringResource(R.string.pause_opens_quota, ui.opensToday, ui.quota)
+                } else {
+                    stringResource(R.string.pause_opens, ui.opensToday)
+                },
+                modifier = Modifier.padding(top = 12.dp),
+                fontFamily = Nunito,
+                fontSize = 15.sp,
+                color = Calme.Muted,
+            )
+
+            if (!ui.blocked && !ui.sessionEnd) {
+                val reasons = listOf(
+                    R.string.pause_reason_msg,
+                    R.string.pause_reason_lookup,
+                    R.string.pause_reason_habit,
+                )
+                // FlowRow et non Row : trois pastilles ne tiennent pas toujours sur une ligne (écran étroit, police agrandie).
+                // Avec une Row, la dernière était écrasée et son libellé coupé lettre par lettre ; ici la pastille passe à la ligne entière.
+                FlowRow(
+                    Modifier.padding(top = 14.dp),
+                    horizontalArrangement = Arrangement.spacedBy(8.dp, Alignment.CenterHorizontally),
+                    verticalArrangement = Arrangement.spacedBy(8.dp),
+                ) {
+                    reasons.forEachIndexed { idx, resId ->
+                        val chosen = selectedReason == idx
+                        Box(
+                            Modifier
+                                .clip(RoundedCornerShape(50))
+                                .background(if (chosen) Calme.SageTint else Calme.Chip)
+                                .clickable(role = Role.RadioButton) { selectedReason = if (chosen) null else idx }
+                                .padding(horizontal = 12.dp, vertical = 6.dp),
+                        ) {
+                            Text(
+                                stringResource(resId),
+                                fontFamily = Nunito,
+                                fontWeight = if (chosen) FontWeight.Bold else FontWeight.SemiBold,
+                                fontSize = 13.sp,
+                                textAlign = TextAlign.Center,
+                                color = if (chosen) Calme.SageDark else Calme.InkSoft,
+                            )
+                        }
                     }
                 }
             }
-        }
 
-        Spacer(Modifier.weight(1f))
+            Spacer(Modifier.weight(1f))
 
-        PillButton(stringResource(R.string.pause_close), onClick = onClose)
+            PillButton(stringResource(R.string.pause_close), onClick = onClose)
 
-        if (!ui.blocked) {
-            val verb = stringResource(if (ui.sessionEnd) R.string.pause_continue else R.string.pause_open)
-            TextButton(
-                onClick = onOpen,
-                enabled = remaining == 0,
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(top = 8.dp)
-                    .height(48.dp),
-            ) {
-                Text(
-                    if (remaining > 0) stringResource(R.string.pause_wait, verb, remaining) else verb,
-                    fontFamily = Nunito,
-                    fontWeight = FontWeight.SemiBold,
-                    fontSize = 15.sp,
-                    color = if (remaining == 0) Calme.SageDark else Calme.Muted,
-                )
+            if (!ui.blocked) {
+                val verb = stringResource(if (ui.sessionEnd) R.string.pause_continue else R.string.pause_open)
+                TextButton(
+                    onClick = onOpen,
+                    enabled = remaining == 0,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(top = 8.dp)
+                        .height(48.dp),
+                ) {
+                    Text(
+                        if (remaining > 0) stringResource(R.string.pause_wait, verb, remaining) else verb,
+                        fontFamily = Nunito,
+                        fontWeight = FontWeight.SemiBold,
+                        fontSize = 15.sp,
+                        color = if (remaining == 0) Calme.SageDark else Calme.Muted,
+                    )
+                }
             }
         }
     }
