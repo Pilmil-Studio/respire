@@ -26,7 +26,7 @@
     <string name="stats_none">aucune pause\npour l’instant</string>
     <string name="stats_week">Renoncements sur 7 jours</string>
     <string name="stats_shorts">Reels et Shorts écartés aujourd’hui : %1$d</string>
-    <string name="stats_time_saved">≈ %1$d min épargnées aujourd’hui · %2$d min sur 7 jours</string>
+    <string name="stats_time_saved">≈ %1$d min épargnées aujourd’hui (estimation) · %2$d min sur 7 jours</string>
     <string name="stats_share">Partager mon bilan sur 7 jours</string>
     <string name="widget_description">Renoncements du jour et temps estimé épargné</string>
     <string name="widget_title">Respire · Aujourd’hui</string>
@@ -190,7 +190,7 @@ Ce qu’elle en fait : ces informations sont utilisées sur ton téléphone uniq
     <string name="start_step_notif">3. Facultatif : être prévenu si Android coupe Respire</string>
     <string name="start_notif_button">Autoriser les notifications</string>
     <string name="start_done">Fait</string>
-    <string name="stats_week_saved">≈ %1$d min gagnées sur cette semaine</string>
+    <string name="stats_week_saved">≈ %1$d min gagnées sur cette semaine (estimation)</string>
     <plurals name="stats_week_giveups">
         <item quantity="one">%d renoncement cette semaine-là</item>
         <item quantity="other">%d renoncements cette semaine-là</item>

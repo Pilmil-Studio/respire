@@ -27,7 +27,7 @@
     <string name="stats_none">no pauses\nyet</string>
     <string name="stats_week">Gave up, last 7 days</string>
     <string name="stats_shorts">Reels and Shorts skipped today: %1$d</string>
-    <string name="stats_time_saved">≈ %1$d min saved today · %2$d min over 7 days</string>
+    <string name="stats_time_saved">≈ %1$d min saved today (estimate) · %2$d min over 7 days</string>
     <string name="stats_share">Share my 7-day summary</string>
     <string name="widget_description">Avoided openings and estimated time saved</string>
     <string name="widget_title">Respire · Today</string>
@@ -192,7 +192,7 @@ What happens to it: it is used on your phone only, at the moment it is accessed.
     <string name="start_step_notif">3. Optional: be warned if Android stops Respire</string>
     <string name="start_notif_button">Allow notifications</string>
     <string name="start_done">Done</string>
-    <string name="stats_week_saved">≈ %1$d min won back that week</string>
+    <string name="stats_week_saved">≈ %1$d min won back that week (estimate)</string>
     <plurals name="stats_week_giveups">
         <item quantity="one">%d give-up that week</item>
         <item quantity="other">%d give-ups that week</item>

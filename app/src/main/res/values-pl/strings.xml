@@ -26,7 +26,7 @@
     <string name="stats_none">jeszcze brak\nprzerw</string>
     <string name="stats_week">Rezygnacje z otwarcia (ostatnie 7 dni)</string>
     <string name="stats_shorts">Pominięte dziś Reels i Shorts: %1$d</string>
-    <string name="stats_time_saved">≈ %1$d min zaoszczędzone dziś · %2$d min w 7 dni</string>
+    <string name="stats_time_saved">≈ %1$d min zaoszczędzone dziś (szacunek) · %2$d min w 7 dni</string>
     <string name="stats_share">Udostępnij podsumowanie 7 dni</string>
     <string name="widget_description">Uniknięte otwarcia i szacowany zaoszczędzony czas</string>
     <string name="widget_title">Respire · Dzisiaj</string>
@@ -193,7 +193,7 @@ Co dzieje się z danymi: wszystko zostaje wyłącznie w telefonie. Respire nie m
     <string name="start_step_notif">3. Opcjonalnie: ostrzeżenie, gdy Android wyłączy Respire</string>
     <string name="start_notif_button">Zezwól na powiadomienia</string>
     <string name="start_done">Gotowe</string>
-    <string name="stats_week_saved">≈ %1$d min odzyskanych w tym tygodniu</string>
+    <string name="stats_week_saved">≈ %1$d min odzyskanych w tym tygodniu (szacunek)</string>
     <plurals name="stats_week_giveups">
         <item quantity="one">%d rezygnacja w tym tygodniu</item>
         <item quantity="few">%d rezygnacje w tym tygodniu</item>
