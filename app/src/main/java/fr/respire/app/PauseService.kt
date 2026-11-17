@@ -2,6 +2,7 @@ package fr.respire.app
 
 import android.accessibilityservice.AccessibilityService
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Handler
 import android.os.HandlerThread
 import android.os.Looper
@@ -41,8 +42,24 @@ class PauseService : AccessibilityService() {
     override fun onServiceConnected() {
         super.onServiceConnected()
         ignored = computeIgnored()
+        applyEventTypes()
+        prefs.registerShortFilterListener(shortFilterListener)
         // La version 3.3 mémorisait des identifiants trop larges : on les efface.
         prefs.clearLearnedShortIds()
+    }
+
+    // Référence forte : SharedPreferences ne garde que des références faibles à ses écouteurs.
+    private val shortFilterListener = SharedPreferences.OnSharedPreferenceChangeListener { _, key ->
+        if (key == null || key in Prefs.SHORT_FILTER_KEYS) applyEventTypes()
+    }
+
+    /** Minimum (changements de fenêtre) tant que le filtre est coupé ; élargi quand il est activé. */
+    private fun applyEventTypes() {
+        val info = serviceInfo ?: return
+        val types = ServiceEventTypes.forShortFilter(prefs.anyShortFilter)
+        if (info.eventTypes == types) return
+        info.eventTypes = types
+        serviceInfo = info
     }
 
     /** Fenêtres qui ne doivent pas compter comme « changer d'appli » (clavier, barre système). */
@@ -220,6 +237,7 @@ class PauseService : AccessibilityService() {
     override fun onInterrupt() = Unit
 
     override fun onDestroy() {
+        prefs.unregisterShortFilterListener(shortFilterListener)
         handler.removeCallbacksAndMessages(null)
         shortHandler.removeCallbacksAndMessages(null)
         shortThread.quitSafely()

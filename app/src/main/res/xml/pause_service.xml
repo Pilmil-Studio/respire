@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
+  accessibilityEventTypes : le minimum, car le service ne peut pas deviner ce que décidera la
+  personne. PauseService (ServiceEventTypes) élargit les types à l'activation du filtre
+  Reels / Shorts et revient à ce minimum à sa désactivation.
   canRetrieveWindowContent : nécessaire uniquement pour l'option Reels / Shorts.
   Le service ne consulte le contenu que dans Instagram et YouTube, et seulement
   les identifiants techniques des vues (voir ShortFormBlocker.kt).
 -->
 <accessibility-service xmlns:android="http://schemas.android.com/apk/res/android"
-    android:accessibilityEventTypes="typeWindowStateChanged|typeWindowContentChanged|typeViewScrolled"
+    android:accessibilityEventTypes="typeWindowStateChanged"
     android:accessibilityFeedbackType="feedbackGeneric"
     android:accessibilityFlags="flagReportViewIds|flagRetrieveInteractiveWindows"
     android:canRetrieveWindowContent="true"

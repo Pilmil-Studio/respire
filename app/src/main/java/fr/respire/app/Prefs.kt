@@ -51,8 +51,19 @@ class Prefs(context: Context) {
 
     /** Masquer les Reels de Facebook (en test). */
     var blockFacebookReels: Boolean
-        get() = sp.getBoolean("block_fb_reels", false)
-        set(v) = sp.edit().putBoolean("block_fb_reels", v).apply()
+        get() = sp.getBoolean(K_FB_REELS, false)
+        set(v) = sp.edit().putBoolean(K_FB_REELS, v).apply()
+
+    /** Au moins un des filtres Reels / Shorts est activé. */
+    val anyShortFilter: Boolean
+        get() = blockReels || blockShorts || blockFacebookReels
+
+    /** Prévient quand un des réglages de filtre Reels / Shorts change. Garder l'écouteur en référence forte. */
+    fun registerShortFilterListener(listener: SharedPreferences.OnSharedPreferenceChangeListener) =
+        sp.registerOnSharedPreferenceChangeListener(listener)
+
+    fun unregisterShortFilterListener(listener: SharedPreferences.OnSharedPreferenceChangeListener) =
+        sp.unregisterOnSharedPreferenceChangeListener(listener)
 
     /** L'utilisateur a accepté l'écran d'information sur l'accessibilité (exigé par Google Play). */
     var accessibilityConsent: Boolean
@@ -379,6 +390,8 @@ class Prefs(context: Context) {
         private const val K_QUOTA = "daily_quota"
         private const val K_REELS = "block_reels"
         private const val K_SHORTS = "block_shorts"
+        const val K_FB_REELS = "block_fb_reels"
+        val SHORT_FILTER_KEYS = setOf(K_REELS, K_SHORTS, K_FB_REELS)
         private const val K_RISK_ON = "risk_on"
         private const val K_RISK_START = "risk_start"
         private const val K_RISK_END = "risk_end"
