@@ -10,6 +10,8 @@
     <string name="pause_title_open">Навіщо ви відкриваєте це зараз?</string>
     <string name="pause_opens_quota">Відкриттів сьогодні: %1$d / %2$d</string>
     <string name="pause_opens">Відкриттів сьогодні: %1$d</string>
+    <string name="breath_in">Вдих</string>
+    <string name="breath_out">Видих</string>
     <string name="pause_close">Ні, закрити</string>
     <string name="pause_open">Все одно відкрити</string>
     <string name="pause_continue">Продовжити</string>

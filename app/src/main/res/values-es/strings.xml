@@ -10,6 +10,8 @@
     <string name="pause_title_open">¿Por qué la abres ahora?</string>
     <string name="pause_opens_quota">Aperturas hoy: %1$d / %2$d</string>
     <string name="pause_opens">Aperturas hoy: %1$d</string>
+    <string name="breath_in">Inspira</string>
+    <string name="breath_out">Espira</string>
     <string name="pause_close">No, la cierro</string>
     <string name="pause_open">Abrir de todos modos</string>
     <string name="pause_continue">Continuar</string>

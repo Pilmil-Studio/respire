@@ -10,6 +10,8 @@
     <string name="pause_title_open">Po co teraz otwierasz tę aplikację?</string>
     <string name="pause_opens_quota">Otwarcia dzisiaj: %1$d / %2$d</string>
     <string name="pause_opens">Otwarcia dzisiaj: %1$d</string>
+    <string name="breath_in">Wdech</string>
+    <string name="breath_out">Wydech</string>
     <string name="pause_close">Nie, zamknij</string>
     <string name="pause_open">Otwórz mimo to</string>
     <string name="pause_continue">Kontynuuj</string>

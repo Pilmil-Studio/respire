@@ -10,6 +10,8 @@
     <string name="pause_title_open">Warum öffnest du sie gerade?</string>
     <string name="pause_opens_quota">Heute geöffnet: %1$d / %2$d</string>
     <string name="pause_opens">Heute geöffnet: %1$d</string>
+    <string name="breath_in">Einatmen</string>
+    <string name="breath_out">Ausatmen</string>
     <string name="pause_close">Nein, schließen</string>
     <string name="pause_open">Trotzdem öffnen</string>
     <string name="pause_continue">Weiter</string>

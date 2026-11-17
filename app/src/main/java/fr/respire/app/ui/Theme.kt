@@ -24,6 +24,8 @@ object Calme {
     val Ring1 = Color(0xFFD8DFD3)
     val Ring2 = Color(0xFFC3D1C4)
     val Ring3 = Color(0xFFA9C0AF)
+    /** Liseré des anneaux de respiration : au moins 3:1 face au fond et à chaque anneau (RingContrastTest). */
+    val RingEdge = SageDark
     val Clay = Color(0xFFA0613E)
     val ClayText = Color(0xFF8A4A2B)
 }

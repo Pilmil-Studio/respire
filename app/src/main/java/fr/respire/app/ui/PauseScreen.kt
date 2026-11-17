@@ -92,13 +92,22 @@ fun PauseScreen(
                     .fillMaxWidth(0.72f)
                     .widthIn(max = 300.dp)
                     .aspectRatio(1f)
-            ) {
-                if (remaining > 0) {
+            ) { inhaling ->
+                Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                    if (remaining > 0) {
+                        Text(
+                            remaining.toString(),
+                            fontFamily = Fraunces,
+                            fontWeight = FontWeight.Normal,
+                            fontSize = 64.sp,
+                            color = Calme.Ink,
+                        )
+                    }
                     Text(
-                        remaining.toString(),
-                        fontFamily = Fraunces,
-                        fontWeight = FontWeight.Normal,
-                        fontSize = 64.sp,
+                        stringResource(if (inhaling) R.string.breath_in else R.string.breath_out),
+                        fontFamily = Nunito,
+                        fontWeight = FontWeight.SemiBold,
+                        fontSize = 16.sp,
                         color = Calme.Ink,
                     )
                 }

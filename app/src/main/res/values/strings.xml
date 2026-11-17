@@ -11,6 +11,8 @@
     <string name="pause_title_open">Why are you opening it now?</string>
     <string name="pause_opens_quota">Opens today: %1$d / %2$d</string>
     <string name="pause_opens">Opens today: %1$d</string>
+    <string name="breath_in">Breathe in</string>
+    <string name="breath_out">Breathe out</string>
     <string name="pause_close">No, close it</string>
     <string name="pause_open">Open anyway</string>
     <string name="pause_continue">Continue</string>
