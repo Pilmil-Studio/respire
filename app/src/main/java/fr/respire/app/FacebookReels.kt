@@ -55,14 +55,11 @@ object FacebookReels {
     val allLabels: List<String> = labels.values.flatten().distinct()
 
     private fun matchesAny(description: String, list: Collection<List<String>>): Boolean =
-        list.any { l -> l.any { it.equals(description, ignoreCase = true) } }
+        list.any { l -> description in l }
 
-    /** Description normalisée si c'est exactement un libellé principal connu, sinon null. */
-    fun mainLabel(description: String?): String? {
-        val d = description?.trim() ?: return null
-        if (d.isEmpty()) return null
-        return allLabels.firstOrNull { it.equals(d, ignoreCase = true) }
-    }
+    /** Le libellé si la description lui est strictement égale (casse et espaces compris), sinon null. */
+    fun mainLabel(description: String?): String? =
+        description?.let { d -> allLabels.firstOrNull { it == d } }
 
     /**
      * Renvoie le libellé détecté, ou null. [inputs] liste les champs de saisie visibles ;

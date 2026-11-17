@@ -30,8 +30,10 @@ class FacebookReelsTest {
     }
 
     @Test
-    fun comparisonIgnoresCaseAndOuterSpaces() {
-        assertEquals("Reels tab details", detect(node("  reels TAB details ")))
+    fun comparisonIsExact_caseAndSpacesCount() {
+        assertNull(detect(node("  Reels tab details ")))
+        assertNull(detect(node("reels TAB details")))
+        assertNull(detect(node("reel details")))
     }
 
     @Test
@@ -47,6 +49,7 @@ class FacebookReelsTest {
     @Test
     fun partialOrOtherLabels_areNotBlocked() {
         assertNull(detect(node("Reel")))
+        assertNull(detect(node("Reels tab")))
         assertNull(detect(node("View reel by Alice")))
         assertNull(detect(node("Reels")))
         assertNull(detect(node("Navigate to your Reels profile")))

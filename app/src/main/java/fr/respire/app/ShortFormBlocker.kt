@@ -102,6 +102,9 @@ object ShortFormBlocker {
         return if (active.packageName?.toString() == pkg) listOf(active) else emptyList()
     }
 
+    internal fun coversEnough(visible: Boolean, nodeHeight: Int, rootHeight: Int): Boolean =
+        visible && nodeHeight >= rootHeight.coerceAtLeast(1) * MIN_COVER
+
     /** Recherche rapide par identifiants connus. Renvoie l'identifiant trouvé, ou null. */
     fun quickMatch(roots: List<AccessibilityNodeInfo>, pkg: String): String? {
         if (pkg == FACEBOOK) return facebookMatch(roots)
@@ -111,7 +114,7 @@ object ShortFormBlocker {
             for (id in knownIds(pkg)) {
                 val nodes = root.findAccessibilityNodeInfosByViewId("$pkg:id/$id") ?: continue
                 val hit = nodes.any { n ->
-                    n.isVisibleToUser && run { n.getBoundsInScreen(rect); rect.height() >= height * MIN_COVER }
+                    n.isVisibleToUser && run { n.getBoundsInScreen(rect); coversEnough(true, rect.height(), height) }
                 }
                 recycleNodes(nodes, root)
                 if (hit) return id
@@ -313,30 +316,24 @@ object ShortFormBlocker {
         }
     }
 
-    /** Analyse complète utilisée par le service : rapide d'abord, exploration si demandé. */
-    fun scan(roots: List<AccessibilityNodeInfo>, pkg: String, explore: Boolean): Result {
-        val start = SystemClock.uptimeMillis()
-        if (roots.isEmpty()) {
+    /** Décision pure d'analyse à partir des résultats d'extraction d'arbre. */
+    internal fun evaluateScan(
+        windows: Int,
+        match: String?,
+        full: FullScan?,
+        dm: Boolean,
+        negative: Boolean,
+        durationMs: Long,
+    ): Result {
+        if (windows <= 0) {
             return Result(false, 0, "-", 0, 0, emptyList(), "aucune fenêtre lisible")
         }
-        val match = quickMatch(roots, pkg)
-        var method = "rapide"
-        var seen = emptyList<String>()
-        var nodes = 0
-        var withId = 0
-        var descriptions = emptyList<String>()
-        var candidate: String? = null
-        if (match == null && explore) {
-            val full = fullScan(roots, pkg)
-            method = "exploration"
-            seen = full.seen
-            nodes = full.nodes
-            withId = full.withId
-            descriptions = full.descriptions
-            candidate = full.match
-        }
-        val dm = match != null && isDirectMessage(roots, pkg)
-        val negative = match != null && hasNegative(roots, pkg)
+        val method = if (full != null) "exploration" else "rapide"
+        val seen = full?.seen ?: emptyList()
+        val nodes = full?.nodes ?: 0
+        val withId = full?.withId ?: 0
+        val descriptions = full?.descriptions ?: emptyList()
+        val candidate = full?.match
         val reason = when {
             match == null && candidate != null -> "lecteur non trouvé (candidat non utilisé : $candidate)"
             match == null -> "lecteur non trouvé"
@@ -346,14 +343,34 @@ object ShortFormBlocker {
         }
         return Result(
             blocked = match != null && !dm && !negative,
-            windows = roots.size,
+            windows = windows,
             method = method,
             nodes = nodes,
-            durationMs = SystemClock.uptimeMillis() - start,
+            durationMs = durationMs,
             seen = seen,
             reason = reason,
             withId = withId,
             descriptions = descriptions,
+        )
+    }
+
+    /** Analyse complète utilisée par le service : rapide d'abord, exploration si demandé. */
+    fun scan(roots: List<AccessibilityNodeInfo>, pkg: String, explore: Boolean): Result {
+        val start = SystemClock.uptimeMillis()
+        if (roots.isEmpty()) {
+            return evaluateScan(0, null, null, dm = false, negative = false, durationMs = 0)
+        }
+        val match = quickMatch(roots, pkg)
+        val full = if (match == null && explore) fullScan(roots, pkg) else null
+        val dm = match != null && isDirectMessage(roots, pkg)
+        val negative = match != null && hasNegative(roots, pkg)
+        return evaluateScan(
+            windows = roots.size,
+            match = match,
+            full = full,
+            dm = dm,
+            negative = negative,
+            durationMs = SystemClock.uptimeMillis() - start,
         )
     }
 

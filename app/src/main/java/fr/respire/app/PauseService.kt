@@ -92,11 +92,7 @@ class PauseService : AccessibilityService() {
         }
     }
 
-    private var lastDiag = 0L
-    private var lastExplore = 0L
-    private var cooldownUntil = 0L
-    private var consecutiveBacks = 0
-    private var confirmed = false
+    private val shortGuard = ShortFormGuard()
 
     private fun runShortCheck() {
         val pkg = synchronized(shortLock) {
@@ -107,10 +103,12 @@ class PauseService : AccessibilityService() {
 
         // Juste après un « retour », l'écran est encore en transition : on attend,
         // puis on vérifie une seule fois si le lecteur est toujours là.
-        if (now < cooldownUntil) {
-            scheduleShortCheck(cooldownUntil - now)
+        val pre = shortGuard.beforeScan(now)
+        if (pre is ShortFormGuard.PreScan.Wait) {
+            scheduleShortCheck(pre.delayMs)
             return
         }
+        val explore = (pre as ShortFormGuard.PreScan.Scan).explore
 
         val roots = ShortFormBlocker.roots(this, pkg) { prefs.recordShortFailure(Prefs.FAIL_TREE_ERROR) }
         if (roots.isEmpty()) {
@@ -118,40 +116,30 @@ class PauseService : AccessibilityService() {
             return
         }
 
-        val explore = now - lastExplore > EXPLORE_EVERY_MS
-        if (explore) lastExplore = now
         val result = ShortFormBlocker.scan(roots, pkg, explore)
-
-        if (result.blocked || result.method == "exploration" || now - lastDiag > DIAG_EVERY_MS) {
-            lastDiag = now
+        val post = shortGuard.afterScan(now, result)
+        if (post.saveDiagnostic) {
             prefs.saveShortDiagnostic(pkg, result)
         }
 
-        if (!result.blocked) {
-            consecutiveBacks = 0
-            confirmed = false
-            return
+        when (val action = post.action) {
+            ShortFormGuard.Action.None,
+            ShortFormGuard.Action.LimitReached -> return
+            is ShortFormGuard.Action.Confirm -> {
+                scheduleShortCheck(action.delayMs)
+                return
+            }
+            is ShortFormGuard.Action.GoBack -> {
+                ShortFormBlocker.goBack(this)
+                prefs.recordShortBlocked(System.currentTimeMillis(), pkg)
+                if (action.showToast) {
+                    val msg = if (pkg == ShortFormBlocker.YOUTUBE) R.string.toast_shorts_blocked else R.string.toast_reels_blocked
+                    handler.post { Toast.makeText(this, msg, Toast.LENGTH_SHORT).show() }
+                }
+                // Vérification de contrôle à la fin de la transition.
+                scheduleShortCheck(action.recheckDelayMs)
+            }
         }
-        // Deux détections à 250 ms d'écart avant d'agir : un élément qui passe
-        // furtivement à l'écran ne déclenche rien.
-        if (!confirmed) {
-            confirmed = true
-            scheduleShortCheck(CONFIRM_MS)
-            return
-        }
-        confirmed = false
-        // Garde-fou : jamais plus de quelques « retour » d'affilée, pour ne pas sortir de l'appli.
-        if (consecutiveBacks >= MAX_CONSECUTIVE_BACKS) return
-        consecutiveBacks++
-        cooldownUntil = now + BACK_COOLDOWN_MS
-        ShortFormBlocker.goBack(this)
-        prefs.recordShortBlocked(System.currentTimeMillis(), pkg)
-        if (consecutiveBacks == 1) {
-            val msg = if (pkg == ShortFormBlocker.YOUTUBE) R.string.toast_shorts_blocked else R.string.toast_reels_blocked
-            handler.post { Toast.makeText(this, msg, Toast.LENGTH_SHORT).show() }
-        }
-        // Vérification de contrôle à la fin de la transition.
-        scheduleShortCheck(BACK_COOLDOWN_MS)
     }
 
     // ---- Pauses -----------------------------------------------------------------
@@ -241,10 +229,5 @@ class PauseService : AccessibilityService() {
     companion object {
         private const val DEBOUNCE_MS = 1500L
         private const val SHORT_CHECK_MS = 120L
-        private const val DIAG_EVERY_MS = 2000L
-        private const val EXPLORE_EVERY_MS = 6000L
-        private const val BACK_COOLDOWN_MS = 900L
-        private const val MAX_CONSECUTIVE_BACKS = 3
-        private const val CONFIRM_MS = 250L
     }
 }
