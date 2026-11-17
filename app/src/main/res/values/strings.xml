@@ -16,9 +16,6 @@
     <string name="pause_close">No, close it</string>
     <string name="pause_open">Open anyway</string>
     <string name="pause_continue">Continue</string>
-    <string name="pause_reason_msg">Specific message</string>
-    <string name="pause_reason_lookup">Quick lookup</string>
-    <string name="pause_reason_habit">Just a habit</string>
     <string name="pause_wait">%1$s in %2$d s</string>
     <string name="home_active">Active</string>
     <string name="home_inactive">Inactive</string>

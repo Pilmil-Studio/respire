@@ -2,13 +2,10 @@ package fr.respire.app.ui
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.ExperimentalLayoutApi
-import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.aspectRatio
@@ -26,16 +23,11 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.ImageBitmap
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.semantics.Role
 import fr.respire.app.R
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
@@ -58,7 +50,6 @@ data class PauseUi(
     val riskQuota: Int = 0,
 )
 
-@OptIn(ExperimentalLayoutApi::class)
 @Composable
 fun PauseScreen(
     ui: PauseUi,
@@ -66,7 +57,6 @@ fun PauseScreen(
     onClose: () -> Unit,
     onOpen: () -> Unit,
 ) {
-    var selectedReason by remember { mutableStateOf<Int?>(null) }
     // L'écran défile (petit écran, police agrandie) ; la hauteur minimale garde les Spacer à poids
     // en place quand tout tient : Column utilise alors cette hauteur minimale comme cible.
     BoxWithConstraints(
@@ -156,41 +146,6 @@ fun PauseScreen(
                 fontSize = 15.sp,
                 color = Calme.Muted,
             )
-
-            if (!ui.blocked && !ui.sessionEnd) {
-                val reasons = listOf(
-                    R.string.pause_reason_msg,
-                    R.string.pause_reason_lookup,
-                    R.string.pause_reason_habit,
-                )
-                // FlowRow et non Row : trois pastilles ne tiennent pas toujours sur une ligne (écran étroit, police agrandie).
-                // Avec une Row, la dernière était écrasée et son libellé coupé lettre par lettre ; ici la pastille passe à la ligne entière.
-                FlowRow(
-                    Modifier.padding(top = 14.dp),
-                    horizontalArrangement = Arrangement.spacedBy(8.dp, Alignment.CenterHorizontally),
-                    verticalArrangement = Arrangement.spacedBy(8.dp),
-                ) {
-                    reasons.forEachIndexed { idx, resId ->
-                        val chosen = selectedReason == idx
-                        Box(
-                            Modifier
-                                .clip(RoundedCornerShape(50))
-                                .background(if (chosen) Calme.SageTint else Calme.Chip)
-                                .clickable(role = Role.RadioButton) { selectedReason = if (chosen) null else idx }
-                                .padding(horizontal = 12.dp, vertical = 6.dp),
-                        ) {
-                            Text(
-                                stringResource(resId),
-                                fontFamily = Nunito,
-                                fontWeight = if (chosen) FontWeight.Bold else FontWeight.SemiBold,
-                                fontSize = 13.sp,
-                                textAlign = TextAlign.Center,
-                                color = if (chosen) Calme.SageDark else Calme.InkSoft,
-                            )
-                        }
-                    }
-                }
-            }
 
             Spacer(Modifier.weight(1f))
 

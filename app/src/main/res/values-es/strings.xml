@@ -15,9 +15,6 @@
     <string name="pause_close">No, la cierro</string>
     <string name="pause_open">Abrir de todos modos</string>
     <string name="pause_continue">Continuar</string>
-    <string name="pause_reason_msg">Mensaje concreto</string>
-    <string name="pause_reason_lookup">Buscar un dato</string>
-    <string name="pause_reason_habit">Pura inercia</string>
     <string name="pause_wait">%1$s en %2$d s</string>
     <string name="home_active">Activo</string>
     <string name="home_inactive">Inactivo</string>

@@ -15,9 +15,6 @@
     <string name="pause_close">Nie, zamknij</string>
     <string name="pause_open">Otwórz mimo to</string>
     <string name="pause_continue">Kontynuuj</string>
-    <string name="pause_reason_msg">Konkretna wiadomość</string>
-    <string name="pause_reason_lookup">Szybkie sprawdzenie</string>
-    <string name="pause_reason_habit">Z przyzwyczajenia</string>
     <string name="pause_wait">%1$s za %2$d s</string>
     <string name="home_active">Aktywna</string>
     <string name="home_inactive">Nieaktywna</string>

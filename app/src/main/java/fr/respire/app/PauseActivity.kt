@@ -21,7 +21,7 @@ import fr.respire.app.ui.RespireTheme
 import fr.respire.app.ui.hourLabel
 
 /**
- * Écran de pause : respiration guidée + question d'intention + compte à rebours.
+ * Écran de pause : respiration guidée + compte à rebours.
  * « Fermer » est disponible tout de suite, « Ouvrir » seulement à la fin de l'attente.
  * Si le quota du jour est atteint, seule la fermeture est possible.
  */

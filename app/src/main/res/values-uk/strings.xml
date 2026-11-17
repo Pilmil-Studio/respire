@@ -15,9 +15,6 @@
     <string name="pause_close">Ні, закрити</string>
     <string name="pause_open">Все одно відкрити</string>
     <string name="pause_continue">Продовжити</string>
-    <string name="pause_reason_msg">Конкретне повідомлення</string>
-    <string name="pause_reason_lookup">Швидко перевірити</string>
-    <string name="pause_reason_habit">За звичкою</string>
     <string name="pause_wait">%1$s через %2$d с</string>
     <string name="home_active">Активно</string>
     <string name="home_inactive">Неактивно</string>
