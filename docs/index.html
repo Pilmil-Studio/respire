@@ -10,6 +10,9 @@
 <link rel="stylesheet" href="assets/site.css">
 <meta property="og:title" content="Respire: a pause before the apps you open on autopilot">
 <meta property="og:description" content="Free, open-source Android app against doomscrolling. A breathing pause before the apps you open without thinking, session and daily limits, Reels and Shorts filter. No trackers.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://pilmil-studio.github.io/respire/index.html">
+<meta property="og:image" content="https://pilmil-studio.github.io/respire/marketing/out/en/social.png">
 </head>
 <body>
 <header class="wrap top">
@@ -35,8 +38,24 @@
 </figure>
 </div>
 
+<section id="for"><div class="wrap">
+<h2>Who it is for</h2>
+<p class="intro">Three situations that lead to Respire.</p>
+<ul class="features three">
+<li><h3>You open apps without thinking</h3><p>Your thumb opens a feed before you have decided anything. Respire puts a pause of a few seconds in front of the apps you choose: you close it right away, or you open it on purpose.</p></li><li><h3>You only want to get rid of Reels and Shorts</h3><p>Instagram messages or regular YouTube videos are useful to you, the stream of short videos is not. The filter leaves the Reels or Shorts player as soon as it opens and keeps the rest of the app available.</p></li><li><h3>You read permissions before installing</h3><p>Respire has no Internet permission and no account, so it cannot send anything. The code is public under the MPL-2.0 licence, so you can read it before installing.</p></li>
+</ul>
+</div></section>
+
 <section id="how"><div class="wrap">
-<h2>Built from what research says works</h2>
+<h2>How it works</h2>
+<p class="intro">Three steps, a few minutes.</p>
+<ul class="features three shots">
+<li><h3>1. Choose the apps to slow down</h3><img class="shot" decoding="async" src="marketing/captures/en/choix_applis.png" alt="Respire Apps to slow down list: a search bar and switches, with three apps turned on." width="1080" height="2340" loading="lazy"><p>Turn on the ones you want, with no limit on how many. Then turn on Respire in Accessibility settings, from the button in the app.</p></li><li><h3>2. Pause before opening</h3><img class="shot" decoding="async" src="marketing/captures/en/respiration.png" alt="Respire pause screen: a circle with a countdown, the question "Why are you opening it now?", three intention chips, a button to close and the time left before opening." width="1080" height="2340" loading="lazy"><p>A countdown appears (10 seconds by default). You can close right away, or open once it ends.</p></li><li><h3>3. Look at your week</h3><img class="shot" decoding="async" src="marketing/captures/en/statistiques.png" alt="Respire statistics screen: 6 times the user gave up out of 9 pauses today, about 60 minutes saved, a bar chart of the last 7 days and temptation peaking around 21:00." width="1080" height="2340" loading="lazy"><p>Respire counts pauses and times you gave up, by day and by hour, to spot your most tempting moment. The figures stay on your phone.</p></li>
+</ul>
+</div></section>
+
+<section id="features"><div class="wrap">
+<h2>Built from published studies and stated design choices</h2>
 <p class="intro">Each feature rests on a study of smartphone overuse or on a stated design choice. The details, rule by rule, are on the page <a href="why.html">Why Respire works the way it does</a>.</p>
 <ul class="features">
 <li><h3>Pause before opening</h3><p>A breathing screen with a countdown and one question. Closing is available right away; opening only once the countdown ends.</p><p class="why">Friction before opening social apps cut opening attempts and made openings more intentional (Grüning, Riedel and Lorenz-Spreen, PNAS, 2023).</p></li>
@@ -50,12 +69,26 @@
 </ul>
 </div></section>
 
+<section id="captures"><div class="wrap">
+<h2>Screenshots</h2>
+<ul class="features three shots">
+<li><h3>Home</h3><img class="shot" decoding="async" src="marketing/captures/en/accueil.png" alt="Respire home screen: slowed-down apps Feed (3 of 5), Short videos (blocked) and Social network (1 of 5), with the Reels and Shorts filter switches." width="1080" height="2340" loading="lazy"></li><li><h3>Getting started</h3><img class="shot" decoding="async" src="marketing/captures/en/demarrage.png" alt="Respire getting-started screen: choose the apps to slow down, then turn on the accessibility service. The slowed-down apps list is still empty." width="1080" height="2340" loading="lazy"></li><li><h3>Limit reached</h3><img class="shot" decoding="async" src="marketing/captures/en/quota_atteint.png" alt="Respire screen when the daily limit is reached: opens today 5 of 5, come back tomorrow, a button to close the app." width="1080" height="2340" loading="lazy"></li>
+</ul>
+</div></section>
+
+<section id="limits"><div class="wrap">
+<h2>What Respire does not do</h2>
+<p class="intro">The limits, stated plainly.</p>
+<ul class="features">
+<li><h3>It does not stop you from turning it off</h3><p>You can switch the service off in Accessibility settings at any time. The 30-second lock only protects Respire’s own settings.</p></li><li><h3>The filter can stop working</h3><p>It relies on identifiers that Instagram, YouTube or Facebook can change in an update. The Facebook filter is in testing and works when Facebook is set to English.</p></li><li><h3>A Reel received in a message still opens</h3><p>The filter targets the full-screen short-video player, not messages. Apps opened through a link also trigger the pause: this is intended.</p></li><li><h3>No blocking on iPhone</h3><p>On iOS, only the cardiac coherence screen exists. The pause in front of other apps and the filter are Android only.</p></li><li><h3>No account, no sync</h3><p>Your settings and counters stay on this phone and are removed when you uninstall.</p></li>
+</ul>
+</div></section>
 <section id="simulator"><div class="wrap">
 <h2>Try the app live</h2>
 <p class="intro">Click through Respire's screens and test the 4s / 6s breathing pause shown before opening a distracting app.</p>
 <div style="display:flex;justify-content:center">
   <div style="width:min(340px,100%);border:8px solid #262925;border-radius:32px;background:#f7f5f0;color:#222621;overflow:hidden;box-shadow:0 18px 44px rgba(0,0,0,.2);font-size:14px">
-    <div style="background:#3d6b52;color:#fff;padding:10px 16px;display:flex;justify-content:space-between;font-weight:700">
+    <div style="background:var(--sage-dark);color:#fff;padding:10px 16px;display:flex;justify-content:space-between;font-weight:700">
       <span>Respire</span><span style="font-size:11px;opacity:.85">Service on</span>
     </div>
     <div id="re-screen" style="padding:14px;min-height:330px;display:grid;gap:10px;align-content:start"></div>
@@ -74,7 +107,7 @@
   function render() {
     document.querySelectorAll(".re-tab").forEach(b => {
       const act = b.dataset.tab === tab;
-      b.style.color = act ? "#3d6b52" : "#6b6e68";
+      b.style.color = act ? "var(--sage-dark)" : "#6b6e68";
       b.style.fontWeight = act ? "700" : "500";
     });
     const scr = document.getElementById("re-screen");
@@ -84,15 +117,15 @@
         <div style="font-weight:800;font-size:16px">Slowed apps</div>
         <div style="background:#fff;border:1px solid #e1ddd3;border-radius:12px;padding:10px;display:flex;justify-content:space-between"><span>Instagram</span><strong>10s pause</strong></div>
         <div style="background:#fff;border:1px solid #e1ddd3;border-radius:12px;padding:10px;display:flex;justify-content:space-between"><span>YouTube Shorts</span><strong>Filtered</strong></div>
-        <button type="button" id="re-try" style="margin-top:6px;padding:10px;border-radius:999px;border:0;background:#3d6b52;color:#fff;font:inherit;font-weight:700;cursor:pointer">Simulate opening</button>
+        <button type="button" id="re-try" style="margin-top:6px;padding:10px;border-radius:999px;border:0;background:var(--sage-dark);color:#fff;font:inherit;font-weight:700;cursor:pointer">Simulate opening</button>
       `;
     } else if (tab === "pause") {
       scr.innerHTML = `
         <div style="text-align:center;display:grid;gap:12px;justify-items:center;padding-top:12px">
           <div style="font-weight:700">Take a breath before opening</div>
-          <div id="re-bubble" style="width:118px;height:118px;border-radius:50%;background:radial-gradient(circle,#7aa889,#3d6b52);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;transition:transform 1s ease;transform:scale(0.85)">Ready</div>
+          <div id="re-bubble" style="width:118px;height:118px;border-radius:50%;background:radial-gradient(circle,#7aa889,var(--sage-dark));color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;transition:transform 1s ease;transform:scale(0.85)">Ready</div>
           <p id="re-info" style="margin:0;font-size:12px;color:#5d615b">4s inhale / 6s exhale cycle</p>
-          <button type="button" id="re-btn" style="font:inherit;padding:9px 18px;border-radius:999px;border:0;background:#3d6b52;color:#fff;font-weight:700;cursor:pointer">${timer ? "Stop" : "Start"}</button>
+          <button type="button" id="re-btn" style="font:inherit;padding:9px 18px;border-radius:999px;border:0;background:var(--sage-dark);color:#fff;font-weight:700;cursor:pointer">${timer ? "Stop" : "Start"}</button>
         </div>
       `;
     } else {
@@ -100,10 +133,10 @@
       scr.innerHTML = `
         <div style="font-weight:800;font-size:16px">This week</div>
         <div style="background:#fff;border:1px solid #e1ddd3;border-radius:12px;padding:12px">
-          <div style="font-size:22px;font-weight:800;color:#3d6b52">18 times resisted</div>
+          <div style="font-size:22px;font-weight:800;color:var(--sage-dark)">18 times resisted</div>
           <div style="font-size:12px;color:#5d615b">~1h 15m saved from endless feeds</div>
         </div>
-        <div style="background:#fff;border:1px solid #e1ddd3;border-radius:12px;padding:12px;font-size:12px">Peak temptation: 9 PM – 10 PM</div>
+        <div style="background:#fff;border:1px solid #e1ddd3;border-radius:12px;padding:12px;font-size:12px">Peak temptation: 9 PM to 10 PM</div>
       `;
     }
   }
@@ -140,6 +173,7 @@
 <section id="free"><div class="wrap">
 <h2>Why Respire is free</h2>
 <p class="intro">I spend too much time scrolling endless feeds myself, and people close to me have needed the same help. Apps that really help do exist, but their most useful features are often behind a paywall: daily limits, blocking Reels or Shorts, statistics. Respire aims to make these tools available to everyone, with no subscription, no ads and no data collection. Someone who wants to take back control of their time should not have to pay for it.</p>
+<p class="intro">Respire is published by Pilmil Studio, a non-profit studio (French association, registration in progress). The code is open (MPL-2.0), with no ads and no data collection.</p>
 </div></section>
 
 <section id="install"><div class="wrap">
@@ -147,9 +181,9 @@
 <ol class="steps"><li><strong>Download</strong> <a href="https://github.com/Pilmil-Studio/respire/releases/latest/download/Respire.apk">Respire.apk</a> on your phone (Android will ask you to allow installs from your browser).</li><li><strong>Choose the apps</strong> to slow down in Respire.</li><li><strong>Turn on Respire</strong> in Accessibility settings, from the button in the app.</li><li><strong>Android 13 and later:</strong> if the switch is greyed out, go to Settings, Apps, Respire, the ⋮ menu, then Allow restricted settings, and try again.</li></ol>
 </div></section>
 
-<section><div class="wrap">
+<section id="faq"><div class="wrap">
 <h2>Questions</h2>
-<details><summary>Why does Respire need accessibility access?</summary><p>It is the only way on Android to know which app is opening, so the pause can appear before it. Respire uses it for nothing else.</p></details><details><summary>Can I turn it off?</summary><p>Yes, at any time in Accessibility settings or by uninstalling the app. The 30-second lock only applies to Respire's own rules.</p></details><details><summary>Does it work on iPhone?</summary><p>Partially. iOS does not allow third-party apps to block Reels or Shorts inside other apps outside Apple's Screen Time framework, while the standalone cardiac coherence module is available on iOS (via Kotlin Multiplatform).</p></details><details><summary>How can I report a problem?</summary><p>Open an issue on <a href="https://github.com/Pilmil-Studio/respire/issues">GitHub</a> or write to <a href="mailto:pilmil.studio@proton.me">pilmil.studio@proton.me</a>. Respire collects no data, so your feedback is the only way to know what to improve.</p></details>
+<details><summary>Why can this app see my apps?</summary><p>To show the pause before an app, Respire has to know which app comes to the foreground, and the accessibility service is the only way to know that on Android. It reads only that app’s name; the list of installed apps is used only to let you choose which ones to slow down.</p></details><details><summary>Can it read my messages?</summary><p>No: it never reads text, messages or images. If you turn on the Reels and Shorts filter, it only checks technical element IDs (and, in Facebook, accessibility labels of interface elements), only inside Instagram, YouTube and Facebook.</p></details><details><summary>Where does my data go?</summary><p>Nowhere: Respire has no Internet permission, so it cannot send anything, even by mistake. Settings and counters stay in the app’s private storage and are removed when you uninstall.</p></details><details><summary>Does the Reels and Shorts filter block my messages?</summary><p>No: messages, search and regular videos stay available. The filter is off by default and you turn it on yourself.</p></details><details><summary>What if I really need to open the app?</summary><p>Closing is available right away, and opening is available once the countdown ends (10 seconds by default). After the daily number of opens you set, the app stays closed until tomorrow.</p></details><details><summary>How many apps can I slow down?</summary><p>As many as you want: there is no limit on how many. The Reels and Shorts filter and the weekly summary are included, for free.</p></details><details><summary>The accessibility switch is greyed out. What now?</summary><p>On Android 13 and later, it is a "restricted setting". Go to Settings, Apps, Respire, the ⋮ menu, then Allow restricted settings, and try again.</p></details><details><summary>Can I turn it off?</summary><p>Yes, at any time in Accessibility settings or by uninstalling the app. The 30-second lock only applies to Respire's own rules.</p></details><details><summary>Does it work on iPhone?</summary><p>Partially. iOS does not allow third-party apps to block Reels or Shorts inside other apps outside Apple's Screen Time framework, while the standalone cardiac coherence module is available on iOS (via Kotlin Multiplatform).</p></details><details><summary>How can I report a problem?</summary><p>Open an issue on <a href="https://github.com/Pilmil-Studio/respire/issues">GitHub</a> or write to <a href="mailto:pilmil.studio@proton.me">pilmil.studio@proton.me</a>. Respire collects no data, so your feedback is the only way to know what to improve.</p></details>
 </div></section>
 
 <section id="studio"><div class="wrap">

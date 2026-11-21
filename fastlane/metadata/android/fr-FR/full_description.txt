@@ -1,6 +1,6 @@
 Respire place une courte pause de respiration devant les applis que tu ouvres sans y penser. Ferme-les d’un geste, ou attends quelques secondes et ouvre-les en connaissance de cause.
 
-Chaque fonction vient de la recherche sur l’usage excessif du smartphone :
+Chaque fonction s’appuie sur une étude publiée ou sur un choix de conception expliqué sur le site :
 
 • Une pause avant d’ouvrir : un écran de respiration, un compte à rebours et une question (« Ouvrir maintenant ? »). Fermer est possible tout de suite, ouvrir seulement à la fin du décompte.
 • Une attente qui s’allonge : chaque nouvelle tentative dans l’heure ajoute quelques secondes.
@@ -20,4 +20,4 @@ Respire utilise l’API du service d’accessibilité d’Android, dont elle a b
 Logiciel libre
 Respire est open source, sous licence MPL-2.0. Code source : https://github.com/Pilmil-Studio/respire
 
-Disponible en français, anglais, espagnol et allemand.
+Disponible en français, anglais, espagnol, allemand, polonais et ukrainien.
